@@ -32,420 +32,544 @@ $app = new \Slim\App($config);
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // Les utilisateurs
 
-$app->any('/v1.0/users', function (Request $request, Response $response) {
+$app->any('/v1.0/user', function (Request $request, Response $response) {
     if($request->isGet())
     {
         //TODO: retourne la liste
 
-        return;
+        return $response;
     }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
-$app->any('/v1.0/user/{id}', function(Request $request, Response $response, $args)
+$app->any('/v1.0/user/{id}', function(Request $request, Response $response, $args) 
 {
-    if($request->isGet())
-    {
+    $id = $args["id"];
+    if ($request->isGet()) {
         //TODO: retourne l'item
 
-        return;
-    }
-    else if($request->isDelete())
-    {
+        return $response;
+    } else if ($request->isDelete()) {
         //TODO: supprime l'item
-        return;
-    }
-    else if($request->isPatch())
-    {
+        return $response;
+    } else if ($request->isPatch()) {
         //TODO: on met à jour l'item
-        return;
+        return $response;
     }
-});
 
+    $response = $response->withStatus(405);
+    return $response;
+});
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // Les AT/DM
 
-$app->any('/v1.0/tools', function (Request $request, Response $response) {
-    if($request->isGet())
-    {
+$app->any('/v1.0/tool', function (Request $request, Response $response) {
+    if ($request->isGet()) {
         //TODO: retourne la liste
 
-        return;
+        return $response;
     }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
-$app->any('/v1.0/tool/{id}', function(Request $request, Response $response, $args)
+$app->any('/v1.0/tool/{id}', function(Request $request, Response $response, $args) 
 {
+    $id = $args["id"];
     if($request->isGet())
     {
         //TODO: retourne l'item
 
-        return;
+        return $response;
     }
     else if($request->isDelete())
     {
         //TODO: supprime l'item
-        return;
+        return $response;
     }
     else if($request->isPatch())
     {
         //TODO: on met à jour l'item
-        return;
+        return $response;
     }
+    else if($request->isPut())
+    {
+        //TODO: on ajoute
+        return $response;
+    }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // Les Résidents
 
-$app->any('/v1.0/residents', function (Request $request, Response $response) {
+$app->any('/v1.0/resident', function (Request $request, Response $response) {
     if($request->isGet())
     {
         //TODO: retourne la liste
 
-        return;
+        return $response;
     }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
-$app->any('/v1.0/resident/{id}', function(Request $request, Response $response, $args)
+$app->any('/v1.0/resident/{id}', function(Request $request, Response $response, $args) 
 {
+    $id = $args["id"];
     if($request->isGet())
     {
         //TODO: retourne l'item
 
-        return;
+        return $response;
     }
     else if($request->isDelete())
     {
         //TODO: supprime l'item
-        return;
+        return $response;
     }
     else if($request->isPatch())
     {
         //TODO: on met à jour l'item
-        return;
+        return $response;
     }
+    else if($request->isPut())
+    {
+        //TODO: on ajoute
+        return $response;
+    }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // Les Etablissements
 
-$app->any('/v1.0/establishments', function (Request $request, Response $response) {
+$app->any('/v1.0/establishment', function (Request $request, Response $response) {
     if($request->isGet())
     {
         //TODO: retourne la liste
 
-        return;
+        return $response;
     }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
-$app->any('/v1.0/establishments/{id}', function(Request $request, Response $response, $args)
+$app->any('/v1.0/establishments/{id}', function(Request $request, Response $response, $args) 
 {
+    $id = $args["id"];
     if($request->isGet())
     {
         //TODO: retourne l'item
 
-        return;
+        return $response;
     }
     else if($request->isDelete())
     {
         //TODO: supprime l'item
-        return;
+        return $response;
     }
     else if($request->isPatch())
     {
         //TODO: on met à jour l'item
-        return;
+        return $response;
     }
+    else if($request->isPut())
+    {
+        //TODO: on ajoute
+        return $response;
+    }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // Les compensations
 
-$app->any('/v1.0/compensations', function (Request $request, Response $response) {
+$app->any('/v1.0/compensation', function (Request $request, Response $response) {
     if($request->isGet())
     {
         //TODO: retourne la liste
 
-        return;
+        return $response;
     }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
-$app->any('/v1.0/compensation/{id}', function(Request $request, Response $response, $args)
+$app->any('/v1.0/compensation/{id}', function(Request $request, Response $response, $args) 
 {
+    $id = $args["id"];
     if($request->isGet())
     {
         //TODO: retourne l'item
 
-        return;
+        return $response;
     }
     else if($request->isDelete())
     {
         //TODO: supprime l'item
-        return;
+        return $response;
     }
     else if($request->isPatch())
     {
         //TODO: on met à jour l'item
-        return;
+        return $response;
     }
+    else if($request->isPut())
+    {
+        //TODO: on ajoute
+        return $response;
+    }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // Les cas d'usage
 
-$app->any('/v1.0/usecases', function (Request $request, Response $response) {
+$app->any('/v1.0/usecase', function (Request $request, Response $response) {
     if($request->isGet())
     {
         //TODO: retourne la liste
 
-        return;
+        return $response;
     }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
-$app->any('/v1.0/usecase/{id}', function(Request $request, Response $response, $args)
+$app->any('/v1.0/usecase/{id}', function(Request $request, Response $response, $args) 
 {
+    $id = $args["id"];
     if($request->isGet())
     {
         //TODO: retourne l'item
 
-        return;
+        return $response;
     }
     else if($request->isDelete())
     {
         //TODO: supprime l'item
-        return;
+        return $response;
     }
     else if($request->isPatch())
     {
         //TODO: on met à jour l'item
-        return;
+        return $response;
     }
+    else if($request->isPut())
+    {
+        //TODO: on ajoute
+        return $response;
+    }
+    else if($request->isPut())
+    {
+        //TODO: on ajoute
+        return $response;
+    }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // Les handicaps
 
-$app->any('/v1.0/handicaps', function (Request $request, Response $response) {
+$app->any('/v1.0/handicap', function (Request $request, Response $response) {
     if($request->isGet())
     {
         //TODO: retourne la liste
 
-        return;
+        return $response;
     }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
-$app->any('/v1.0/handicap/{id}', function(Request $request, Response $response, $args)
+$app->any('/v1.0/handicap/{id}', function(Request $request, Response $response, $args) 
 {
+    $id = $args["id"];
     if($request->isGet())
     {
         //TODO: retourne l'item
 
-        return;
+        return $response;
     }
     else if($request->isDelete())
     {
         //TODO: supprime l'item
-        return;
+        return $response;
     }
     else if($request->isPatch())
     {
         //TODO: on met à jour l'item
-        return;
+        return $response;
     }
+    else if($request->isPut())
+    {
+        //TODO: on ajoute
+        return $response;
+    }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // Les User_Establishment
 
-$app->any('/v1.0/user_establishment_links', function (Request $request, Response $response) {
+$app->any('/v1.0/user_establishment_link', function (Request $request, Response $response) {
     if($request->isGet())
     {
         //TODO: retourne la liste
 
-        return;
+        return $response;
     }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
-$app->any('/v1.0/user_establishment_link/{id}', function(Request $request, Response $response, $args)
+$app->any('/v1.0/user_establishment_link/{id}', function(Request $request, Response $response, $args) 
 {
+    $id = $args["id"];
     if($request->isGet())
     {
         //TODO: retourne l'item
 
-        return;
+        return $response;
     }
     else if($request->isDelete())
     {
         //TODO: supprime l'item
-        return;
+        return $response;
     }
     else if($request->isPatch())
     {
         //TODO: on met à jour l'item
-        return;
+        return $response;
     }
+    else if($request->isPut())
+    {
+        //TODO: on ajoute
+        return $response;
+    }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // Les User_Resident
 
-$app->any('/v1.0/user_resident_links', function (Request $request, Response $response) {
+$app->any('/v1.0/user_resident_link', function (Request $request, Response $response) {
     if($request->isGet())
     {
         //TODO: retourne la liste
 
-        return;
+        return $response;
     }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
-$app->any('/v1.0/user_resident_link/{id}', function(Request $request, Response $response, $args)
+$app->any('/v1.0/user_resident_link/{id}', function(Request $request, Response $response, $args) 
 {
+    $id = $args["id"];
     if($request->isGet())
     {
         //TODO: retourne l'item
 
-        return;
+        return $response;
     }
     else if($request->isDelete())
     {
         //TODO: supprime l'item
-        return;
+        return $response;
     }
     else if($request->isPatch())
     {
         //TODO: on met à jour l'item
-        return;
+        return $response;
     }
+    else if($request->isPut())
+    {
+        //TODO: on ajoute
+        return $response;
+    }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // Les Tool Resident
 
-$app->any('/v1.0/tool_resident_links', function (Request $request, Response $response) {
+$app->any('/v1.0/tool_resident_link', function (Request $request, Response $response) {
     if($request->isGet())
     {
         //TODO: retourne la liste
 
-        return;
+        return $response;
     }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
-$app->any('/v1.0/tool_resident_link/{id}', function(Request $request, Response $response, $args)
+$app->any('/v1.0/tool_resident_link/{id}', function(Request $request, Response $response, $args) 
 {
+    $id = $args["id"];
     if($request->isGet())
     {
         //TODO: retourne l'item
 
-        return;
+        return $response;
     }
     else if($request->isDelete())
     {
         //TODO: supprime l'item
-        return;
+        return $response;
     }
     else if($request->isPatch())
     {
         //TODO: on met à jour l'item
-        return;
+        return $response;
     }
+    else if($request->isPut())
+    {
+        //TODO: on ajoute
+        return $response;
+    }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // Les tool handicap
 
-$app->any('/v1.0/tool_handicap_links', function (Request $request, Response $response) {
+$app->any('/v1.0/tool_handicap_link', function (Request $request, Response $response) {
     if($request->isGet())
     {
         //TODO: retourne la liste
 
-        return;
+        return $response;
     }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
-$app->any('/v1.0/tool_handicap_link/{id}', function(Request $request, Response $response, $args)
+$app->any('/v1.0/tool_handicap_link/{id}', function(Request $request, Response $response, $args) 
 {
+    $id = $args["id"];
     if($request->isGet())
     {
         //TODO: retourne l'item
 
-        return;
+        return $response;
     }
     else if($request->isDelete())
     {
         //TODO: supprime l'item
-        return;
+        return $response;
     }
     else if($request->isPatch())
     {
         //TODO: on met à jour l'item
-        return;
+        return $response;
     }
+    else if($request->isPut())
+    {
+        //TODO: on ajoute
+        return $response;
+    }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // Les Tool_compensation
 
-$app->any('/v1.0/tool_compensation_links', function (Request $request, Response $response) {
+$app->any('/v1.0/tool_compensation_link', function (Request $request, Response $response) {
     if($request->isGet())
     {
         //TODO: retourne la liste
 
-        return;
+        return $response;
     }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
-$app->any('/v1.0/tool_compensation_link/{id}', function(Request $request, Response $response, $args)
+$app->any('/v1.0/tool_compensation_link/{id}', function(Request $request, Response $response, $args) 
 {
+    $id = $args["id"];
     if($request->isGet())
     {
         //TODO: retourne l'item
 
-        return;
+        return $response;
     }
     else if($request->isDelete())
     {
         //TODO: supprime l'item
-        return;
+        return $response;
     }
     else if($request->isPatch())
     {
         //TODO: on met à jour l'item
-        return;
+        return $response;
     }
+    else if($request->isPut())
+    {
+        //TODO: on ajoute
+        return $response;
+    }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // Les Tool Usecase
 
-$app->any('/v1.0/tool_usecase_links', function (Request $request, Response $response) {
+$app->any('/v1.0/tool_usecase_link', function (Request $request, Response $response) {
     if($request->isGet())
     {
         //TODO: retourne la liste
 
-        return;
+        return $response;
     }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
-$app->any('/v1.0/tool_usecase_link/{id}', function(Request $request, Response $response, $args)
+$app->any('/v1.0/tool_usecase_link/{id}', function(Request $request, Response $response, $args) 
 {
+    $id = $args["id"];
     if($request->isGet())
     {
         //TODO: retourne l'item
 
-        return;
+        return $response;
     }
     else if($request->isDelete())
     {
         //TODO: supprime l'item
-        return;
+        return $response;
     }
     else if($request->isPatch())
     {
         //TODO: on met à jour l'item
-        return;
+        return $response;
     }
+    else if($request->isPut())
+    {
+        //TODO: on ajoute
+        return $response;
+    }
+    $response = $response->withStatus(405);
+    return $response;
 });
 
 $app->run();
