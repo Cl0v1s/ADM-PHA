@@ -1,6 +1,10 @@
 <?php
 
-include_once 'Applicative/API.php';
+use \Psr\Http\Message\ServerRequestInterface as Request;
+use \Psr\Http\Message\ResponseInterface as Response;
+
+require_once './../vendor/autoload.php';
+include_once './../Applicative/API.php';
 
 /**
  * Created by PhpStorm.
@@ -8,10 +12,7 @@ include_once 'Applicative/API.php';
  * Date: 22/01/17
  * Time: 16:15
  */
-class APIController
+class APIController extends Controller
 {
-
-
-
 
 }
