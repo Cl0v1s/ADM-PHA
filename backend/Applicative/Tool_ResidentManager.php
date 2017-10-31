@@ -6,7 +6,7 @@
  * Time: 19:41
  */
 
-class UserManager implements ModelManager
+class Tool_ResidentManager implements ModelManager
 {
     public static function GetAll()
     {

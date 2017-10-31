@@ -6,7 +6,7 @@
  * Time: 19:41
  */
 
-class UserManager implements ModelManager
+class UsecaseManager implements ModelManager
 {
     public static function GetAll()
     {
