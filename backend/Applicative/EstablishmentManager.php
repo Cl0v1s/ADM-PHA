@@ -2,34 +2,38 @@
 /**
  * Created by PhpStorm.
  * User: Clovis
- * Date: 30/10/2017
- * Time: 19:41
+ * Date: 31/10/2017
+ * Time: 12:34
  */
 
-class EstablishmentManager implements ModelManager
+class EstablishmentManager extends ModelManager
 {
     public static function GetAll()
     {
-        // TODO: Implement GetAll() method.
+        return ModelManager::GetAll("Establishment");
     }
 
     public static function Get($id)
     {
-        // TODO: Implement Get() method.
+        return ModelManager::Get("Establishment", $id);
     }
 
-    public static function Put($id, $user)
+    public static function Put($name)
     {
-        // TODO: Implement Put() method.
+        $item = new Establishment(null);
+        $item->setName($name);
+        return ModelManager::Put($item);
     }
 
-    public static function Patch($id, $user)
+    public static function Patch($id, $name)
     {
-        // TODO: Implement Patch() method.
+        $item = EstablishmentManager::Get($id);
+        $item->setName($name);
+        ModelManager::Patch($id, $item);
     }
 
-    public static function Delete($id)
+    public static function Delete( $id)
     {
-        // TODO: Implement Delete() method.
+        ModelManager::Delete("Establishment", $id);
     }
 }

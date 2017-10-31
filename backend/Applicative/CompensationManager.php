@@ -6,34 +6,34 @@
  * Time: 12:34
  */
 
-class UsecaseManager
+class CompensationManager extends ModelManager
 {
     public static function GetAll()
     {
-        return ModelManager::GetAll("Usecase");
+        return ModelManager::GetAll("Compensation");
     }
 
     public static function Get($id)
     {
-        return ModelManager::Get("Usecase", $id);
+        return ModelManager::Get("Compensation", $id);
     }
 
     public static function Put($name)
     {
-        $item = new Usecase(null);
+        $item = new Compensation(null);
         $item->setName($name);
         return ModelManager::Put($item);
     }
 
     public static function Patch($id, $name)
     {
-        $item = UsecaseManager::Get($id);
+        $item = CompensationManager::Get($id);
         $item->setName($name);
         ModelManager::Patch($id, $item);
     }
 
-    public static function Delete($id)
+    public static function Delete( $id)
     {
-        ModelManager::Delete("Usecase", $id);
+        ModelManager::Delete("Compensation", $id);
     }
 }

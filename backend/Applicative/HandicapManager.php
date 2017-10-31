@@ -2,34 +2,38 @@
 /**
  * Created by PhpStorm.
  * User: Clovis
- * Date: 30/10/2017
- * Time: 19:41
+ * Date: 31/10/2017
+ * Time: 12:34
  */
 
-class HandicapManager implements ModelManager
+class HandicapManager extends ModelManager
 {
     public static function GetAll()
     {
-        // TODO: Implement GetAll() method.
+        return ModelManager::GetAll("Handicap");
     }
 
     public static function Get($id)
     {
-        // TODO: Implement Get() method.
+        return ModelManager::Get("Handicap", $id);
     }
 
-    public static function Put($id, $user)
+    public static function Put($name)
     {
-        // TODO: Implement Put() method.
+        $item = new Handicap(null);
+        $item->setName($name);
+        return ModelManager::Put($item);
     }
 
-    public static function Patch($id, $user)
+    public static function Patch($id, $name)
     {
-        // TODO: Implement Patch() method.
+        $item = HandicapManager::Get($id);
+        $item->setName($name);
+        ModelManager::Patch($id, $item);
     }
 
-    public static function Delete($id)
+    public static function Delete( $id)
     {
-        // TODO: Implement Delete() method.
+        ModelManager::Delete("Handicap", $id);
     }
 }

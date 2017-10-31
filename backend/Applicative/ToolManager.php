@@ -2,34 +2,54 @@
 /**
  * Created by PhpStorm.
  * User: Clovis
- * Date: 30/10/2017
- * Time: 19:41
+ * Date: 31/10/2017
+ * Time: 12:34
  */
 
-class ToolManager implements ModelManager
+class ToolManager
 {
     public static function GetAll()
     {
-        // TODO: Implement GetAll() method.
+        return ModelManager::GetAll("Tool");
     }
 
     public static function Get($id)
     {
-        // TODO: Implement Get() method.
+        return ModelManager::Get("Tool", $id);
     }
 
-    public static function Put($id, $user)
+    public static function Put($name, $description, $autonomy = null, $guide = null, $invasive = null, $provider = null, $advantages = null, $price = null, $refund = null)
     {
-        // TODO: Implement Put() method.
+        $item = new Tool(null);
+        $item->setName($name);
+        $item->setDescription($description);
+        $item->setAutonomy($autonomy);
+        $item->setGuide($guide);
+        $item->setInvasive($invasive);
+        $item->setProvider($provider);
+        $item->setAdvantages($advantages);
+        $item->setPrice($price);
+        $item->setRefund($refund);
+        return ModelManager::Put($item);
     }
 
-    public static function Patch($id, $user)
+    public static function Patch($id,$name, $description, $autonomy = null, $guide = null, $invasive = null, $provider = null, $advantages = null, $price = null, $refund = null)
     {
-        // TODO: Implement Patch() method.
+        $item = ToolManager::Get($id);
+        $item->setName($name);
+        $item->setDescription($description);
+        $item->setAutonomy($autonomy);
+        $item->setGuide($guide);
+        $item->setInvasive($invasive);
+        $item->setProvider($provider);
+        $item->setAdvantages($advantages);
+        $item->setPrice($price);
+        $item->setRefund($refund);
+        ModelManager::Patch($id, $item);
     }
 
     public static function Delete($id)
     {
-        // TODO: Implement Delete() method.
+        ModelManager::Delete("Tool", $id);
     }
 }

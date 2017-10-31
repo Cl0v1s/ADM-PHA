@@ -20,6 +20,9 @@ class Engine
     private static $instance;
     public static $DEBUG = false;
 
+    /**
+     * @return Engine
+     */
     public static function Instance()
     {
         if(isset(Engine::$instance) ==  false)
@@ -61,7 +64,13 @@ class Engine
             throw new Exception("Must be a child class of Storage");
         $this->persistence[$key] = $storage;
     }
-    public function Persistence($class)
+
+    /**
+     * @param $class
+     * @return DatabaseStorage
+     * @throws Exception
+     */
+    public function getPersistence($class)
     {
         if(!isset($this->persistence[$class]))
             throw new Exception($class." not registered as Persistent Storage");

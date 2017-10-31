@@ -2,34 +2,48 @@
 /**
  * Created by PhpStorm.
  * User: Clovis
- * Date: 30/10/2017
- * Time: 19:41
+ * Date: 31/10/2017
+ * Time: 12:34
  */
 
-class ResidentManager implements ModelManager
+class ResidentManager
 {
     public static function GetAll()
     {
-        // TODO: Implement GetAll() method.
+        return ModelManager::GetAll("Resident");
     }
 
     public static function Get($id)
     {
-        // TODO: Implement Get() method.
+        return ModelManager::Get("Resident", $id);
     }
 
-    public static function Put($id, $user)
+    public static function Put($lastname, $firstname, $age, $pathologies, $autonomy, $Establishment_id)
     {
-        // TODO: Implement Put() method.
+        $item = new Resident(null);
+        $item->setLastname($lastname);
+        $item->setFirstname($firstname);
+        $item->setAge($age);
+        $item->setPathologies($pathologies);
+        $item->setAutonomy($autonomy);
+        $item->setEstablishmentId($Establishment_id);
+        return ModelManager::Put($item);
     }
 
-    public static function Patch($id, $user)
+    public static function Patch($id, $lastname, $firstname, $age, $pathologies, $autonomy, $Establishment_id)
     {
-        // TODO: Implement Patch() method.
+        $item = ResidentManager::Get($id);
+        $item->setLastname($lastname);
+        $item->setFirstname($firstname);
+        $item->setAge($age);
+        $item->setPathologies($pathologies);
+        $item->setAutonomy($autonomy);
+        $item->setEstablishmentId($Establishment_id);
+        ModelManager::Patch($id, $item);
     }
 
     public static function Delete($id)
     {
-        // TODO: Implement Delete() method.
+        ModelManager::Delete("Resident", $id);
     }
 }

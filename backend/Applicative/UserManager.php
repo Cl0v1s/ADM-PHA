@@ -2,34 +2,46 @@
 /**
  * Created by PhpStorm.
  * User: Clovis
- * Date: 30/10/2017
- * Time: 19:41
+ * Date: 31/10/2017
+ * Time: 12:34
  */
 
-class UserManager implements ModelManager
+class UserManager
 {
     public static function GetAll()
     {
-        // TODO: Implement GetAll() method.
+        return ModelManager::GetAll("User");
     }
 
     public static function Get($id)
     {
-        // TODO: Implement Get() method.
+        return ModelManager::Get("User", $id);
     }
 
-    public static function Put($id, $user)
+    public static function Put($lastname, $firstname, $mail, $phone, $group)
     {
-        // TODO: Implement Put() method.
+        $item = new User(null);
+        $item->setLastname($lastname);
+        $item->setFirstname($firstname);
+        $item->setMail($mail);
+        $item->setPhone($phone);
+        $item->setGroup($group);
+        return ModelManager::Put($item);
     }
 
-    public static function Patch($id, $user)
+    public static function Patch($id, $lastname, $firstname, $mail, $phone, $group)
     {
-        // TODO: Implement Patch() method.
+        $item = UserManager::Get($id);
+        $item->setLastname($lastname);
+        $item->setFirstname($firstname);
+        $item->setMail($mail);
+        $item->setPhone($phone);
+        $item->setGroup($group);
+        ModelManager::Patch($id, $item);
     }
 
     public static function Delete($id)
     {
-        // TODO: Implement Delete() method.
+        ModelManager::Delete("User", $id);
     }
 }
