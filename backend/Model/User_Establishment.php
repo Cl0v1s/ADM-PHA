@@ -36,5 +36,23 @@ class User_Establishment extends StorageItem
         return $this->Establishment_id;
     }
 
+    /**
+     * @param mixed $User_id
+     */
+    public function setUserId($User_id)
+    {
+        $this->User_id = $User_id;
+        $this->checkIntegrity("User_id");
+    }
+
+    /**
+     * @param mixed $Establishment_id
+     */
+    public function setEstablishmentId($Establishment_id)
+    {
+        $this->Establishment_id = $Establishment_id;
+        $this->checkIntegrity("Establishment_id");
+    }
+
 
 }

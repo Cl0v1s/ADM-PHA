@@ -6,7 +6,7 @@
  * Time: 12:34
  */
 
-class ToolManager
+class ToolManager implements IModelManager
 {
     public static function GetAll()
     {

@@ -6,7 +6,7 @@
  * Time: 12:34
  */
 
-class CompensationManager extends ModelManager
+class CompensationManager implements IModelManager
 {
     public static function GetAll()
     {

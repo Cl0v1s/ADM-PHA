@@ -6,7 +6,7 @@
  * Time: 12:34
  */
 
-class ResidentManager
+class ResidentManager implements IModelManager
 {
     public static function GetAll()
     {

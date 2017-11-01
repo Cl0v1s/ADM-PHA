@@ -6,7 +6,7 @@
  * Time: 12:34
  */
 
-class HandicapManager extends ModelManager
+class HandicapManager implements IModelManager
 {
     public static function GetAll()
     {

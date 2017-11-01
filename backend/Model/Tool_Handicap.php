@@ -36,5 +36,23 @@ class Tool_Handicap extends StorageItem
         return $this->Handicap_id;
     }
 
+    /**
+     * @param mixed $Tool_id
+     */
+    public function setToolId($Tool_id)
+    {
+        $this->Tool_id = $Tool_id;
+        $this->checkIntegrity("Tool_id");
+    }
+
+    /**
+     * @param mixed $Handicap_id
+     */
+    public function setHandicapId($Handicap_id)
+    {
+        $this->Handicap_id = $Handicap_id;
+        $this->checkIntegrity("Handicap_id");
+    }
+
 
 }

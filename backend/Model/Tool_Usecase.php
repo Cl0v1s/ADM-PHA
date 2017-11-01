@@ -36,6 +36,26 @@ class Tool_Usecase extends StorageItem
         return $this->Usecase_id;
     }
 
+    /**
+     * @param mixed $Tool_id
+     */
+    public function setToolId($Tool_id)
+    {
+        $this->Tool_id = $Tool_id;
+        $this->checkIntegrity("Tool_id");
+    }
+
+    /**
+     * @param mixed $Usecase_id
+     */
+    public function setUsecaseId($Usecase_id)
+    {
+        $this->Usecase_id = $Usecase_id;
+        $this->checkIntegrity("Usecase_id");
+    }
+
+
+
 
 
 }

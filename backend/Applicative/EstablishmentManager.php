@@ -6,7 +6,7 @@
  * Time: 12:34
  */
 
-class EstablishmentManager extends ModelManager
+class EstablishmentManager implements IModelManager
 {
     public static function GetAll()
     {

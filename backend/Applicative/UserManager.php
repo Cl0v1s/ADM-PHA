@@ -6,7 +6,7 @@
  * Time: 12:34
  */
 
-class UserManager
+class UserManager implements IModelManager
 {
     public static function GetAll()
     {

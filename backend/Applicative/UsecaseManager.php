@@ -6,7 +6,7 @@
  * Time: 12:34
  */
 
-class UsecaseManager
+class UsecaseManager implements IModelManager
 {
     public static function GetAll()
     {

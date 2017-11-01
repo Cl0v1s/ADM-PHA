@@ -36,6 +36,25 @@ class Tool_Compensation extends StorageItem
         return $this->Compensation_id;
     }
 
+    /**
+     * @param mixed $Tool_id
+     */
+    public function setToolId($Tool_id)
+    {
+        $this->Tool_id = $Tool_id;
+        $this->checkIntegrity("Tool_id");
+    }
+
+    /**
+     * @param mixed $Compensation_id
+     */
+    public function setCompensationId($Compensation_id)
+    {
+        $this->Compensation_id = $Compensation_id;
+        $this->checkIntegrity("Compensation_id");
+    }
+
+
 
 
 

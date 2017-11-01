@@ -36,6 +36,26 @@ class User_Resident extends StorageItem
         return $this->Resident_id;
     }
 
+    /**
+     * @param mixed $User_id
+     */
+    public function setUserId($User_id)
+    {
+        $this->User_id = $User_id;
+        $this->checkIntegrity("User_id");
+    }
+
+    /**
+     * @param mixed $Resident_id
+     */
+    public function setResidentId($Resident_id)
+    {
+        $this->Resident_id = $Resident_id;
+        $this->checkIntegrity("Resident_id");
+    }
+
+
+
 
 
 }

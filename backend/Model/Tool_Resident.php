@@ -106,6 +106,26 @@ class Tool_Resident extends StorageItem
         $this->checkIntegrity("comments");
     }
 
+    /**
+     * @param mixed $Tool_id
+     */
+    public function setToolId($Tool_id)
+    {
+        $this->Tool_id = $Tool_id;
+        $this->checkIntegrity("Tool_id");
+    }
+
+    /**
+     * @param mixed $Resident_id
+     */
+    public function setResidentId($Resident_id)
+    {
+        $this->Resident_id = $Resident_id;
+        $this->checkIntegrity("Resident_id");
+    }
+
+
+
 
 
 }
