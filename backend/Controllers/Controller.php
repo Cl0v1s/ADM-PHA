@@ -4,7 +4,6 @@ use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
 require_once './../vendor/autoload.php';
-include_once './../Applicative/API.php';
 
 /**
  * Created by PhpStorm.
@@ -23,13 +22,14 @@ class Controller
     public static function routeHandler(Request $request, Response $response, $next)
     {
         $response = $response->withHeader("Content-Type", "application/json");
+        $response = $response->withHeader("Content-Encoding", "deflate");
+        $date = new DateTime();
+        $date->setTimezone(DateTimeZone::UTC);
+        $response = $response->withHeader("Date", $date->format(DATE_RFC822));
         $route = $request->getAttribute("route");
 
         try {
             $response = $next($request, $response, $route->getArguments());
-            if ($response->getBody()->getContents() === "") {
-                $response = $response->withStatus(405);
-            }
         }
         catch(Exception $e)
         {
