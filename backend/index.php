@@ -44,7 +44,13 @@ $app->any('/v1.0/{collection}/{id}', function(Request $request, Response $respon
 {
     $collection = ucfirst($args["collection"]);
     $operation = ucfirst($request->getMethod());
-    $params = $request->getQueryParams();
+    $params = null;
+    if($request->isGet())
+    {
+        $params = $request->getQueryParams();
+    }
+    else
+        $params = $request->getParsedBody();
     $params["id"] = $args["id"];
     APIController::Execute($collection, $operation, $params, $response);
     return $response;

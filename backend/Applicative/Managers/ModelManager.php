@@ -8,11 +8,63 @@
 
 class ModelManager
 {
-    public static function GetAll($class)
+
+    private static function buildSQLWhere($filters)
+    {
+        $where = "";
+        $andor = null;
+        preg_match_all('/(and)|(or)/', $filters, $andor);
+
+        $filters = preg_split('/(and)|(or)/', $filters);
+        for($i = 0; $i < count($filters);  $i++)
+        {
+            // Gestion de l'égalité
+            if(strpos($filters[$i], "%") !== false)
+            {
+                $filters[$i] = str_replace("eq", "LIKE", $filters[$i]);
+            }
+            else
+                $filters[$i] = str_replace("eq", "=", $filters[$i]);
+
+            // Gestion de la différence
+            if(strpos($filters[$i], "ne") !== false)
+            {
+                if(strpos($filters[$i], "%") !== false)
+                {
+                    $filters[$i] = str_replace("ne", "LIKE", $filters[$i]);
+                }
+                else
+                    $filters[$i] = str_replace("ne", "=", $filters[$i]);
+
+                $filters[$i] = "NOT ".$filters[$i];
+            }
+            // Gestion gt
+            $filters[$i] = str_replace("gt", ">", $filters[$i]);
+
+            // Gestion ge
+            $filters[$i] = str_replace("ge", ">=", $filters[$i]);
+
+            // Gestion lt
+            $filters[$i] = str_replace("lt", "<", $filters[$i]);
+
+            // Gestion le
+            $filters[$i] = str_replace("le", "<=", $filters[$i]);
+
+            $where .= $filters[$i];
+            if(isset($andor[0][$i]) == true)
+                $where .= $andor[0][$i];
+        }
+
+        return $where;
+    }
+
+
+    public static function GetAll($class, $filters)
     {
         $storage = Engine::Instance()->getPersistence("DatabaseStorage");
         $items = null;
-        $storage->findAll("Establishment", $items, null);
+        $filters = ModelManager::buildSQLWhere($filters);
+        $storage->findAll("Establishment", $items, $filters);
         return $items;
     }
 

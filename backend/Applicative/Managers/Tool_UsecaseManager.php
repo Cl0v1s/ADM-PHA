@@ -9,9 +9,9 @@
 class Tool_UsecaseManager implements IModelManager
 {
 
-    public static function GetAll()
+    public static function GetAll($filters)
     {
-        return ModelManager::GetAll("Tool_Usecase");
+        return ModelManager::GetAll("Tool_Usecase", $filters);
     }
 
     public static function Get($id)

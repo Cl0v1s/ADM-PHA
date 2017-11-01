@@ -8,9 +8,9 @@
 
 class ToolManager implements IModelManager
 {
-    public static function GetAll()
+    public static function GetAll($filters)
     {
-        return ModelManager::GetAll("Tool");
+        return ModelManager::GetAll("Tool", $filters);
     }
 
     public static function Get($id)

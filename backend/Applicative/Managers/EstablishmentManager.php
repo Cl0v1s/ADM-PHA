@@ -8,9 +8,9 @@
 
 class EstablishmentManager implements IModelManager
 {
-    public static function GetAll()
+    public static function GetAll($filters)
     {
-        return ModelManager::GetAll("Establishment");
+        return ModelManager::GetAll("Establishment", $filters);
     }
 
     public static function Get($id)

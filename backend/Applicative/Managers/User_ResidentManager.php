@@ -9,9 +9,9 @@
 class User_ResidentManager implements IModelManager
 {
 
-    public static function GetAll()
+    public static function GetAll($filters)
     {
-        return ModelManager::GetAll("User_Resident");
+        return ModelManager::GetAll("User_Resident", $filters);
     }
 
     public static function Get($id)

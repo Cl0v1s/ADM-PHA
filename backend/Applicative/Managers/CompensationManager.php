@@ -8,9 +8,9 @@
 
 class CompensationManager implements IModelManager
 {
-    public static function GetAll()
+    public static function GetAll($filters)
     {
-        return ModelManager::GetAll("Compensation");
+        return ModelManager::GetAll("Compensation", $filters);
     }
 
     public static function Get($id)

@@ -9,7 +9,7 @@
 class Tool_CompensationManager implements IModelManager
 {
 
-    public static function GetAll()
+    public static function GetAll($filters)
     {
         return ModelManager::GetAll("Tool_Compensation");
     }

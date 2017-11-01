@@ -9,9 +9,9 @@
 class Tool_ResidentManager implements IModelManager
 {
 
-    public static function GetAll()
+    public static function GetAll($filters)
     {
-        return ModelManager::GetAll("Tool_Resident");
+        return ModelManager::GetAll("Tool_Resident", $filters);
     }
 
     public static function Get($id)

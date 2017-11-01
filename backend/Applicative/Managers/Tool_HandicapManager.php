@@ -9,9 +9,9 @@
 class Tool_HandicapManager implements IModelManager
 {
 
-    public static function GetAll()
+    public static function GetAll($filters)
     {
-        return ModelManager::GetAll("Tool_Handicap");
+        return ModelManager::GetAll("Tool_Handicap", $filters);
     }
 
     public static function Get($id)

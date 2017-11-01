@@ -8,9 +8,9 @@
 
 class UsecaseManager implements IModelManager
 {
-    public static function GetAll()
+    public static function GetAll($filters)
     {
-        return ModelManager::GetAll("Usecase");
+        return ModelManager::GetAll("Usecase", $filters);
     }
 
     public static function Get($id)

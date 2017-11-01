@@ -8,9 +8,9 @@
 
 class UserManager implements IModelManager
 {
-    public static function GetAll()
+    public static function GetAll($filters)
     {
-        return ModelManager::GetAll("User");
+        return ModelManager::GetAll("User", $filters);
     }
 
     public static function Get($id)

@@ -33,7 +33,7 @@ class APIController extends Controller
         switch ($operation)
         {
             case "GetAll":
-                $data = APIController::GetAll($manager);
+                $data = APIController::GetAll($manager, $params["\$filter"]);
                 break;
             case "Get":
                 $data = APIController::Get($manager,$params["id"]);
@@ -54,9 +54,9 @@ class APIController extends Controller
         return $response;
     }
 
-    private static function GetAll($manager)
+    private static function GetAll($manager, $filters)
     {
-        return $manager::GetAll();
+        return $manager::GetAll($filters);
     }
 
     private static function Get($manager, $id)

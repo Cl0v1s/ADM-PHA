@@ -8,9 +8,9 @@
 
 class ResidentManager implements IModelManager
 {
-    public static function GetAll()
+    public static function GetAll($filters)
     {
-        return ModelManager::GetAll("Resident");
+        return ModelManager::GetAll("Resident", $filters);
     }
 
     public static function Get($id)

@@ -8,9 +8,9 @@
 
 class HandicapManager implements IModelManager
 {
-    public static function GetAll()
+    public static function GetAll($filters)
     {
-        return ModelManager::GetAll("Handicap");
+        return ModelManager::GetAll("Handicap", $filters);
     }
 
     public static function Get($id)
