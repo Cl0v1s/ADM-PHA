@@ -33,7 +33,7 @@ class APIController extends Controller
         switch ($operation)
         {
             case "GetAll":
-                $data = APIController::GetAll($manager, $params["\$filter"]);
+                $data = APIController::GetAll($manager, $params);
                 break;
             case "Get":
                 $data = APIController::Get($manager,$params["id"]);
@@ -54,8 +54,29 @@ class APIController extends Controller
         return $response;
     }
 
-    private static function GetAll($manager, $filters)
+    private static function GetAll($manager, $data)
     {
+        $filters = "";
+        if(isset($data["\$filter"]))
+        {
+            $filters = $data["\$filter"];
+        }
+
+        if(isset($data["\$top"]))
+        {
+            if(is_numeric($data["\$top"]) == false)
+                throw new Exception("L'indice de départ n'est pas valide", "BadArgument");
+            $top = intval($data["\$top"]);
+            $filters .= " and id ge ".$top;
+
+            if(isset($data["\$skip"]))
+            {
+                if(is_numeric($data["\$skip"]) == false)
+                    throw new Exception("L'indice de longueur n'est pas valide", "BadArgument");
+                $skip = $top + intval($data["\$skip"]);
+                $filters .= " and id lt ".$skip;
+            }
+        }
         return $manager::GetAll($filters);
     }
 
