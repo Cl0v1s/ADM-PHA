@@ -18,7 +18,7 @@ class ToolManager implements IModelManager
         return ModelManager::Get("Tool", $id);
     }
 
-    public static function Put($name, $description, $autonomy = null, $guide = null, $invasive = null, $provider = null, $advantages = null, $price = null, $refund = null)
+    public static function Put($name, $description, $type, $autonomy = null, $guide = null, $invasive = null, $constructor = null, $advantages = null, $price = null, $refund = null, $humans = null)
     {
         $item = new Tool(null);
         $item->setName($name);
@@ -26,14 +26,16 @@ class ToolManager implements IModelManager
         $item->setAutonomy($autonomy);
         $item->setGuide($guide);
         $item->setInvasive($invasive);
-        $item->setProvider($provider);
+        $item->setConstructor($constructor);
         $item->setAdvantages($advantages);
         $item->setPrice($price);
         $item->setRefund($refund);
+        $item->setHumans($humans);
+        $item->setType($type);
         return ModelManager::Put($item);
     }
 
-    public static function Patch($id,$name, $description, $autonomy = null, $guide = null, $invasive = null, $provider = null, $advantages = null, $price = null, $refund = null)
+    public static function Patch($id, $name, $description, $type, $autonomy = null, $guide = null, $invasive = null, $constructor = null, $advantages = null, $price = null, $refund = null, $humans = null)
     {
         $item = ToolManager::Get($id);
         $item->setName($name);
@@ -41,10 +43,12 @@ class ToolManager implements IModelManager
         $item->setAutonomy($autonomy);
         $item->setGuide($guide);
         $item->setInvasive($invasive);
-        $item->setProvider($provider);
+        $item->setConstructor($constructor);
         $item->setAdvantages($advantages);
         $item->setPrice($price);
         $item->setRefund($refund);
+        $item->setHumans($humans);
+        $item->setType($type);
         ModelManager::Patch($id, $item);
     }
 

@@ -44,7 +44,7 @@ class Tool extends StorageItem
      * @Word
      * @Size(min=1,max=1000)
      */
-    public $provider;
+    public $constructor;
 
     /**
      * @Word
@@ -63,12 +63,27 @@ class Tool extends StorageItem
     public $refund;
 
     /**
+     * @Numeric
+     */
+    public $humans;
+
+    /**
+     * @Required
+     * @Word
+     * @Size(min=1, max=400)
+     */
+    public $type;
+
+    /**
      * @return mixed
      */
     public function getName()
     {
         return $this->name;
     }
+
+
+
 
     /**
      * @param mixed $name
@@ -154,18 +169,18 @@ class Tool extends StorageItem
     /**
      * @return mixed
      */
-    public function getProvider()
+    public function getConstructor()
     {
-        return $this->provider;
+        return $this->constructor;
     }
 
     /**
-     * @param mixed $provider
+     * @param mixed $constructor
      */
-    public function setProvider($provider)
+    public function setConstructor($constructor)
     {
-        $this->provider = $provider;
-        $this->checkIntegrity("provider");
+        $this->constructor = $constructor;
+        $this->checkIntegrity("constructor");
 
     }
 
@@ -219,6 +234,40 @@ class Tool extends StorageItem
     {
         $this->refund = $refund;
         $this->checkIntegrity("refund");
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHumans()
+    {
+        return $this->humans;
+    }
+
+    /**
+     * @param mixed $humans
+     */
+    public function setHumans($humans)
+    {
+        $this->humans = $humans;
+        $this->checkIntegrity("humans");
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param mixed $type
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+        $this->checkIntegrity("type");
     }
 
 

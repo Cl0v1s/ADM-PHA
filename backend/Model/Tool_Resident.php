@@ -32,11 +32,6 @@ class Tool_Resident extends StorageItem
      */
     public $anxiety;
 
-    /**
-     * @Word
-     * @Size(min=1, max=1000)
-     */
-    public $comments;
 
     /**
      * @return mixed
@@ -87,23 +82,6 @@ class Tool_Resident extends StorageItem
         $this->anxiety = $anxiety;
         $this->checkIntegrity("anxiety");
 
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getComments()
-    {
-        return $this->comments;
-    }
-
-    /**
-     * @param mixed $comments
-     */
-    public function setComments($comments)
-    {
-        $this->comments = $comments;
-        $this->checkIntegrity("comments");
     }
 
     /**

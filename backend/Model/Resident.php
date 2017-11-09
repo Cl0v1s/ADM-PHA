@@ -50,6 +50,12 @@ class Resident extends StorageItem
     public $Establishment_id;
 
     /**
+     * @Word
+     * @Size(min=1, max=3000)
+     */
+    public $healplan;
+
+    /**
      * @return mixed
      */
     public function getLastname()
@@ -154,6 +160,25 @@ class Resident extends StorageItem
         $this->Establishment_id = $Establishment_id;
         $this->checkIntegrity("Establishment_id");
     }
+
+    /**
+     * @return mixed
+     */
+    public function getHealplan()
+    {
+        return $this->healplan;
+    }
+
+    /**
+     * @param mixed $healplan
+     */
+    public function setHealplan($healplan)
+    {
+        $this->healplan = $healplan;
+        $this->checkIntegrity("healplan");
+    }
+
+
 
 
 }
