@@ -14,7 +14,6 @@ include_once 'Controllers/APIController.php';
  * Date: 22/01/17
  * Time: 16:12
  */
-
 Engine::$DEBUG = true;
 date_default_timezone_set ("Europe/Paris");
 Engine::Instance()->setPersistence(new DatabaseStorage(Configuration::$DB_hostname, Configuration::$DB_name, Configuration::$DB_username, Configuration::$DB_password));
@@ -22,14 +21,17 @@ Engine::Instance()->setPersistence(new DatabaseStorage(Configuration::$DB_hostna
 $config = [
     'settings' => [
         'displayErrorDetails' => true,
+        'determineRouteBeforeAppMiddleware' => true,
     ],
 ];
+
+
 $app = new \Slim\App($config);
 
 
 // Ajout du middleware
 $app->add(function(Request $request, Response $response, $next){
-    Controller::routeHandler($request, $response, $next);
+    return Controller::routeHandler($request, $response, $next);
 });
 
 // Définition des routes

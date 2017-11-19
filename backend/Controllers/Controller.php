@@ -3,7 +3,7 @@
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
-require_once './../vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 /**
  * Created by PhpStorm.
@@ -22,13 +22,16 @@ class Controller
     public static function routeHandler(Request $request, Response $response, $next)
     {
         $response = $response->withHeader("Content-Type", "application/json");
-        $response = $response->withHeader("Content-Encoding", "deflate");
+        //$response = $response->withHeader("Content-Encoding", "deflate");
         $date = new DateTime();
-        $date->setTimezone(DateTimeZone::UTC);
+        $date->setTimezone(new DateTimeZone(DateTimeZone::listIdentifiers(DateTimeZone::UTC)[0]));
         $response = $response->withHeader("Date", $date->format(DATE_RFC822));
         $route = $request->getAttribute("route");
 
         try {
+            if (empty($route)) {
+                throw new Exception();
+            }
             $response = $next($request, $response, $route->getArguments());
         }
         catch(Exception $e)

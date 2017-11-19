@@ -3,7 +3,18 @@
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
-require_once './../vendor/autoload.php';
+require_once "Applicative/Managers/IModelManager.php";
+
+foreach (glob("Applicative/Managers/*") as $filename) {
+    require_once $filename;
+}
+
+foreach (glob("Model/*") as $filename) {
+    require_once $filename;
+}
+
+require_once 'vendor/autoload.php';
+require_once 'Controllers/Controller.php';
 
 /**
  * Created by PhpStorm.
