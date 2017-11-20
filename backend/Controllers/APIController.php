@@ -41,6 +41,7 @@ class APIController extends Controller
             return $response->withStatus(405);
 
         $data = null;
+        echo $params["id"]; // test
         switch ($operation)
         {
             case "GetAll":
@@ -59,8 +60,9 @@ class APIController extends Controller
                 APIController::Delete($manager, $params["id"]);
                 break;
         }
-
-        $response = $response->getBody()->write(json_encode($data));
+        $packet = array();
+        $packet["data"] = $data;
+        $response = $response->getBody()->write(json_encode($packet));
 
         return $response;
     }

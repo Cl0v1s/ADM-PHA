@@ -64,7 +64,7 @@ class ModelManager
         $storage = Engine::Instance()->getPersistence("DatabaseStorage");
         $items = null;
         $filters = ModelManager::buildSQLWhere($filters);
-        $storage->findAll("Establishment", $items, $filters);
+        $storage->findAll($class, $items, $filters);
         return $items;
     }
 
