@@ -1,0 +1,16 @@
+<app-dmitem>
+    <h1>{ dm.name }</h1>
+    <div>
+        { dm.description }
+    </div>
+    <script>
+        var tag = this;  
+        
+        tag.dm = null;
+
+        tag.on("mount", function()
+        {
+            tag.dm = tag.opts.dm;
+        });
+    </script>
+</app-dmitem>

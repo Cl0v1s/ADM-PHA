@@ -1,0 +1,14 @@
+<app-dmlist>
+
+    <app-dmitem each="{ dm in dms }" dm="{ dm }"></app-dmitem>
+
+    <script>
+        var tag = this;
+        
+        tag.dms = null;
+
+        tag.on("mount", function(){
+            tag.dms = tag.opts.dms;
+        });
+    </script>
+</app-dmlist>

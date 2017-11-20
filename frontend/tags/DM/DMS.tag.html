@@ -1,0 +1,15 @@
+<app-dms>
+    <app-header></app-header>
+    <app-dmlist dms="{ dms }"></app-dmlist>
+
+    <script>
+        var tag = this;
+
+        tag.dms = null;
+
+        tag.on("mount", function()
+        {
+            tag.dms = tag.opts.dms;
+        });
+    </script>
+</app-dms>
