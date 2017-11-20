@@ -54,8 +54,8 @@ $app->any('/v1.0/{collection}/{id}', function(Request $request, Response $respon
     else
         $params = $request->getParsedBody();
     $params["id"] = $args["id"];
-    APIController::Execute($collection, $operation, $params, $response);
-    return $response;
+    return APIController::Execute($collection, $operation, $params, $response);
+
 });
 
 

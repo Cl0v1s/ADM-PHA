@@ -41,27 +41,32 @@ class APIController extends Controller
             return $response->withStatus(405);
 
         $data = null;
-        echo $params["id"]; // test
         switch ($operation)
         {
             case "GetAll":
                 $data = APIController::GetAll($manager, $params);
                 break;
+            case "GET":
             case "Get":
                 $data = APIController::Get($manager,$params["id"]);
                 break;
+            case "PUT":
             case "Put":
                 $data = APIController::Put($manager, $params);
                 break;
+            case "PATCH":
             case "Patch":
                 APIController::Patch($manager, $params["id"], $params);
                 break;
+            case "DELETE":
             case "Delete":
                 APIController::Delete($manager, $params["id"]);
                 break;
         }
+        if($data == null && $operation != "GetAll")
+            return $response->withStatus(404);
         $packet = array();
-        $packet["data"] = $data;
+        $packet["value"] = $data;
         $response = $response->getBody()->write(json_encode($packet));
 
         return $response;
