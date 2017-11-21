@@ -1,0 +1,15 @@
+<app-ats>
+    <app-header></app-header>
+    <app-atlist ats = {"ats"}></app-atlist>
+
+    <script>
+        var tag = this;
+        tag.ats = null;
+        
+        tag.on("mount", function ()
+        {
+           tag.ats = tag.opts.ats; 
+        }); 
+    
+    </script>
+</app-ats>

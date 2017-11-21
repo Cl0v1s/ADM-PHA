@@ -37,6 +37,21 @@ let Router =
             ErrorHandler.alertIfError(error);
         });
     },
+   
+    routeAts : function()
+    {
+        let request = App.request("gzefuzefb/v1.0/tool");
+        request.then(function(data)
+        {
+            let opts = { ats : data,};        
+          
+            App.changePage("app-ats", opts);
+        }); 
+request.catch(function(error)
+{
+    ErrorHandler.alertIfError(error);
+});
+    },
 
      ///////////////////////////////////////////////////////////////
 
@@ -44,6 +59,6 @@ let Router =
     {
         route("", Router.routeIndex);
         route("dms", Router.routeDMs);
-        
+        route("ats", Router.routeATs);
     }
 }

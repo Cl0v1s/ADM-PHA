@@ -1,0 +1,15 @@
+<app-atlist>
+
+    <app-atitem each = {"at in ats "} at = { "at" } ></app-atitem> 
+    <script>
+     var tag= this;
+
+     tag.ats = null; 
+
+     tag.on ( "mount", function()
+     {
+        tag.ats= tag.opts.ats 
+     }); 
+     
+    </script>
+</app-atlist>

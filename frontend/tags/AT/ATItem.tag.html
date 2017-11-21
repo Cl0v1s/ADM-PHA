@@ -1,0 +1,20 @@
+<app-atitem>
+    <h1>{ at.name }</h1>
+    <div>
+        { at.description }
+    </div>
+    <script>
+   
+    var tag = this;
+  
+    tag.at = null ; 
+   
+    tag.on("mount", function() 
+    {
+        tag.at = tag.opts.at ; 
+        
+    })
+    
+    </script>
+
+</app-atitem>
