@@ -1,15 +1,17 @@
 <app-ats>
     <app-header></app-header>
-    <app-atlist ats = {"ats"}></app-atlist>
+    <app-atlist ats="{ ats }"></app-atlist>
 
     <script>
         var tag = this;
+
         tag.ats = null;
-        
-        tag.on("mount", function ()
+
+        tag.on("before-mount", function()
         {
-           tag.ats = tag.opts.ats; 
-        }); 
-    
+            tag.ats = tag.opts.ats;
+            if(tag.ats == null)
+                throw new Error("ATS cant be null.");
+        });
     </script>
 </app-ats>

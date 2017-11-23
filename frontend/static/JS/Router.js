@@ -24,7 +24,7 @@ let Router =
 
     routeDMs : function()
     {
-        let request = App.request("http://192.168.1.19/ADMPHA/backend/v1.0/tool", null, "GET");
+        let request = App.request("http://192.168.1.19/ADMPHA/backend/v1.0/tool?$filter=type eq 0", null, "GET");
 
         request.then(function(data){
             let opts = {
@@ -40,12 +40,12 @@ let Router =
    
     routeATs : function()
     {
-        let request = App.request("gzefuzefb/v1.0/tool");
+        let request = App.request("http://192.168.1.19/ADMPHA/backend/v1.0/tool?$filter=type eq 1", null, "GET");
         request.then(function(data)
         {
             let opts = { ats : data.value};        
-          
             App.changePage("app-ats", opts);
+            
         }); 
         request.catch(function(error)
         {

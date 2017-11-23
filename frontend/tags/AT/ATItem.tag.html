@@ -1,20 +1,22 @@
 <app-atitem>
-    <h1>{ at.name }</h1>
-    <div>
+    <a href="#ats/details/{at.id}" class="button add">Consulter</a>
+    <div class="picture">
+        <img src="{ at.picture }">
+    </div>
+    <div class="name">
+        { at.name }
+    </div>
+    <div class="description">
         { at.description }
     </div>
     <script>
-   
-    var tag = this;
-  
-    tag.at = null ; 
-   
-    tag.on("mount", function() 
-    {
-        tag.at = tag.opts.at ; 
+        var tag = this;  
         
-    })
-    
-    </script>
+        tag.at = null;
 
+        tag.on("before-mount", function()
+        {
+            tag.at = tag.opts.at;
+        });
+    </script>
 </app-atitem>

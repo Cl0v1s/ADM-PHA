@@ -1,15 +1,16 @@
 <app-atlist>
 
-    <app-atitem each = {"at in ats "} at = { "at" } ></app-atitem> 
+    <app-atitem each="{ at in ats }" at="{ at }"></app-atitem>
+
     <script>
-     var tag= this;
+        var tag = this;
+        
+        tag.ats = null;
 
-     tag.ats = null; 
-
-     tag.on ( "mount", function()
-     {
-        tag.ats= tag.opts.ats 
-     }); 
-     
+        tag.on("before-mount", function(){
+            tag.ats = tag.opts.ats;
+            if(tag.ats == null)
+                 throw new Error("ATS cant be null.");
+        });
     </script>
 </app-atlist>
