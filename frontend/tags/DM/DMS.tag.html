@@ -1,5 +1,9 @@
 <app-dms>
     <app-header></app-header>
+    <div class="search">
+        <input type="text" placeholder="Rechercher un dispositif médical" ref="search">
+        <input type="button" class="search" value="Rechercher" onclick="{ search }">
+    </div>
     <app-dmlist dms="{ dms }"></app-dmlist>
 
     <script>
@@ -13,5 +17,12 @@
             if(tag.dms == null)
                 throw new Error("DMS cant be null.");
         });
+
+        tag.search = function()
+        {
+            var name = tag.refs.search.value;
+            name = "'*"+name+"*'";
+            Router.redirect("dms/name eq "+name);
+        };
     </script>
 </app-dms>

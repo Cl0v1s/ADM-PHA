@@ -22,9 +22,11 @@ let Router =
         App.changePage("app-index", null);
     },
 
-    routeDMs : function()
+    routeDMs : function(filters = "")
     {
-        let request = App.request("http://192.168.1.19/ADMPHA/backend/v1.0/tool?$filter=type eq 0", null, "GET");
+        if(filters != "")
+            filters = " and "+filters;
+        let request = App.request("http://192.168.1.19/ADMPHA/backend/v1.0/tool?$filter=type eq 0"+filters, null, "GET");
 
         request.then(function(data){
             let opts = {
@@ -58,6 +60,7 @@ let Router =
     setRoutes : function()
     {
         route("dms", Router.routeDMs);
+        route("dms/*", Router.routeDMs);
         route("ats", Router.routeATs);
         route("", Router.routeIndex);
     },

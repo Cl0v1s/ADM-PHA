@@ -11,6 +11,7 @@ class ModelManager
 
     private static function buildSQLWhere($filters)
     {
+        $filters = str_replace("*", "%", $filters);
         $where = "";
         $andor = null;
         preg_match_all('/(and)|(or)/', $filters, $andor);
