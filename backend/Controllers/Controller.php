@@ -22,6 +22,7 @@ class Controller
     public static function routeHandler(Request $request, Response $response, $next)
     {
         $response = $response->withHeader("Content-Type", "application/json");
+        $response = $response->withHeader("Access-Control-Allow-Origin", "*");
         //$response = $response->withHeader("Content-Encoding", "deflate");
         $date = new DateTime();
         $date->setTimezone(new DateTimeZone(DateTimeZone::listIdentifiers(DateTimeZone::UTC)[0]));

@@ -6,6 +6,15 @@ let App =
     // Le composant actuellement monté en tant que page 
     Page : null,
 
+    jsonToQuery : function(json) {
+        return '?' + 
+            Object.keys(json).map(function(key) {
+                if(json[key] != null)
+                    return encodeURIComponent(key) + '=' +
+                        encodeURIComponent(json[key]);
+            }).join('&');
+    },
+
     /**
      * Effectue une requete Ajax et retourne une promesse.
      * address : concaténé après App.Address, addresse à interroger
@@ -18,49 +27,56 @@ let App =
             var href=window.location.href;
             if(data == null)
                 data = {};
-            var request = ajax({
-                "method" : method,
-                "url" : address,
-                "data" : data
-            });
-            request.then(function(response)
-            {
-                if(address.indexOf(App.Address) == -1)
-                {
-                    resolve(response);
-                    return;
-                }
-                try
-                {
-                    ErrorHandler.handle(response);
-                    resolve(response);
-                }
-                catch(error)
-                {
-                    if(error.name == ErrorHandler.State.FATAL)
-                    {
-                        if(redirect)
-                        {
-                            var message = encodeURI(error.message);
-                            reject(ErrorHandler.State.FATAL);
-                            route("/error/"+message);
-                        }
-                        else 
-                        {
-                            ErrorHandler.alertIfError(error);
-                        }
-                    }
-                    else 
-                        reject(error);
-                }
-            });
+            
+            var oReq = new XMLHttpRequest();
+            oReq.open(method, address, true);
+            //TODO: ajouter les headers
+            //oReq.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            oReq.send(App.jsonToQuery(data));
 
-            request.catch(function(error)
+            oReq.onreadystatechange = function () 
             {
-                var message = encodeURI("Une erreur réseau a eu lieu. Vérifiez votre connexion et réessayez.");
-                reject(ErrorHandler.State.FATAL);
-                route("/error/"+message);
-            });
+                var DONE = 4; // readyState 4 means the request is done.
+                var OK = 200; // status 200 is a successful return.
+                if (oReq.readyState === DONE) {
+                  if (oReq.status === OK) 
+                  {
+                      var response = JSON.parse(oReq.responseText);
+                        if(address.indexOf(App.Address) == -1)
+                        {
+                            resolve(response);
+                            return;
+                        }
+                        try
+                        {
+                            ErrorHandler.handle(response);
+                            resolve(response);
+                        }
+                        catch(error)
+                        {
+                            if(error.name == ErrorHandler.State.FATAL)
+                            {
+                                if(redirect)
+                                {
+                                    var message = encodeURI(error.message);
+                                    reject(ErrorHandler.State.FATAL);
+                                    route("/error/"+message);
+                                }
+                                else 
+                                {
+                                    ErrorHandler.alertIfError(error);
+                                }
+                            }
+                            else 
+                                reject(error);
+                    }
+                  } else {
+                    var message = encodeURI("Une erreur réseau a eu lieu. Vérifiez votre connexion et réessayez.");
+                    reject(ErrorHandler.State.FATAL);
+                    route("/error/"+message);
+                  }
+                }
+            };
         });
     },
 

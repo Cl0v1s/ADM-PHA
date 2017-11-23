@@ -12,7 +12,7 @@ let Router =
     start : function()
     {
         Router.setRoutes();
-        route.start(true);
+        route.start(true);        
     },
 
     /////////////////////////////////////////////////////////////////
@@ -22,14 +22,15 @@ let Router =
         App.changePage("app-index", null);
     },
 
-    routeDms : function()
+    routeDMs : function()
     {
-        let request = App.request("dksllksqd/v1.0/tool");
+        let request = App.request("http://192.168.1.19/ADMPHA/backend/v1.0/tool");
 
         request.then(function(data){
             let opts = {
                 dms : data,
             }
+            console.log(data);
             App.changePage("app-dms", opts);
         });
 
@@ -38,7 +39,7 @@ let Router =
         });
     },
    
-    routeAts : function()
+    routeATs : function()
     {
         let request = App.request("gzefuzefb/v1.0/tool");
         request.then(function(data)
@@ -47,18 +48,18 @@ let Router =
           
             App.changePage("app-ats", opts);
         }); 
-request.catch(function(error)
-{
-    ErrorHandler.alertIfError(error);
-});
+        request.catch(function(error)
+        {
+            ErrorHandler.alertIfError(error);
+        });
     },
 
      ///////////////////////////////////////////////////////////////
 
     setRoutes : function()
     {
-        route("", Router.routeIndex);
         route("dms", Router.routeDMs);
         route("ats", Router.routeATs);
-    }
+        route("", Router.routeIndex);
+    },
 }
