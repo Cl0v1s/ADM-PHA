@@ -18,7 +18,7 @@ class ResidentManager implements IModelManager
         return ModelManager::Get("Resident", $id);
     }
 
-    public static function Put($lastname, $firstname, $age, $pathologies, $autonomy, $Establishment_id, $healplan = null)
+    public static function Put($lastname, $firstname, $age, $pathologies, $autonomy, $Establishment_id, $healplan = null, $picture = null)
     {
         $item = new Resident(null);
         $item->setLastname($lastname);
@@ -28,10 +28,11 @@ class ResidentManager implements IModelManager
         $item->setAutonomy($autonomy);
         $item->setEstablishmentId($Establishment_id);
         $item->setHealplan($healplan);
+        $item->setPicture($picture);
         return ModelManager::Put($item);
     }
 
-    public static function Patch($id, $lastname, $firstname, $age, $pathologies, $autonomy, $Establishment_id, $healplan = null)
+    public static function Patch($id, $lastname, $firstname, $age, $pathologies, $autonomy, $Establishment_id, $healplan = null, $picture = null)
     {
         $item = ResidentManager::Get($id);
         $item->setLastname($lastname);
@@ -41,6 +42,7 @@ class ResidentManager implements IModelManager
         $item->setAutonomy($autonomy);
         $item->setEstablishmentId($Establishment_id);
         $item->setHealplan($healplan);
+        $item->setPicture($picture);        
         ModelManager::Patch($id, $item);
     }
 

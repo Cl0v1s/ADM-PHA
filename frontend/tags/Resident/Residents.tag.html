@@ -1,0 +1,32 @@
+<app-residents>
+    <app-header></app-header>
+    <div class="search">
+            <input type="text" placeholder="Rechercher un dispositif médical" ref="search">
+            <input type="button" class="search" value="Rechercher" onclick="{ search }">
+    </div>
+    <app-residentlist residents="{ residents }"></app-residentlist>
+    <script>
+        var tag = this;
+
+        tag.residents = null;
+
+        tag.on("before-mount", function(){
+            tag.residents = tag.opts.residents;
+            if(tag.residents == null)
+                throw new Error("Residents cant be null.");
+        });
+
+        tag.search = function()
+        {
+            var names = tag.refs.search.value.split(" ");
+            var filters = "";
+            for(var i = 0; i < names.length; i++)
+            {
+                filters += "firstname eq '*"+names[i]+"*' or lastname eq '*"+names[i]+"*' or "
+            }
+            filters = filters.slice(0, -3);
+            Router.redirect("residents/"+filters);
+        };
+
+    </script>
+</app-residents>

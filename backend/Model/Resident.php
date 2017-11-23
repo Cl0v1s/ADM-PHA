@@ -56,6 +56,12 @@ class Resident extends StorageItem
     public $healplan;
 
     /**
+     * @Word
+     * @Size(min=1, max=400)
+     */
+    public $picture;
+
+    /**
      * @return mixed
      */
     public function getLastname()
@@ -178,6 +184,22 @@ class Resident extends StorageItem
         $this->checkIntegrity("healplan");
     }
 
+        /**
+     * @return mixed
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * @param mixed $healplan
+     */
+    public function setPicture($healplan)
+    {
+        $this->picture = $healplan;
+        $this->checkIntegrity("picture");
+    }
 
 
 

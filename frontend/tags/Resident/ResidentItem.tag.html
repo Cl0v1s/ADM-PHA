@@ -1,0 +1,23 @@
+<app-residentitem>
+    <a href="#residents/details/{dm.id}" class="button add">Consulter</a>
+    <div class="picture">
+        <img src="{ resident.picture }">
+    </div>
+    <div class="name">
+        <span>{ resident.firstname }</span>
+        <span>{ resident.lastname }</span>
+    </div>
+    <div class="description">
+        { resident.age } ans
+    </div>
+
+    <script>
+        var tag = this;    
+
+        tag.resident = null;
+
+        tag.on("before-mount", function(){
+            tag.resident = tag.opts.resident;
+        });
+    </script>
+</app-residentitem>

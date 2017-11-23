@@ -1,0 +1,14 @@
+<app-residentlist>
+    <app-residentitem each="{ resident in residents }" resident="{ resident }"></app-residentitem>
+    <script>
+        var tag = this; 
+        
+        tag.residents = null;
+
+        tag.on("before-mount", function(){
+            tag.residents = tag.opts.residents;
+            if(tag.residents == null)
+                throw new Error("Residents cant be null.");
+        });
+    </script>
+</app-residentlist>
