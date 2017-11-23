@@ -1,14 +1,18 @@
 <app-header>
-        <h1>
-            Je suis un header !
-        </h1>
+        <div class="logo">
+            Je suis un joli logo
+        </div>
         <nav>
-            <a>Et moi un lien de navigation !</a>
+            <a class="{ selected: window.location.href.indexOf('residents') != -1 }" href="residents">Résidents</a>
+            <a class="{ selected: window.location.href.indexOf('pros') != -1 }" href="pros">Professionnels</a>
+            <a class="{ selected: window.location.href.indexOf('users') != -1 }" href="users">Personnels</a>
+            <a class="{ selected: window.location.href.indexOf('dms') != -1 }" href="dms">Dispositifs Médicaux</a>
+            <a class="{ selected: window.location.href.indexOf('ats') != -1 }" href="ats">Aides Techniques</a>
+            <a class="{ selected: window.location.href.indexOf('account') != -1 }" href="account">Mon compte</a>            
+            
         </nav>
 
     <script>
         var tag = this;
-
-
     </script>
 </app-header>
