@@ -18,10 +18,11 @@ class ToolManager implements IModelManager
         return ModelManager::Get("Tool", $id);
     }
 
-    public static function Put($name, $description, $type, $autonomy = null, $guide = null, $invasive = null, $constructor = null, $advantages = null, $price = null, $refund = null, $humans = null)
+    public static function Put($name, $description, $type, $picture = null, $autonomy = null, $guide = null, $invasive = null, $constructor = null, $advantages = null, $price = null, $refund = null, $humans = null)
     {
         $item = new Tool(null);
         $item->setName($name);
+        $item->setPicture($picture);
         $item->setDescription($description);
         $item->setAutonomy($autonomy);
         $item->setGuide($guide);
@@ -35,7 +36,7 @@ class ToolManager implements IModelManager
         return ModelManager::Put($item);
     }
 
-    public static function Patch($id, $name, $description, $type, $autonomy = null, $guide = null, $invasive = null, $constructor = null, $advantages = null, $price = null, $refund = null, $humans = null)
+    public static function Patch($id, $name, $description, $type, $picture, $autonomy = null, $guide = null, $invasive = null, $constructor = null, $advantages = null, $price = null, $refund = null, $humans = null)
     {
         $item = ToolManager::Get($id);
         $item->setName($name);
@@ -49,6 +50,7 @@ class ToolManager implements IModelManager
         $item->setRefund($refund);
         $item->setHumans($humans);
         $item->setType($type);
+        $item->setPicture($picture);
         ModelManager::Patch($id, $item);
     }
 

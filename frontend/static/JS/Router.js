@@ -24,13 +24,12 @@ let Router =
 
     routeDMs : function()
     {
-        let request = App.request("http://192.168.1.19/ADMPHA/backend/v1.0/tool");
+        let request = App.request("http://192.168.1.19/ADMPHA/backend/v1.0/tool", null, "GET");
 
         request.then(function(data){
             let opts = {
-                dms : data,
+                dms : data.value,
             }
-            console.log(data);
             App.changePage("app-dms", opts);
         });
 
@@ -44,7 +43,7 @@ let Router =
         let request = App.request("gzefuzefb/v1.0/tool");
         request.then(function(data)
         {
-            let opts = { ats : data,};        
+            let opts = { ats : data.value};        
           
             App.changePage("app-ats", opts);
         }); 

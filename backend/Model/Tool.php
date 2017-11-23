@@ -16,6 +16,12 @@ class Tool extends StorageItem
     public $name;
 
     /**
+     * @Word
+     * @Size(min=1,max=400)
+     */
+    public $picture;
+
+    /**
      * @Required
      * @Word
      * @Size(min=1,max=1000)
@@ -268,6 +274,23 @@ class Tool extends StorageItem
     {
         $this->type = $type;
         $this->checkIntegrity("type");
+    }
+
+        /**
+     * @return mixed
+     */
+    public function getPciture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * @param mixed $type
+     */
+    public function setPicture($type)
+    {
+        $this->picture = $type;
+        $this->checkIntegrity("picture");
     }
 
 

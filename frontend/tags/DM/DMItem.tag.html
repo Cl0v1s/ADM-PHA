@@ -1,5 +1,8 @@
 <app-dmitem>
-    <h1>{ dm.name }</h1>
+    <div class="picture">
+        <img src="{ dm.picture }">
+    </div>
+    <h1>{  }</h1>
     <div>
         { dm.description }
     </div>
@@ -8,7 +11,7 @@
         
         tag.dm = null;
 
-        tag.on("mount", function()
+        tag.on("before-mount", function()
         {
             tag.dm = tag.opts.dm;
         });

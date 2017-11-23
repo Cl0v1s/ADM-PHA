@@ -7,8 +7,10 @@
         
         tag.dms = null;
 
-        tag.on("mount", function(){
+        tag.on("before-mount", function(){
             tag.dms = tag.opts.dms;
+            if(tag.dms == null)
+                 throw new Error("DMS cant be null.");
         });
     </script>
 </app-dmlist>
