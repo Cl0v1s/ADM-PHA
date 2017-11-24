@@ -2,6 +2,27 @@
     <app-header></app-header>
     <app-residentinfo resident="{ resident }"></app-residentinfo>
     <app-usecaseselector></app-usecaseselector>
+    
+
+    <div class="widgets">
+        <div>
+            Professionnels 
+            <app-userwidget users="{ resident.pro }"></app-userwidget>                
+        </div>
+        <div>
+            Personnel médical
+            <app-userwidget users="{ resident.perso }"></app-userwidget>
+        </div>
+        <div>
+            Dispositifs médicaux
+            <app-dmwidget dms="{ resident.dms }"></app-dmwidget>
+        </div>
+        <div>
+            Aides techniques
+            <app-atwidget ats="{ resident.ats }"></app-atwidget>
+        </div>
+    </div>
+
     <script>
         var tag = this;
 

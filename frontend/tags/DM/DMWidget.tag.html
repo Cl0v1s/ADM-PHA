@@ -1,0 +1,24 @@
+<app-dmwidget>
+    <div class="list">
+        <div class="item" each="{ dm in dms }" onclick='{ details }'>
+            <div>
+                { dm.name }
+            </div>
+        </div>
+    </div>
+    <script>
+        var tag = this; 
+        
+        tag.dms = null;
+
+        tag.on("before-mount", function(){
+            tag.dms = tag.opts.dms;
+            if(tag.dms == null)
+                throw new Error("DMS cant be null.");
+        });
+
+        tag.details = function(){
+            alert("Not implemented");
+        };
+    </script>
+</app-dmwidget>
