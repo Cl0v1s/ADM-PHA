@@ -18,7 +18,7 @@ class UserManager implements IModelManager
         return ModelManager::Get("User", $id);
     }
 
-    public static function Put($lastname, $firstname, $mail, $phone, $group)
+    public static function Put($lastname, $firstname, $mail, $phone, $group, $job)
     {
         $item = new User(null);
         $item->setLastname($lastname);
@@ -26,10 +26,11 @@ class UserManager implements IModelManager
         $item->setMail($mail);
         $item->setPhone($phone);
         $item->setGroup($group);
+        $item->setJob($job);
         return ModelManager::Put($item);
     }
 
-    public static function Patch($id, $lastname, $firstname, $mail, $phone, $group)
+    public static function Patch($id, $lastname, $firstname, $mail, $phone, $group, $job)
     {
         $item = UserManager::Get($id);
         $item->setLastname($lastname);
@@ -37,6 +38,7 @@ class UserManager implements IModelManager
         $item->setMail($mail);
         $item->setPhone($phone);
         $item->setGroup($group);
+        $item->setJob($job);
         ModelManager::Patch($id, $item);
     }
 

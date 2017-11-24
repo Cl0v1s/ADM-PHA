@@ -1,0 +1,23 @@
+<app-userwidget>
+        <div class="list">
+                <div class="item" each="{ user in users }" onclick='{ details }'>
+                    <div>
+                        { user.name }
+                    </div>
+                    <div>
+                        { user.job }
+                    </div>
+                </div>
+            </div>
+    <script>
+        var tag = this;
+        
+        tag.users = null;
+
+        tag.on("before-mount", function(){
+            tag.users = tag.opts.users;
+            if(tag.users == null)
+                throw new Error("Users cant be null.");
+        });
+    </script>
+</app-userwidget>

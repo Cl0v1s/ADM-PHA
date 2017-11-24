@@ -74,13 +74,28 @@ let Router =
         });
     },
 
+    routeResident : function(id)
+    {
+        let request = App.request("http://192.168.1.19/ADMPHA/backend/v1.0/resident/"+id, null, "GET");
+        request.then(function(data)
+        {
+            let opts = { resident : data.value};        
+            App.changePage("app-resident", opts);
+        }); 
+        request.catch(function(error)
+        {
+            ErrorHandler.alertIfError(error);
+        });
+    },
+
      ///////////////////////////////////////////////////////////////
 
     setRoutes : function()
     {
         route("dms", Router.routeDMs);
         route("dms/*", Router.routeDMs);
-        route("residents", Router.routeResidents);
+        route("resident/*", Router.routeResident);
+        route("residents", Router.routeResidents);        
         route("residents/*", Router.routeResidents);
         route("ats", Router.routeATs);
         route("ats/*", Router.routeATs);
