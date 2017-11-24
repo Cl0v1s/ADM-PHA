@@ -1,0 +1,16 @@
+<app-situationlist>
+
+    <app-situationitem each="{ situation in situations }" dm="{ situation }"></app-situationitem>
+
+    <script>
+        var tag = this;
+
+        tag.situations = null;
+
+        tag.on("before-mount", function(){
+            tag.situations = tag.opts.situations;
+            if(tag.situations == null)
+                 throw new Error("situations cant be null.");
+        });
+    </script>
+</app-situationlist>

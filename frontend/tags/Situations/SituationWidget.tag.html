@@ -1,0 +1,24 @@
+<app-situationwidget>
+    <div class="list">
+        <div class="item" each="{ situation in situations }" onclick='{ details }'>
+            <div>
+                { situation.name }
+            </div>
+        </div>
+    </div>
+    <script>
+        var tag = this;
+
+        tag.situations = null;
+
+        tag.on("before-mount", function(){
+            tag.situations = tag.opts.situations;
+            if(tag.situations == null)
+                throw new Error("situations cant be null.");
+        });
+
+        tag.details = function(){
+            alert("Not implemented");
+        };
+    </script>
+</app-situationwidget>

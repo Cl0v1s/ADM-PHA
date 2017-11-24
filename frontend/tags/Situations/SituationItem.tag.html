@@ -1,0 +1,22 @@
+<app-situationitem>
+    <a href="#situation/details/{situation.id}" class="button add">Consulter</a>
+    <div class="picture">
+        <img src="{ situation.picture }">
+    </div>
+    <div class="name">
+        { Situation.name }
+    </div>
+    <div class="description">
+        { situation.description }
+    </div>
+    <script>
+        var tag = this;
+
+        tag.situation = null;
+
+        tag.on("before-mount", function()
+        {
+            tag.situation = tag.opts.situation;
+        });
+    </script>
+</app-situationitem>

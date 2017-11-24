@@ -1,0 +1,24 @@
+<app-situations>
+    <app-header></app-header>
+    <app-situationlist situation="{ situation }"></app-situationlist>
+
+    <script>
+        var tag = this;
+
+        tag.situations = null;
+
+        tag.on("before-mount", function()
+        {
+            tag.situations = tag.opts.situations;
+            if(tag.dms == null)
+                throw new Error("situations cant be null.");
+        });
+
+        tag.search = function()
+        {
+            var name = tag.refs.search.value;
+            name = "'*"+name+"*'";
+            Router.redirect("situations/name eq "+name);
+        };
+    </script>
+</app-situations>
