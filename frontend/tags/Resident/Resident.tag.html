@@ -1,0 +1,16 @@
+<app-resident>
+    <app-header></app-header>
+    <app-residentinfo resident="{ resident }"></app-residentinfo>
+    <app-usecaseselector></app-usecaseselector>
+    <script>
+        var tag = this;
+
+        tag.resident = null;
+
+        tag.on("before-mount", function(){
+            tag.resident = tag.opts.resident;
+            if(tag.resident == null)
+                throw new Error("Resident cant be null.");
+        });
+    </script>
+</app-resident>

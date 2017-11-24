@@ -47,6 +47,13 @@ class User extends StorageItem
     public $group;
 
     /**
+     * @Required
+     * @Word
+     * @Size(min=1,max=400)
+     */
+    public $job;
+
+    /**
      * @return mixed
      */
     public function getLastname()
@@ -130,5 +137,22 @@ class User extends StorageItem
     {
         $this->group = $group;
         $this->checkIntegrity("group");
+    }
+
+        /**
+     * @return mixed
+     */
+    public function getJob()
+    {
+        return $this->job;
+    }
+
+    /**
+     * @param mixed $group
+     */
+    public function setJob($group)
+    {
+        $this->job = $group;
+        $this->checkIntegrity("job");
     }
 }
