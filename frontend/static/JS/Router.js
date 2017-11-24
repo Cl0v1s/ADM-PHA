@@ -26,7 +26,7 @@ let Router =
     {
         if(filters != "")
             filters = " and "+filters;
-        let request = App.request("http://192.168.1.19/ADMPHA/backend/v1.0/tool?$filter=type eq 0"+filters, null, "GET");
+        let request = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool?$filter=type eq 0"+filters, null, "GET");
 
         request.then(function(data){
             let opts = {
@@ -44,7 +44,7 @@ let Router =
     {
         if(filters != "")
             filters = " and "+filters;
-        let request = App.request("http://192.168.1.19/ADMPHA/backend/v1.0/tool?$filter=type eq 1"+filters, null, "GET");
+        let request = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool?$filter=type eq 1"+filters, null, "GET");
         request.then(function(data)
         {
             let opts = { ats : data.value};        
@@ -61,10 +61,10 @@ let Router =
     {
         if(filters != "")
             filters = "?$filter="+filters;
-        let request = App.request("http://192.168.1.19/ADMPHA/backend/v1.0/resident"+filters, null, "GET");
+        let request = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/resident"+filters, null, "GET");
         request.then(function(data)
         {
-            let opts = { ats : data.value};        
+            let opts = { residents : data.value};        
             App.changePage("app-residents", opts);
             
         }); 
@@ -76,7 +76,7 @@ let Router =
 
     routeResident : function(id)
     {
-        let request = App.request("http://192.168.1.19/ADMPHA/backend/v1.0/resident/"+id, null, "GET");
+        let request = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/resident/"+id, null, "GET");
         request.then(function(data)
         {
             let opts = { resident : data.value};        
