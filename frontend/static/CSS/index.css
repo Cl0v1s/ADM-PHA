@@ -1,1 +1,14 @@
-﻿
+﻿div#popin
+{
+    position: fixed; 
+    width: 90%; 
+    height: auto; 
+    top: 50%; 
+    left: 50%;
+    display: none;
+}
+
+div#popin.visible 
+{
+    display: block;
+}

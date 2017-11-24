@@ -6,6 +6,9 @@ let App =
     // Le composant actuellement monté en tant que page 
     Page : null,
 
+    // Le composant actuellement monté en tant que PopIn
+    PopIn: null,
+
     jsonToQuery : function(json) {
         return '?' + 
             Object.keys(json).map(function(key) {
@@ -99,7 +102,30 @@ let App =
         }
         App.Page = riot.mount("div#app", tag, data);
         window.scroll(0,0);
-    }
+    },
+
+    showPopIn : function(tag, data)
+    {
+        if(App.PopIn != null)
+        {
+            App.PopIn.forEach(function(t)
+            {
+                t.unmount();
+            });
+            var e = document.createElement("div");
+            e.id = "popin";
+            e.class = "visible";
+            document.body.appendChild(e);
+        }
+        App.PopIn = riot.mount("div#popin", tag, data);
+    },
+
+    hidePopIn : function()
+    {
+        var e = document.getElementById("popin");
+        if(e != null)
+            e.remove();
+    },
 
   
 }
