@@ -1,0 +1,45 @@
+<app-commenteditform>
+    <form name="edit-comment">
+        <textarea name="content" ref="content">
+            { comment.content }
+        </textarea>
+        <input type="button" value="Envoyer" onclick="{ validate }">
+    </form>
+
+    <script>
+        var tag = this;
+
+        tag.comment = null;
+
+        tag.on("before-mount", function(){
+            tag.comment = tag.opts.comment;
+        });
+
+        tag.validate = function()
+        {
+            if(tag.refs.content.trim() == "")
+            {
+                ErrorHandler.diagnosticForm(null);
+                return;
+            }
+            tag.send();
+        };
+
+        tag.send = function(){
+            if(tag.comment == null)
+            {
+                tag.comment = {};
+                tag.comment.User_id = Login.GetUser();
+            }
+            tag.comment.content = tag.refs.content;
+            let request = App.request(App.Address+"/comment", tag.comment, "PUT");
+            request.then(function(response){
+                throw new Error("Not implemented.");
+            });
+            request.catch(function(error){
+                ErrorHandler.alertIfError(error);
+            });
+            
+        };
+    </script>
+</app-commenteditform>

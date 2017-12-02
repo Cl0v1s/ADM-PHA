@@ -1,0 +1,25 @@
+<app-commentitem>
+    <div>
+        <span>
+            { comment.user.firstname} 
+            { comment.user.lastname }
+        </span>
+        - 
+        <span>
+            <!--TODO: revoir l'appelation du taf de l'user -->
+            { comment.user.job }
+        </span>
+    </div>
+    <div>
+        { comment.content }
+    </div>
+    <script>
+        var tag = this;
+        
+        tag.comment = null;
+
+        tag.on("before-mount", function(){
+            tag.comment = tag.opts.comment;
+        });
+    </script>
+</app-commentitem>

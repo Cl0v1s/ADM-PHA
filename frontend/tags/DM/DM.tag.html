@@ -1,0 +1,98 @@
+<app-dm>
+    <div class="description">
+        <div class="img">
+            <h3>Description</h3>
+        </div>
+        <div>
+            <p>
+                { dm.description }
+            </p>
+        </div>
+    </div>
+
+    <div class="autonomy">
+        <div class="img">
+            <h3>Degré d'autonomie</h3>
+        </div>
+        <div>
+            <p>
+                { dm.autonomy }
+            </p>
+        </div>
+    </div>
+
+    <div class="guide">
+        <div class="img">
+            <h3>Guide d'utilisation</h3>
+        </div>
+        <div>
+            <p>
+                { dm.guide }
+            </p>
+        </div>
+    </div>
+
+    <div class="invasive">
+        <div class="img">
+            <h3>Caractère invasif</h3>
+        </div>
+        <div>
+            <p>
+                { dm.invasive }
+            </p>
+        </div>
+    </div>
+
+    <div class="advantages">
+        <div class="img">
+            <h3>Avantages et inconvénients</h3>
+        </div>
+        <div>
+            <p>
+                { dm.advantages }
+            </p>
+        </div>
+    </div>
+
+    <div class="market">
+        <div class="img">
+            <h3>Fabricants / prix</h3>
+        </div>
+        <div>
+            <div>
+                <label>Prix moyen</label>
+                <p>{ dm.price }</p>
+            </div>
+            <div>
+                <label>Fabricants</label>
+                <p>
+                    <!--TODO: ajouter les informations sur les fabricants -->
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="comments">
+        <h2>Commentaires</h2>
+        <app-commentEditForm></app-commentEditForm>
+        <app-comments comments="{ comments }"></app-comments>
+    </div>
+
+
+    <script>
+        var tag = this;
+
+        tag.dm = null;
+        tag.comments = null;
+
+        tag.on("before-mount", function(){
+            tag.dm = tag.opts.dm;
+            if(tag.dm == null)
+                throw new Error("DM cant be null.");
+            tag.comments = tag.opts.comments;
+            if(tag.comments == null)
+                throw new Error("Comments cant be null.");
+        });
+
+    </script>
+</app-dm>

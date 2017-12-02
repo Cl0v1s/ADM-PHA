@@ -1,7 +1,7 @@
 let App =
 {
     // L'adresse de base dans laquelle on a besoin de taper éventuellement
-    Address : null,
+    Address : "http://www.clovis-portron.cf/ADMPHA/backend/v1.0",
 
     // Le composant actuellement monté en tant que page 
     Page : null,
@@ -126,6 +126,12 @@ let App =
         if(e != null)
             e.remove();
     },
+
+    showNotification : function(message)
+    {
+        //TODO: revoir ca pour le présenter d'une meilleure manière
+        alert(message);
+    }
 
   
 }

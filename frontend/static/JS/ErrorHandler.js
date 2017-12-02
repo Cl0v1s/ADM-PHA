@@ -24,5 +24,10 @@ let ErrorHandler =
     {
         if(error instanceof Error)
             window.alert(error.message);
-    }
+    },
+
+    diagnosticForm : function(errors)
+    {
+        throw new Error("Not implemented.");
+    },
 }

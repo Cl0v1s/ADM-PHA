@@ -1,0 +1,46 @@
+<app-usecase>
+    <div>
+        <div>
+            { usecase.name }
+        </div>
+        <div>
+            <input type="button" value="X" onclick='{ close }'>
+        </div>
+    </div>
+    <div>
+        <div each='{ tool in usecase.tools }' data-id='{ tool.id }' onclick='{ choose }'>{ tool.name }</div>
+    </div>
+    <app-dm dm='{ usecase.tools[0] }' ref="tool"></app-dm>
+
+    <script>
+        var tag = this;
+        
+        tag.usecase = null;
+
+        tag.on("before-mount", function(){
+            tag.usecase = tag.opts.usecase;
+            if(tag.usecase == null)
+                throw new Error("Usecase cant be null.");
+        });
+
+        tag.close = function()
+        {
+            App.hidePopin();
+        };
+
+        tag.choose = function(event)
+        {
+            let id = event.target.getAttribute("data-id");
+            if(id == null)
+                return;
+            let request = App.request(App.Address+"/tool/"+id, null);
+            request.then(function(response){
+                tag.refs.tool.dm = response.value;
+                tag.refs.tool.update();
+            });
+            request.catch(function(error){
+                ErrorHandler.alertIfError(error);
+            });
+        };
+    </script>
+</app-usecase>
