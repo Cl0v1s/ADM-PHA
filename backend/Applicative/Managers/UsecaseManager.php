@@ -15,21 +15,7 @@ class UsecaseManager implements IModelManager
 
     public static function Get($id)
     {
-        $usecase = ModelManager::Get("Usecase", $id);
-        if($usecase == null)
-            return null;
-        $links = Tool_UsecaseManager::GetAll("Usecase_id eq ".$usecase->Id());
-        $tools = array();
-        foreach($links as $link)
-        {
-            $tool = ToolManager::Get($link->getToolId());
-            if($tool == null)
-                continue;
-            array_push($tools, $tool);
-        }
-        $usecase = get_object_vars($usecase);
-        $usecase["tools"] = $tools;
-        return $usecase;
+        return ModelManager::Get("Usecase", $id);
     }
 
     public static function Put($name)

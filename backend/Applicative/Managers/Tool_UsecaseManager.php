@@ -11,7 +11,15 @@ class Tool_UsecaseManager implements IModelManager
 
     public static function GetAll($filters)
     {
-        return ModelManager::GetAll("Tool_Usecase", $filters);
+        $links = ModelManager::GetAll("Tool_Usecase", $filters);
+        $links = get_object_vars($links);
+        foreach($links as $link)
+        {
+            $tool = ToolManager::Get($link["Tool_id"]);
+            if($tool != null)
+                $link["tool"] = $tool;
+        }
+        return $links;
     }
 
     public static function Get($id)

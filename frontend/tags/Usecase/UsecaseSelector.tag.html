@@ -1,33 +1,52 @@
 <app-usecaseselector>
-    <div each='{ usecase, i in usecases }' data-id="{ usecase.id }" onclick="{ show }" class="usecase { usecase.name }">
+    <div each='{ usecase, i in usecases }' data-id="{ i }" onclick="{ show }" class="usecase { usecase.name }">
         { usecase.name }
     </div>
     <script>
         var tag = this; 
         
         tag.usecases = null;
+        tag.resident = null;
 
         tag.on("before-mount", function()
         {
             tag.usecases = tag.opts.usecases;
             if(tag.usecases == null)
                 throw new Error("Usecases cant be null.");
+            tag.resident = tag.opts.resident;
+            if(tag.resident == null)
+                throw new Error("Resident cant be null.");
         });
 
         tag.show = function(event)
         {
             let id = event.target.getAttribute("data-id");
-            if(id == null)
+            if(id == null || tag.usecases[id] == null)
                 return;
-            let request = App.request(App.Address + "/usecase/"+id, null, "GET");
-            request.then(function(response){
-                    App.showPopIn("app-usecase", { 
-                    "usecase" : response.value
+            let requestAllowedTools = App.request(App.Address + "/tool_resident?$filter=Resident_id eq "+tag.resident.id);
+            let requestUseCase = App.request(App.Address + "/tool_usecase?$filter=Usecase_id eq "+tag.usecases[id].id);
+            let request = Promise.all([requestAllowedTools, requestUseCase]);
+            request.then(function(response){ 
+                let allowedTools = [];
+                response[1].value.forEach(tool_usecase => {
+                    for(let i = 0; i < response[0].value.length; i++)
+                    {
+                        let tool_resident = response[0].value[i];
+                        if(tool_resident.tool.id == tool_usecase.tool.id)
+                            allowedTools.push(tool_resident.tool);
+                    }
                 });
+                App.showPopIn("app-usecase", { 
+                "usecase" : tag.usecases[id],
+                "tools" : allowedTools
+            });
+
             });
             request.catch(function(error){
                 ErrorHandler.alertIfError(error);
             });
+
+
 
         };
     </script>
