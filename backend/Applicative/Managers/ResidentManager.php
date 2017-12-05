@@ -26,7 +26,7 @@ class ResidentManager implements IModelManager
         $dms = array();
         foreach($tool_residents as $link)
         {
-            $tool = ToolManager::Get($link->getToolId());
+            $tool = ToolManager::Get($link["Tool_id"]);
             if($tool == null)
                 continue;
             if($tool->getType() == 0)
@@ -43,7 +43,7 @@ class ResidentManager implements IModelManager
         $pro = array();
         foreach($user_residents as $link)
         {
-            $user = ToolManager::Get($link->getUserId());
+            $user = ToolManager::Get($link["User_id"]);
             if($user == null)
                 continue;
             if($user->getGroup() == 0)
