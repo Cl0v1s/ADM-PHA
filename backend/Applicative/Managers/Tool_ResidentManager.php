@@ -32,8 +32,6 @@ class Tool_ResidentManager implements IModelManager
             $link["tool"] = $tool;
             array_push($results, $link);
         }
-        return $tool;
-
 
         return $results;
     }
