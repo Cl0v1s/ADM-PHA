@@ -112,6 +112,11 @@ let App =
             {
                 t.unmount();
             });
+            App.PopIn = null;
+            
+        }
+        else 
+        {
             var e = document.createElement("div");
             e.id = "popin";
             e.class = "visible";

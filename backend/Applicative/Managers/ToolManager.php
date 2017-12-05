@@ -15,7 +15,13 @@ class ToolManager implements IModelManager
 
     public static function Get($id)
     {
-        return ModelManager::Get("Tool", $id);
+        $tool = ModelManager::Get("Tool", $id);
+        if($tool == null)
+            return null;
+        $comments = CommentManager::GetAll("Tool_id eq ".$tool->Id());
+        $tool = get_object_vars($tool);
+        $tool["comments"] = $comments;
+        return $tool;
     }
 
     public static function Put($name, $description, $type, $picture = null, $autonomy = null, $guide = null, $invasive = null, $constructor = null, $advantages = null, $price = null, $refund = null, $humans = null)

@@ -1,5 +1,5 @@
 <app-usecaseselector>
-    <div each='{ usecase, i in usecases }' data-id="{ i }" onclick="{ show }" class="usecase { usecase.name }">
+    <div each='{ usecase, i in usecases }' data-id="{ usecase.id }" onclick="{ show }" class="usecase { usecase.name }">
         { usecase.name }
     </div>
     <script>
@@ -17,11 +17,18 @@
         tag.show = function(event)
         {
             let id = event.target.getAttribute("data-id");
-            if(id == null || tag.usecases[id] == null)
+            if(id == null)
                 return;
-            App.showPopIn("app-usecase", { 
-                "usecase" : tag.usecases[id]
+            let request = App.request(App.Address + "/usecase/"+id, null, "GET");
+            request.then(function(response){
+                    App.showPopIn("app-usecase", { 
+                    "usecase" : response.value
+                });
             });
+            request.catch(function(error){
+                ErrorHandler.alertIfError(error);
+            });
+
         };
     </script>
 </app-usecaseselector>
