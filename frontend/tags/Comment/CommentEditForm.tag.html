@@ -1,7 +1,7 @@
 <app-commenteditform>
     <form name="edit-comment">
         <textarea name="content" ref="content">
-            { comment.content }
+           <virtual if='{ comment != null }'> { comment.content }</virtual>
         </textarea>
         <input type="button" value="Envoyer" onclick="{ validate }">
     </form>

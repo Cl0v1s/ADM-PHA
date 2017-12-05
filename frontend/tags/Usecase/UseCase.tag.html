@@ -8,19 +8,23 @@
         </div>
     </div>
     <div>
-        <div each='{ tool in usecase.tools }' data-id='{ tool.id }' onclick='{ choose }'>{ tool.name }</div>
+        <div each='{ tool in tools }' data-id='{ tool.id }' onclick='{ choose }'>{ tool.name }</div>
     </div>
-    <app-dm dm='{ usecase.tools[0] }' ref="tool"></app-dm>
+    <app-dm if='{ tools.length > 0 }' dm='{ tools[0] }' ref="tool"></app-dm>
 
     <script>
         var tag = this;
         
         tag.usecase = null;
+        tag.tools = null;
 
         tag.on("before-mount", function(){
             tag.usecase = tag.opts.usecase;
             if(tag.usecase == null)
                 throw new Error("Usecase cant be null.");
+            tag.tools = tag.opts.tools;
+            if(tag.tools == null)
+                throw new Error("Tools cant be null.");
         });
 
         tag.close = function()

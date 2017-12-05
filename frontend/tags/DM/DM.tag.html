@@ -75,7 +75,7 @@
     <div class="comments">
         <h2>Commentaires</h2>
         <app-commentEditForm></app-commentEditForm>
-        <app-comments comments="{ comments }"></app-comments>
+        <app-comments comments="{ dm.comments }"></app-comments>
     </div>
 
 
@@ -83,15 +83,11 @@
         var tag = this;
 
         tag.dm = null;
-        tag.comments = null;
 
         tag.on("before-mount", function(){
             tag.dm = tag.opts.dm;
             if(tag.dm == null)
                 throw new Error("DM cant be null.");
-            tag.comments = tag.opts.comments;
-            if(tag.comments == null)
-                throw new Error("Comments cant be null.");
         });
 
     </script>

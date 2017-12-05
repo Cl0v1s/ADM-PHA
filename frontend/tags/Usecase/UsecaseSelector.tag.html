@@ -36,15 +36,17 @@
                             allowedTools.push(tool_resident.tool);
                     }
                 });
+                console.log(allowedTools);
+                App.showPopIn("app-usecase", { 
+                "usecase" : tag.usecases[id],
+                "tools" : allowedTools
+                });
             });
             request.catch(function(error){
                 ErrorHandler.alertIfError(error);
             });
 
-            App.showPopIn("app-usecase", { 
-                "usecase" : tag.usecases[id],
-                "tools" : allowedTools
-            });
+
 
         };
     </script>
