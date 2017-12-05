@@ -76,10 +76,12 @@ let Router =
 
     routeResident : function(id)
     {
-        let request = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/resident/"+id, null, "GET");
+        let requestUsecase = App.request(App.Address + "/usecase", null, "GET");
+        let requestResident = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/resident/"+id, null, "GET");
+        let request = Promise.all([requestResident, requestUsecase]);
         request.then(function(data)
         {
-            let opts = { resident : data.value};        
+            let opts = { resident : data[0].value, usecases : data[1].value };        
             App.changePage("app-resident", opts);
         }); 
         request.catch(function(error)

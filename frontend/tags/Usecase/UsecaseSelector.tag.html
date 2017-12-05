@@ -1,6 +1,27 @@
 <app-usecaseselector>
-
+    <div each='{ usecase, i in usecases }' data-id="{ i }" onclick="{ show }" class="usecase { usecase.name }">
+        { usecase.name }
+    </div>
     <script>
-        var tag = this;    
+        var tag = this; 
+        
+        tag.usecases = null;
+
+        tag.on("before-mount", function()
+        {
+            tag.usecases = tag.opts.usecases;
+            if(tag.usecases == null)
+                throw new Error("Usecases cant be null.");
+        });
+
+        tag.show = function(event)
+        {
+            let id = event.target.getAttribute("data-id");
+            if(id == null || tag.usecases[id] == null)
+                return;
+            App.showPopIn("app-usecase", { 
+                "usecase" : tag.usecases[id]
+            });
+        };
     </script>
 </app-usecaseselector>

@@ -1,7 +1,7 @@
 <app-resident>
     <app-header></app-header>
     <app-residentinfo resident="{ resident }"></app-residentinfo>
-    <app-usecaseselector></app-usecaseselector>
+    <app-usecaseselector usecases="{ usecases }"></app-usecaseselector>
     
 
     <div class="widgets">
@@ -27,11 +27,15 @@
         var tag = this;
 
         tag.resident = null;
+        tag.usecases = null;
 
         tag.on("before-mount", function(){
             tag.resident = tag.opts.resident;
             if(tag.resident == null)
                 throw new Error("Resident cant be null.");
+            tag.usecases = tag.opts.usecases;
+            if(tag.usecases == null)
+                throw new Error("Usecases cant be null.");
         });
     </script>
 </app-resident>
