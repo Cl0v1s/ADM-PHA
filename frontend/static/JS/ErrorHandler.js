@@ -7,11 +7,12 @@ let ErrorHandler =
         FATAL : "FATAL"
     },
 
+
     /**
      * On gère ici les erreurs renvoyées après une requete AJAX
      * Doit throw une erreur si un problème est détecté
      */
-    handleAjax : function(response)
+    handle : function(response)
     {
         // On gère ici les réponses renvoyées par le serveur après une requete AJAX
     },

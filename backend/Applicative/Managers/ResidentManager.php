@@ -52,7 +52,7 @@ class ResidentManager implements IModelManager
                 array_push($pro, $user);   
         }
         $resident["perso"] = $perso;
-        $resdient["pro"] = $pro;
+        $resident["pro"] = $pro;
 
         return $resident;
     }
