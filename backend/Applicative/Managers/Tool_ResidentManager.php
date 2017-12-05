@@ -16,11 +16,25 @@ class Tool_ResidentManager implements IModelManager
         foreach($links as $link)
         {
             $link = get_object_vars($link);
+
             $tool = ToolManager::Get($link["Tool_id"]);
-            if($tool != null)
-                $link["tool"] = $tool;
+            if($tool == null)
+            {
+                array_push($results, $link);
+                return;                
+            }
+            $tool = get_object_vars($tool);
+            
+            
+            $comments = CommentManager::GetAll("Tool_Resident_id eq ".$link->Id());
+            $tool["comments"] = $comments;
+
+            $link["tool"] = $tool;
             array_push($results, $link);
         }
+        return $tool;
+
+
         return $results;
     }
 
