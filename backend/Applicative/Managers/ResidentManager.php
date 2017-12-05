@@ -21,7 +21,7 @@ class ResidentManager implements IModelManager
         $resident = get_object_vars($resident);
     
         // Récupération des ats et dms
-        $tool_residents = Tool_ResidentManager::GetAll("Resident_id eq "+$id);
+        $tool_residents = Tool_ResidentManager::GetAll("Resident_id eq ".$id);
         $ats = array();
         $dms = array();
         foreach($tool_residents as $link)
@@ -38,7 +38,7 @@ class ResidentManager implements IModelManager
         $resident["dms"] = $dms;
 
         // Récupération s des users
-        $user_residents = User_ResidentManager::GetAll("Resident_id eq "+$id);
+        $user_residents = User_ResidentManager::GetAll("Resident_id eq ".$id);
         $perso = array();
         $pro = array();
         foreach($user_residents as $link)
