@@ -45,6 +45,10 @@ table {
 	border-spacing: 0;
 }
 
+* {
+	font-family: "helvetica";
+}
+
 /*		HEADER: 	*/
 app-header {
 	height : 100px;
@@ -56,10 +60,19 @@ app-header {
 
 app-header a {
 	color : #ffffff;
+	margin-right: 10px;
+	float: right;
+}
+
+app-header a:hover {
+	text-decoration : underline;
+	color : #ffffff;
 }
 
 app-header img {
-	width: 15px;
+	width: 40px;
+	float: left;
+
 }
 
  /*		POPIN: 	*/
