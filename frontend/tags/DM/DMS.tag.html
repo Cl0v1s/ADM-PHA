@@ -1,20 +1,25 @@
 <app-dms>
     <app-header></app-header>
+<<<<<<< HEAD
     <div id="imagelistdm">
     </div>
 
+=======
+    <div class="ui container">
+>>>>>>> aa227aba36cd5ecb1706677a0c30b722c01cc65c
     <div class="ui category search">
       <div class="ui icon input">
-        <input class="prompt" type="text" placeholder="Recherche un dispositif médical..."value="Rechercher" onclick="{ search }" >
+        <input class="prompt" type="text" placeholder="Recherche un dispositif médical..." ref="search" onkeyup="{ search }">
         <i class="search icon"></i>
       </div>
-      <div class="results"></div>
     </div>
 
     <app-dmlist dms="{ dms }"></app-dmlist>
 
     <script>
         var tag = this;
+
+        tag.timer = null;
 
         tag.dms = null;
 
@@ -27,9 +32,16 @@
 
         tag.search = function()
         {
-            var name = tag.refs.search.value;
-            name = "'*"+name+"*'";
-            Router.redirect("dms/name eq "+name);
+            if(tag.timer != null)
+            {
+                clearTimeout(tag.timer);
+            }
+            tag.timer = setTimeout(() => {
+                var name = tag.refs.search.value;
+                name = "'*"+name+"*'";
+                Router.redirect("dms/name eq "+name);
+            }, 1000);
         };
     </script>
+  </div>
 </app-dms>
