@@ -39,6 +39,21 @@ let Router =
             ErrorHandler.alertIfError(error);
         });
     },
+
+    routeDM : function(id)
+    {
+        let request = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool/"+id, null, "GET");
+        request.then(function(data){
+            let opts = {
+                dm : data.value,
+            };
+            opts.dm.comments = null;
+            App.changePage("app-dmdetails", opts);
+        });
+        request.catch(function(error){
+            ErrorHandler.alertIfError(error);
+        });
+    },
    
     routeATs : function(filters = "")
     {
@@ -96,6 +111,7 @@ let Router =
     {
         route("dms", Router.routeDMs);
         route("dms/*", Router.routeDMs);
+        route("dm/*", Router.routeDM);
         route("resident/*", Router.routeResident);
         route("residents", Router.routeResidents);        
         route("residents/*", Router.routeResidents);
