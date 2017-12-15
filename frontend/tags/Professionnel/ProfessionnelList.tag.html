@@ -1,0 +1,14 @@
+<app-professionnellist>
+    <app-professionnelitem each="{ professionel in professionnel }" professionnel = {"professionel"} ></app-professionnelitem>
+    <script>
+        var tag = this; 
+        
+        tag.professionnels = null;
+
+        tag.on("before-mount", function(){
+            tag.professionnels = tag.opts.professionnels;
+            if(tag.professionnels == null)
+                throw new Error("Professionnel cant be null.");
+        });
+    </script>
+</app-professionnellist>
