@@ -51,10 +51,9 @@ table {
 
 /*		HEADER: 	*/
 app-header {
-	height : 100px;
 	background-color: #484c4F;
 	width: 100%;
-	display: block;
+	display: inline-block;
 	color: #ffffff;
 }
 
@@ -72,8 +71,23 @@ app-header a:hover {
 
 app-header img {
 	width: 40px;
-	float: left;
+margin-top: 12px;
+margin-bottom: 12px !important;
+vertical-align: middle;
+}
 
+app-header nav {
+	vertical-align: middle;
+display: inline-block;
+position: absolute;
+transform: translateY(-50%);
+right: 5px;
+top: 50%;
+}
+}
+
+app-header .center-element {
+	position: relative !important;
 }
 
  /*		POPIN: 	*/

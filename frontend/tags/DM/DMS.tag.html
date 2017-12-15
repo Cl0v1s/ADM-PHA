@@ -1,13 +1,13 @@
 <app-dms>
     <app-header></app-header>
+    <div class="ui container">
     <div class="ui category search">
       <div class="ui icon input">
-        <input class="prompt" type="text" placeholder="Recherche un dispositif médical..."value="Rechercher" onclick="{ search }" >
+        <input class="prompt" type="text" placeholder="Recherche un dispositif médical..." onclick="{ search }" >
         <i class="search icon"></i>
       </div>
-      <div class="results"></div>
     </div>
-    
+
     <app-dmlist dms="{ dms }"></app-dmlist>
 
     <script>
@@ -29,4 +29,5 @@
             Router.redirect("dms/name eq "+name);
         };
     </script>
+  </div>
 </app-dms>
