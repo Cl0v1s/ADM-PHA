@@ -3,7 +3,7 @@
     <div class="ui container">
     <div class="ui category search">
       <div class="ui icon input">
-        <input class="prompt" type="text" placeholder="Recherche un dispositif médical..." onclick="{ search }" >
+        <input class="prompt" type="text" placeholder="Recherche un dispositif médical..." ref="search" onkeyup="{ search }">
         <i class="search icon"></i>
       </div>
     </div>
@@ -12,6 +12,8 @@
 
     <script>
         var tag = this;
+
+        tag.timer = null;
 
         tag.dms = null;
 
@@ -24,9 +26,15 @@
 
         tag.search = function()
         {
-            var name = tag.refs.search.value;
-            name = "'*"+name+"*'";
-            Router.redirect("dms/name eq "+name);
+            if(tag.timer != null)
+            {
+                clearTimeout(tag.timer);
+            }
+            tag.timer = setTimeout(() => {
+                var name = tag.refs.search.value;
+                name = "'*"+name+"*'";
+                Router.redirect("dms/name eq "+name);
+            }, 1000);
         };
     </script>
   </div>
