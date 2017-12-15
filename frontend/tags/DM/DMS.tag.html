@@ -1,5 +1,8 @@
 <app-dms>
     <app-header></app-header>
+    <div id="imagelistdm">
+    </div>
+
     <div class="ui category search">
       <div class="ui icon input">
         <input class="prompt" type="text" placeholder="Recherche un dispositif médical..."value="Rechercher" onclick="{ search }" >
@@ -7,7 +10,7 @@
       </div>
       <div class="results"></div>
     </div>
-    
+
     <app-dmlist dms="{ dms }"></app-dmlist>
 
     <script>
