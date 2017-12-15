@@ -56,8 +56,8 @@ app-header {
 	width: 100%;
 	display: block;
 	color: #ffffff;
-
 }
+
 
 app-header a {
 	color : #ffffff;
@@ -67,7 +67,7 @@ app-header a {
 
 app-header a:hover {
 	text-decoration : underline;
-	color : #000000;
+	color : #ffffff;
 }
 
 app-header img {
