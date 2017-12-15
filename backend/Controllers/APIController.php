@@ -25,10 +25,11 @@ require_once 'Controllers/Controller.php';
 class APIController extends Controller
 {
     /**
-     * @param $class
-     * @param $operation
-     * @param array $params
-     * @param Response $response
+     * Kesskafé
+     * @param string $class 
+     * @param string $operation 
+     * @param array $params 
+     * @param Response $response 
      * @return Response
      */
     public static function Execute($class, $operation,array $params, Response $response)
@@ -72,6 +73,14 @@ class APIController extends Controller
         return $response;
     }
 
+    
+    /**
+     * Retourne tous les items
+     * @param ModelManager $manager 
+     * @param array $data paramètres de la requete
+     * @return array Résultats
+     */
+
     private static function GetAll($manager, $data)
     {
         $filters = "";
@@ -97,11 +106,29 @@ class APIController extends Controller
         }
         return $manager::GetAll($filters);
     }
+        
+    /**
+     * Kesskafé
+     * @param string $class 
+     * @param string $operation 
+     * @param array $params 
+     * @param Response $response 
+     * @return Response
+     */
 
     private static function Get($manager, $id)
     {
         return $manager::Get($id);
     }
+
+    /**
+     * Supprime l'item dont on a sélectionné l'id
+     * @param string $class 
+     * @param string $operation : Suppression
+     * @param array $params : Manager, id
+     * @param Response $response 
+     * @return Response
+     */
 
     private static function Delete($manager, $id)
     {
