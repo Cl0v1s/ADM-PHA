@@ -1,0 +1,23 @@
+<app-professionnelitem>
+    <a ????? class="button add">Consulter</a>
+    <div class="picture">
+        <img src="??????">
+    </div>
+    <div class="name">
+        <span>{ professionnel.firstname }</span>
+        <span>{ professionnel.lastname }</span>
+    </div>
+    <div class="description">
+       profession ??
+    </div>
+
+    <script>
+        var tag = this;    
+
+        tag.resident = null;
+
+        tag.on("before-mount", function(){
+            tag.professionnel = tag.opts.professionnel;
+        });
+    </script>
+</app-professionnelitem>
