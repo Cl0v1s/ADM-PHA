@@ -62,15 +62,19 @@ let Router =
     {
         if(filters != "")
             filters = " and "+filters;
-        let request = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool?$filter=type eq 1"+filters, null, "GET");
-        request.then(function(data)
-        {
-            let opts = { ats : data.value};        
+        let requestResults = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool?$filter=type eq 1"+filters, null, "GET");
+        let requestAts = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool?$filter=type eq 1", null, "GET");
+        let request = Promise.all([requestResults, requestAts]);
+
+        request.then(function(data){
+            let opts = {
+                results : data[0].value,
+                ats : data[1].value
+            }
             App.changePage("app-ats", opts);
-            
-        }); 
-        request.catch(function(error)
-        {
+        });
+
+        request.catch(function(error){
             ErrorHandler.alertIfError(error);
         });
     },
