@@ -26,11 +26,14 @@ let Router =
     {
         if(filters != "")
             filters = " and "+filters;
-        let request = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool?$filter=type eq 0"+filters, null, "GET");
+        let requestResults = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool?$filter=type eq 0"+filters, null, "GET");
+        let requestDms = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool?$filter=type eq 0", null, "GET");
+        let request = Promise.all([requestResults, requestDms]);
 
         request.then(function(data){
             let opts = {
-                dms : data.value,
+                results : data[0].value,
+                dms : data[1].value
             }
             App.changePage("app-dms", opts);
         });
