@@ -26,11 +26,14 @@ let Router =
     {
         if(filters != "")
             filters = " and "+filters;
-        let request = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool?$filter=type eq 0"+filters, null, "GET");
+        let requestResults = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool?$filter=type eq 0"+filters, null, "GET");
+        let requestDms = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool?$filter=type eq 0", null, "GET");
+        let request = Promise.all([requestResults, requestDms]);
 
         request.then(function(data){
             let opts = {
-                dms : data.value,
+                results : data[0].value,
+                dms : data[1].value
             }
             App.changePage("app-dms", opts);
         });
@@ -59,15 +62,19 @@ let Router =
     {
         if(filters != "")
             filters = " and "+filters;
-        let request = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool?$filter=type eq 1"+filters, null, "GET");
-        request.then(function(data)
-        {
-            let opts = { ats : data.value};        
+        let requestResults = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool?$filter=type eq 1"+filters, null, "GET");
+        let requestAts = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool?$filter=type eq 1", null, "GET");
+        let request = Promise.all([requestResults, requestAts]);
+
+        request.then(function(data){
+            let opts = {
+                results : data[0].value,
+                ats : data[1].value
+            }
             App.changePage("app-ats", opts);
-            
-        }); 
-        request.catch(function(error)
-        {
+        });
+
+        request.catch(function(error){
             ErrorHandler.alertIfError(error);
         });
     },
@@ -117,6 +124,7 @@ let Router =
         route("residents/*", Router.routeResidents);
         route("ats", Router.routeATs);
         route("ats/*", Router.routeATs);
+        route("at/*", Router.routeDM);
         route("", Router.routeIndex);
     },
 }

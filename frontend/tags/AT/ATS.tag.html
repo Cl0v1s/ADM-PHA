@@ -1,5 +1,6 @@
 <app-ats>
     <app-header></app-header>
+<<<<<<< HEAD
     <div id="imagelistat">
     </div>
     <div class="search">
@@ -7,24 +8,63 @@
             <input type="button" class="search" value="Rechercher" onclick="{ search }">
         </div>
     <app-atlist ats="{ ats }"></app-atlist>
+=======
+
+    <div id="imagelistat">
+    </div>
+
+    <div class="ui container">
+    <div class="ui category search">
+      <div class="ui icon input">
+            <input list="ats" class="awesomplete" type="text" placeholder="Recherche une aide technique..." ref="search" />
+            <datalist id="ats">
+                <option each="{ at in ats }">{ at.name }</option>
+            </datalist>
+        <i class="search icon"></i>
+      </div>
+    </div>
+
+    <app-dmlist dms="{ results }"></app-dmlist>
+>>>>>>> 4d7ecba25b1e351e3836aa8a315a07219952b2fb
 
     <script>
         var tag = this;
 
+        tag.timer = null;
+
+        tag.results = null;
         tag.ats = null;
 
         tag.on("before-mount", function()
         {
+            tag.results = tag.opts.results;
+            if(tag.results == null)
+                throw new Error("Results cant be null.");
             tag.ats = tag.opts.ats;
             if(tag.ats == null)
                 throw new Error("ATS cant be null.");
         });
 
+        tag.on("mount", function(){
+            tag.refs.search.addEventListener("awesomplete-selectcomplete", tag.search);
+            tag.refs.search.addEventListener("keyup", tag.search);
+        });
+
         tag.search = function()
         {
-            var name = tag.refs.search.value;
-            name = "'*"+name+"*'";
-            Router.redirect("ats/name eq "+name);
+            if(tag.timer != null)
+            {
+                clearTimeout(tag.timer);
+            }
+            tag.timer = setTimeout(() => {
+                var name = tag.refs.search.value;
+                name = "'*"+name+"*'";
+                Router.redirect("ats/name eq "+name);
+            }, 1000);
         };
     </script>
+<<<<<<< HEAD
+=======
+  </div>
+>>>>>>> 4d7ecba25b1e351e3836aa8a315a07219952b2fb
 </app-ats>
