@@ -124,6 +124,7 @@ let Router =
         route("residents/*", Router.routeResidents);
         route("ats", Router.routeATs);
         route("ats/*", Router.routeATs);
+        route("at/*", Router.routeDM);
         route("", Router.routeIndex);
     },
 }
