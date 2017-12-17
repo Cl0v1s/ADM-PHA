@@ -137,7 +137,8 @@ class APIController extends Controller
 
     private static function Put($manager, $data)
     {
-        $f = new ReflectionFunction($manager."::Put");
+        $c = new ReflectionClass($manager);
+        $f = $c->getMethod("Put");
         $params = array();
         foreach ($f->getParameters() as $param) {
             if(isset($data[$param->name]) == false)
@@ -149,7 +150,8 @@ class APIController extends Controller
 
     private static function Patch($manager, $id, $data)
     {
-        $f = new ReflectionFunction($manager."::Put");
+        $c = new ReflectionClass($manager);
+        $f = $c->getMethod("Patch");
         $params = array();
         foreach ($f->getParameters() as $param) {
             if(isset($data[$param->name]) == false)
