@@ -1,10 +1,14 @@
 <app-residents>
     <app-header></app-header>
     <div class="ui container">
-    <div class="search">
-            <input type="text" placeholder="Rechercher un dispositif médical" ref="search">
-            <input type="button" class="search" value="Rechercher" onclick="{ search }">
-    </div>
+
+      <div class="ui category search">
+        <div class="ui icon input">
+              <input list="residents" class="awesomplete" type="text" placeholder="Rechercher un dispositif médical..." ref="search"/>
+          <i class="search icon" ></i>
+        </div>
+      </div>
+
     <app-residentlist residents="{ residents }"></app-residentlist>
     <script>
         var tag = this;
