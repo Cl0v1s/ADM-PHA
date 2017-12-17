@@ -109,12 +109,7 @@ div#popin.visible
 }
 
 /*		DM 	*/
-app-dms .search
-{
-margin-right: auto;
-margin-left:auto;
-width : 100 % ;
-}
+
 #imagelistdm
 {
 	background-image: url("../IMG/img_dmlist.jpg");
@@ -124,6 +119,32 @@ width : 100 % ;
 	width: 100%;
 	height: 400px;}
 
+	.ui.category.search {
+		text-align: center;
+		padding: 30px;
+	}
+
+	.awesomplete {
+		width: 410px;
+	}
+
+	.main_section .ui.container {
+		-webkit-box-shadow: 4px 7px 16px -3px rgba(0,0,0,0.44);
+		-moz-box-shadow: 4px 7px 16px -3px rgba(0,0,0,0.44);
+		box-shadow: 4px 7px 16px -3px rgba(0,0,0,0.44);
+		background-color: #ffffff;
+		margin: 100px;
+	}
+
+	body {
+		margin: 0;
+		background-image: url("../../static/IMG/background.jpg");
+		background-size: cover;
+	}
+
+
+
+
 /*		AT 	*/
 #imagelistat
 {
@@ -132,7 +153,9 @@ width : 100 % ;
 	background-repeat: no-repeat;
 
 	width: 100%;
-	height: 400px;}
+	height: 400px;
+}
+
 
 
 
