@@ -146,7 +146,7 @@ class APIController extends Controller
                 throw new Exception("Les arguments fournis sont incorrects (".$param->name.")", Errors::$BAD_ARGUMENTS);
             array_push($params,$data[$param->name]);
         }
-        $manager::Put(...$params);
+        return $manager::Put(...$params);
     }
 
     private static function Patch($manager, $id, $data)
