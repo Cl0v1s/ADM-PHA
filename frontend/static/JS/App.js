@@ -115,13 +115,10 @@ let App =
             App.PopIn = null;
             
         }
-        else 
-        {
-            var e = document.createElement("div");
-            e.id = "popin";
-            e.class = "visible";
-            document.body.appendChild(e);
-        }
+        var e = document.createElement("div");
+        e.id = "popin";
+        e.class = "visible";
+        document.body.appendChild(e);
         App.PopIn = riot.mount("div#popin", tag, data);
     },
 
