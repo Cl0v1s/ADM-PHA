@@ -25,7 +25,7 @@ class Tool_ResidentManager implements IModelManager
             }
             $tool = get_object_vars($tool);
             
-            $comments = CommentManager::GetAll("Tool_Resident_id eq ".$link["id"]);
+            $comments = CommentManager::GetAll("Resident_id eq ".$link["Resident_id"]." and Tool_id eq ".$link["Tool_id"]);
             $tool["comments"] = $comments;
 
             $link["tool"] = $tool;
