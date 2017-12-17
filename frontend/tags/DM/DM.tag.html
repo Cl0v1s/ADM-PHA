@@ -76,7 +76,7 @@
 
     <div if="{ dm.comments != null }" class="comments">
         <h2>Commentaires</h2>
-        <app-commentEditForm if="{ resident != null}" resident="{ resident }" dm="{ dm }" ></app-commentEditForm>
+        <app-commentEditForm if="{ resident != null}" resident="{ resident }" dm="{ dm }" callback="{ afterComment }" ></app-commentEditForm>
         <app-comments comments="{ dm.comments }"></app-comments>
     </div>
 
@@ -93,6 +93,14 @@
                 throw new Error("DM cant be null.");
             tag.resident = tag.opts.resident;
         });
+
+        tag.afterComment = function(comment)
+        {
+            if(dm.comments == null)
+                return;
+            dm.comments.push(comment);
+            tag.update();
+        }
 
     </script>
 </app-dm>

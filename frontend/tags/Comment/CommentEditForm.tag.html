@@ -11,11 +11,13 @@
         tag.comment = null;
         tag.resident = null;
         tag.dm = null;
+        tag.callback = null;
 
         tag.on("before-mount", function(){
             tag.comment = tag.opts.comment;
             tag.resident = tag.opts.resident;
             tag.dm = tag.opts.dm;
+            tag.callback = tag.opts.callback;
         });
 
         tag.on("mount", function(){
@@ -44,7 +46,9 @@
             tag.comment.content = tag.refs.content.value;
             let request = App.request(App.Address+"/comment", tag.comment, "PUT");
             request.then(function(response){
-                throw new Error("Not implemented.");
+                tag.refs.content.value = "";
+                if(tag.callback != null)
+                    tag.callback(tag.comment);
             });
             request.catch(function(error){
                 ErrorHandler.alertIfError(error);
