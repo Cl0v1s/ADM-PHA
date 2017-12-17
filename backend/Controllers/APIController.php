@@ -93,14 +93,14 @@ class APIController extends Controller
         if(isset($data["\$top"]))
         {
             if(is_numeric($data["\$top"]) == false)
-                throw new Exception("L'indice de départ n'est pas valide", Errors::BAD_ARGUMENTS);
+                throw new Exception("L'indice de départ n'est pas valide", Errors::$BAD_ARGUMENTS);
             $top = intval($data["\$top"]);
             $filters .= " and id ge ".$top;
 
             if(isset($data["\$skip"]))
             {
                 if(is_numeric($data["\$skip"]) == false)
-                    throw new Exception("L'indice de longueur n'est pas valide", Errors::BAD_ARGUMENTS);
+                    throw new Exception("L'indice de longueur n'est pas valide", Errors::$BAD_ARGUMENTS);
                 $skip = $top + intval($data["\$skip"]);
                 $filters .= " and id lt ".$skip;
             }
@@ -143,7 +143,7 @@ class APIController extends Controller
         $params = array();
         foreach ($f->getParameters() as $param) {
             if(isset($data[$param->name]) == false)
-                throw new Exception("Les arguments fournis sont incorrects (".$param->name.")", Errors::BAD_ARGUMENTS);
+                throw new Exception("Les arguments fournis sont incorrects (".$param->name.")", Errors::$BAD_ARGUMENTS);
             $params[$param->name] = $data[$param->name];
         }
         $manager::Put(...$params);
@@ -156,7 +156,7 @@ class APIController extends Controller
         $params = array();
         foreach ($f->getParameters() as $param) {
             if(isset($data[$param->name]) == false)
-                throw new Exception("Les arguments fournis sont incorrects (".$param->name.")", Errors::BAD_ARGUMENTS);
+                throw new Exception("Les arguments fournis sont incorrects (".$param->name.")", Errors::$BAD_ARGUMENTS);
             $params[$param->name] = $data[$param->name];
         }
         $manager::Patch($id, ...$params);
