@@ -3,9 +3,7 @@
         <div>
             { usecase.name }
         </div>
-        <div>
-            <input type="button" value="X" onclick='{ close }'>
-        </div>
+
     </div>
     <div>
         <div each='{ tool in tools }' data-id='{ tool.id }' onclick='{ choose }'>{ tool.name }</div>
@@ -27,10 +25,6 @@
                 throw new Error("Tools cant be null.");
         });
 
-        tag.close = function()
-        {
-            App.hidePopIn();
-        };
 
         tag.choose = function(event)
         {

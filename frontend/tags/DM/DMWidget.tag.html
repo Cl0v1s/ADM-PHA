@@ -1,6 +1,6 @@
 <app-dmwidget>
     <div class="list">
-        <div class="item" each="{ dm in dms }" onclick='{ details }'>
+        <div class="item" each="{ dm in dms }" onclick='{ details(dm) }' >
             <div>
                 { dm.name }
             </div>
@@ -10,15 +10,41 @@
         var tag = this; 
         
         tag.dms = null;
+        tag.resident = null;
 
         tag.on("before-mount", function(){
             tag.dms = tag.opts.dms;
             if(tag.dms == null)
                 throw new Error("DMS cant be null.");
+            tag.resident = tag.opts.resident;
+            if(tag.resident == null)
+                throw new Error("Resident cant be null.");
         });
 
-        tag.details = function(){
-            alert("Not implemented");
+        tag.details = function(dm){
+            return function(event){
+                if(dm.comments == null)
+                {
+                    let filter = "Resident_id eq "+tag.resident.id+" and Tool_id eq "+dm.id;
+                    let request =  App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/comment?$filter="+filter, null, "GET");
+                    request.then(function(response){
+                        dm.comments = response.value;
+                        App.showPopIn("app-dm", {
+                            "dm" : dm, 
+                            "resident" : tag.resident
+                        });
+                    },function(error){
+                        ErrorHandler.alertIfError(error);
+                    });
+                }
+                else{
+                    App.showPopIn("app-dm", {
+                        "dm" : dm
+                    });
+                }
+
+       
+            };
         };
     </script>
 </app-dmwidget>

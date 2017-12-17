@@ -1,7 +1,6 @@
 <app-commenteditform>
     <form name="edit-comment">
         <textarea name="content" ref="content">
-           <virtual if='{ comment != null }'> { comment.content }</virtual>
         </textarea>
         <input type="button" value="Envoyer" onclick="{ validate }">
     </form>
@@ -10,14 +9,23 @@
         var tag = this;
 
         tag.comment = null;
+        tag.resident = null;
+        tag.dm = null;
 
         tag.on("before-mount", function(){
             tag.comment = tag.opts.comment;
+            tag.resident = tag.opts.resident;
+            tag.dm = tag.opts.dm;
+        });
+
+        tag.on("mount", function(){
+            if(tag.comment != null)
+                tag.refs.content.value = tag.comment.content;
         });
 
         tag.validate = function()
         {
-            if(tag.refs.content.trim() == "")
+            if(tag.refs.content.value.trim() == "")
             {
                 ErrorHandler.diagnosticForm(null);
                 return;
@@ -26,12 +34,14 @@
         };
 
         tag.send = function(){
-            if(tag.comment == null)
+            if(tag.comment == null || tag.comment.id == null)
             {
                 tag.comment = {};
                 tag.comment.User_id = Login.GetUser();
+                tag.comment.Resident_id = tag.resident.id;
+                tag.comment.Tool_id = tag.dm.id;
             }
-            tag.comment.content = tag.refs.content;
+            tag.comment.content = tag.refs.content.value;
             let request = App.request(App.Address+"/comment", tag.comment, "PUT");
             request.then(function(response){
                 throw new Error("Not implemented.");

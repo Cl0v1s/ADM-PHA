@@ -10,8 +10,7 @@ let App =
     PopIn: null,
 
     jsonToQuery : function(json) {
-        return '?' + 
-            Object.keys(json).map(function(key) {
+        return  Object.keys(json).map(function(key) {
                 if(json[key] != null)
                     return encodeURIComponent(key) + '=' +
                         encodeURIComponent(json[key]);
@@ -34,6 +33,9 @@ let App =
             var oReq = new XMLHttpRequest();
             oReq.open(method, address, true);
             //TODO: ajouter les headers
+            if(data != null && method != "GET")
+                oReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            
             //oReq.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
             oReq.send(App.jsonToQuery(data));
 
@@ -119,7 +121,20 @@ let App =
         e.id = "popin";
         e.class = "visible";
         document.body.appendChild(e);
+
+
+        
+
+
         App.PopIn = riot.mount("div#popin", tag, data);
+        var close = document.createElement("input");
+        close.type = "button";
+        close.value = "X";
+        close.onclick = function(){
+            App.hidePopIn();
+        };
+
+        e.appendChild(close);
     },
 
     hidePopIn : function()

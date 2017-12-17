@@ -1,6 +1,7 @@
 let Login = {
     GetUser : function()
     {
-        throw new Error("Not implemented.");
+        console.log("Not IMPLEMENRTED");
+        return 1;
     },
 }
