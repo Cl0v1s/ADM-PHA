@@ -4,6 +4,7 @@ use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
 require_once "Applicative/Managers/IModelManager.php";
+require_once "Applicative/Errors.php";
 
 foreach (glob("Applicative/Managers/*") as $filename) {
     require_once $filename;
@@ -92,14 +93,14 @@ class APIController extends Controller
         if(isset($data["\$top"]))
         {
             if(is_numeric($data["\$top"]) == false)
-                throw new Exception("L'indice de départ n'est pas valide", "BadArgument");
+                throw new Exception("L'indice de départ n'est pas valide", Errors::BAD_ARGUMENTS);
             $top = intval($data["\$top"]);
             $filters .= " and id ge ".$top;
 
             if(isset($data["\$skip"]))
             {
                 if(is_numeric($data["\$skip"]) == false)
-                    throw new Exception("L'indice de longueur n'est pas valide", "BadArgument");
+                    throw new Exception("L'indice de longueur n'est pas valide", Errors::BAD_ARGUMENTS);
                 $skip = $top + intval($data["\$skip"]);
                 $filters .= " and id lt ".$skip;
             }
@@ -142,7 +143,7 @@ class APIController extends Controller
         $params = array();
         foreach ($f->getParameters() as $param) {
             if(isset($data[$param->name]) == false)
-                throw new Exception("Les arguments fournis sont incorrects", "BadArgument");
+                throw new Exception("Les arguments fournis sont incorrects", Errors::BAD_ARGUMENTS);
             $params[$param->name] = $data[$param->name];
         }
         $manager::Put(...$params);
@@ -155,7 +156,7 @@ class APIController extends Controller
         $params = array();
         foreach ($f->getParameters() as $param) {
             if(isset($data[$param->name]) == false)
-                throw new Exception("Les arguments fournis sont incorrects", "BadArgument");
+                throw new Exception("Les arguments fournis sont incorrects", Errors::BAD_ARGUMENTS);
             $params[$param->name] = $data[$param->name];
         }
         $manager::Patch($id, ...$params);
