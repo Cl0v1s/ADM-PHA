@@ -31,6 +31,9 @@ class Controller
         $response = $response->withHeader("Date", $date->format(DATE_RFC822));
         $route = $request->getAttribute("route");
 
+        if($request->isOptions())
+            return $response;
+
         try {
             if (empty($route)) {
                 throw new Exception();
