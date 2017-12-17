@@ -143,7 +143,7 @@ class APIController extends Controller
         $params = array();
         foreach ($f->getParameters() as $param) {
             if(isset($data[$param->name]) == false)
-                throw new Exception("Les arguments fournis sont incorrects", Errors::BAD_ARGUMENTS);
+                throw new Exception("Les arguments fournis sont incorrects (".$param->name.")", Errors::BAD_ARGUMENTS);
             $params[$param->name] = $data[$param->name];
         }
         $manager::Put(...$params);
@@ -156,7 +156,7 @@ class APIController extends Controller
         $params = array();
         foreach ($f->getParameters() as $param) {
             if(isset($data[$param->name]) == false)
-                throw new Exception("Les arguments fournis sont incorrects", Errors::BAD_ARGUMENTS);
+                throw new Exception("Les arguments fournis sont incorrects (".$param->name.")", Errors::BAD_ARGUMENTS);
             $params[$param->name] = $data[$param->name];
         }
         $manager::Patch($id, ...$params);
