@@ -18,7 +18,13 @@ class Comment extends StorageItem
      * @Required
      * @Numeric
      */
-    public $Tool_Resident_id;
+    public $Resident_id;
+
+    /**
+     * @Required
+     * @Numeric
+     */
+    public $Tool_id;
 
 
     /**
@@ -48,18 +54,35 @@ class Comment extends StorageItem
     /**
      * @return mixed
      */
-    public function getToolResidentId()
+    public function getToolId()
     {
-        return $this->Tool_Resident_id;
+        return $this->Tool_id;
     }
 
     /**
      * @param mixed $Tool_Resident_id
      */
-    public function setToolResidentId($Tool_Resident_id)
+    public function setToolId($Tool_id)
     {
-        $this->Tool_Resident_id = $Tool_Resident_id;
-        $this->checkIntegrity("Tool_Resident_id");
+        $this->Tool_id = $Tool_id;
+        $this->checkIntegrity("Tool_id");
+    }
+
+        /**
+     * @return mixed
+     */
+    public function getResidentId()
+    {
+        return $this->Resident_id;
+    }
+
+    /**
+     * @param mixed $Tool_Resident_id
+     */
+    public function setResidentId($Resident_id)
+    {
+        $this->Resident_id = $Resident_id;
+        $this->checkIntegrity("Resident_id");
     }
 
     /**
