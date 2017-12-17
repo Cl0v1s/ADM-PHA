@@ -38,8 +38,16 @@ $app->add(function(Request $request, Response $response, $next){
 
 $app->any('/v1.0/{collection}', function (Request $request, Response $response, $args) {
     $collection = ucfirst($args["collection"]);
-    $operation = "GetAll";
-    return APIController::Execute($collection, $operation, $request->getQueryParams(), $response);
+    $operation = ucfirst($request->getMethod());
+    $params = null;
+    if($request->isGet())
+    {
+        $operation = "GetAll";
+        $params = $request->getQueryParams();
+    }
+    else
+        $params = $request->getParsedBody();
+    return APIController::Execute($collection, $operation, $params, $response);
 });
 
 $app->any('/v1.0/{collection}/{id}', function(Request $request, Response $response, $args)
