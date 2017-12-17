@@ -1,18 +1,31 @@
 <app-dmitem>
+
+
+  <div class="ui card">
     <a if="{ dm.type == 0 || dm.type == '0' }"  href="#dm/{dm.id}" class="button add">Consulter</a>
     <a if="{ dm.type == 1 || dm.type == '1' }"  href="#at/{dm.id}" class="button add">Consulter</a>
-    <div class="picture">
-        <img src="{ dm.picture }">
+    <div class="image">
+      <div class="picture">
+          <img src="{ dm.picture }">
+      </div>
+     </div>
+    <div class="content">
+      <a class="header">
+        <div class="name">
+              { dm.name }
+          </div>
+      </a>
+      <div class="description">
+        <div class="description">
+            { dm.description }
+        </div>
+      </div>
     </div>
-    <div class="name">
-        { dm.name }
-    </div>
-    <div class="description">
-        { dm.description }
-    </div>
+  </div>
+
     <script>
-        var tag = this;  
-        
+        var tag = this;
+
         tag.dm = null;
 
         tag.on("before-mount", function()

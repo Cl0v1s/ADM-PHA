@@ -1,18 +1,29 @@
 <app-residentitem>
-    <a href="#resident/{resident.id}" class="button add">Consulter</a>
-    <div class="picture">
+
+
+  <div class="ui card">
+    <a href="#resident/{resident.id}" class="button add">
+    <div class="image">
+      <div class="picture">
         <img src="{ resident.picture }">
-    </div>
-    <div class="name">
-        <span>{ resident.firstname }</span>
-        <span>{ resident.lastname }</span>
-    </div>
-    <div class="description">
+      </div>
+     </div>
+    <div class="content">
+      <a class="header">
+        <div class="name">
+          <span>{ resident.firstname }</span>
+          <span>{ resident.lastname }</span>
+          </div>
+      </a>
+      <div class="description">
         { resident.age } ans
+      </div>
     </div>
+    </a>
+  </div>
 
     <script>
-        var tag = this;    
+        var tag = this;
 
         tag.resident = null;
 

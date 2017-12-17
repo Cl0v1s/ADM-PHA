@@ -145,13 +145,15 @@ div#popin.visible
 		background-size: cover;
 	}
 
-
+.picture img {
+	width: 100%;
+}
 
 
 /*		AT 	*/
 #imagelistat
 {
-	background-image: url("../IMG/img_atlist.jpg");
+	background-image: url("../IMG/img_lists.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	-webkit-box-shadow: 4px 7px 16px -3px rgba(0,0,0,0.44);
@@ -181,7 +183,7 @@ div#popin.visible
 /*		RESIDENTS 	*/
 
 #imagelistresidents{
-	background-image: url("../IMG/img_residentslist.jpg");
+	background-image: url("../IMG/img_lists.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	width: 100%;
