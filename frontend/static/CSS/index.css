@@ -148,7 +148,24 @@ div#popin.visible
 .picture img {
 	width: 100%;
 }
+app-dm
+{
+	font-family: "helvetica";
+}
+app-dm .img
+{
+	background-color: #6CC2CF;
+}
+app-dm .description .autonomy .guide .invasive .avantages .maket
+{
 
+	margin : center
+	-webkit-box-shadow: 4px 7px 16px -3px rgba(0,0,0,0.44);
+	-moz-box-shadow: 4px 7px 16px -3px rgba(0,0,0,0.44);
+	box-shadow: 4px 7px 16px -3px rgba(0,0,0,0.44);
+	background-color: #ffffff;
+
+}
 
 /*		AT 	*/
 #imagelistat
