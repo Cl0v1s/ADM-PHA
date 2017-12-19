@@ -1,14 +1,19 @@
 <app-dmitem>
 
-
   <div class="ui card">
-    <a if="{ dm.type == 0 || dm.type == '0' }"  href="#dm/{dm.id}" class="button add">Consulter</a>
-    <a if="{ dm.type == 1 || dm.type == '1' }"  href="#at/{dm.id}" class="button add">Consulter</a>
-    <div class="image">
-      <div class="picture">
-          <img src="{ dm.picture }">
-      </div>
-     </div>
+    <a if="{ dm.type == 0 || dm.type == '0' }"  href="#dm/{dm.id}" class="button add">
+      <div class="image">
+          <div class="picture">
+              <img src="{ dm.picture }">
+          </div>
+         </div></a>
+    <a if="{ dm.type == 1 || dm.type == '1' }"  href="#at/{dm.id}" class="button add">
+      <div class="image">
+        <div class="picture">
+            <img src="{ dm.picture }">
+        </div>
+       </div>
+    </a>
     <div class="content">
       <a class="header">
         <div class="name">
@@ -22,6 +27,7 @@
       </div>
     </div>
   </div>
+
 
     <script>
         var tag = this;
