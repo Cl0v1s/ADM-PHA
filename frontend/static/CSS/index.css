@@ -162,6 +162,7 @@ app-dm .img
 	border-radius:100px;
 	box-shadow: 4px 7px 16px -3px rgba(0,0,0,0.44);
 	margin: 0 auto;
+	float: left;
 }
 
 .photoatdm .img img {
@@ -173,16 +174,6 @@ app-dm .img
 }
 
 
-app-dm .description .autonomy .guide .invasive .avantages .maket
-{
-
-	margin : center
-	-webkit-box-shadow: 4px 7px 16px -3px rgba(0,0,0,0.44);
-	-moz-box-shadow: 4px 7px 16px -3px rgba(0,0,0,0.44);
-	box-shadow: 4px 7px 16px -3px rgba(0,0,0,0.44);
-	background-color: #ffffff;
-
-}
 
 .photoatdmhead {
 	background-color: #6CC2CF;
@@ -194,6 +185,7 @@ app-dm .description .autonomy .guide .invasive .avantages .maket
 height: 300px;
 width: -moz-available;
 padding: 0 !important;
+float: left;
 
 }
 
@@ -217,7 +209,7 @@ padding: 0 !important;
 .divider {
 	display: inline-block;
   width: 0;
-  height: 12em;
+  height: 15em;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
 	padding: 0 !important;
