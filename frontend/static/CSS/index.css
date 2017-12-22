@@ -196,6 +196,9 @@ float: left;
 .photoatdm p {
 	text-align: center;
 	color: #ccc;
+	position: relative;
+top: 50%;
+transform: translateY(-50%); 
 }
 
 .photoatdm h3 {
