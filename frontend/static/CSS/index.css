@@ -55,7 +55,6 @@ app-header {
 	width: 100%;
 	display: inline-block;
 	color: #ffffff;
-	position: fixed;
 	z-index: 10000;
 }
 
