@@ -1,20 +1,22 @@
 <app-dm>
   <div class="main_section">
-  <div class="ui container">
-  <div class="namedmat">
-      <div>
-          <p>
+    <div class="ui container">
+      <div class="ui grid">
+        <div class="eight wide column">
+          <div class="namedmat">
+              <p>
               { dm.name }
-          </p>
-          <p if="{ dm.type == 0 || dm.type == '0' }"  href="#dm/{dm.id}" class="button add">Dispositif médical</p>
-          <p if="{ dm.type == 1 || dm.type == '1' }"  href="#at/{dm.id}" class="button add">Aide technique</p>
-          <img id="dmpicture" src="{ dm.picture }">
-
-
+              </p>
+              <p if="{ dm.type == 0 || dm.type == '0' }"  href="#dm/{dm.id}" class="button add">Dispositif médical</p>
+              <p if="{ dm.type == 1 || dm.type == '1' }"  href="#at/{dm.id}" class="button add">Aide technique</p>
+        </div>
+      </div>
+      <div class="eight wide column">
+              <img id="dmpicture" src="{ dm.picture }">
+      </div>
       </div>
     </div>
   </div>
-</div>
 
 <div class="main_section">
 <div class="ui container">
