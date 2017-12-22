@@ -203,6 +203,10 @@ float: left;
 	height: 300px;
 }
 
+.dmat {
+	margin: 50px !important;
+}
+
 .photoatdm p {
 	text-align: center;
 	color: #D9D9D9;
