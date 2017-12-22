@@ -55,12 +55,14 @@ app-header {
 	width: 100%;
 	display: inline-block;
 	color: #ffffff;
+	position: fixed;
+	z-index: 10000;
 }
 
 
 app-header a {
 	color : #ffffff;
-	margin-right: 10px;
+padding-left: 30px;
 	float: right;
 }
 
@@ -156,6 +158,8 @@ app-dm .img
 {
 	background-color: #6CC2CF;
 }
+
+
 app-dm .description .autonomy .guide .invasive .avantages .maket
 {
 
