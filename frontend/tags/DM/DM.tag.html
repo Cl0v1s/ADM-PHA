@@ -1,8 +1,8 @@
 <app-dm>
   <div class="main_section">
     <div class="ui container">
-      <div class="ui grid">
-        <div class="eight wide column">
+      <div class="ui grid photoatdmhead">
+        <div class="four wide column">
           <div class="namedmat">
               <p>
               { dm.name }
@@ -11,7 +11,7 @@
               <p if="{ dm.type == 1 || dm.type == '1' }"  href="#at/{dm.id}" class="button add">Aide technique</p>
         </div>
       </div>
-      <div class="eight wide column">
+      <div class="twelve wide column" id="no_padding">
               <img id="dmpicture" src="{ dm.picture }">
       </div>
       </div>
@@ -20,11 +20,15 @@
 
 <div class="main_section">
 <div class="ui container">
+  <div class="ui grid photoatdm">
+    <div class="four wide column">
     <div class="description">
         <h3>Description</h3>
         <div class="img">
         </div>
-        <div>
+      </div>
+    </div>
+      <div class="twelve wide column">
             <p>
                 { dm.description }
             </p>
@@ -32,14 +36,19 @@
     </div>
   </div>
 </div>
+</div>
 
 <div class="main_section">
 <div class="ui container">
+  <div class="ui grid photoatdm">
+    <div class="four wide column">
     <div class="autonomy">
       <h3>Degré d'autonomie</h3>
         <div class="img">
         </div>
-        <div>
+      </div>
+    </div>
+    <div class="twelve wide column">
             <p>
                 { dm.autonomy }
             </p>
@@ -50,27 +59,35 @@
 
 <div class="main_section">
 <div class="ui container">
+  <div class="ui grid photoatdm">
+    <div class="four wide column">
     <div class="guide">
       <h3>Guide d'utilisation</h3>
         <div class="img">
 
         </div>
-        <div>
+      </div>
+    </div>
+    <div class="twelve wide column">
             <p>
                 { dm.guide }
             </p>
         </div>
+      </div>
     </div>
   </div>
-</div>
 
 <div class="main_section">
 <div class="ui container">
+  <div class="ui grid photoatdm">
+    <div class="four wide column">
     <div class="invasive">
       <h3>Caractère invasif</h3>
         <div class="img">
         </div>
-        <div>
+      </div>
+    </div>
+        <div class="twelve wide column">
             <p>
                 { dm.invasive }
             </p>
@@ -81,11 +98,15 @@
 
 <div class="main_section">
 <div class="ui container">
+  <div class="ui grid photoatdm">
+    <div class="four wide column">
     <div class="advantages">
       <h3>Avantages et inconvénients</h3>
         <div class="img">
         </div>
-        <div>
+      </div>
+    </div>
+    <div class="twelve wide column">
             <p>
                 { dm.advantages }
             </p>
@@ -96,11 +117,15 @@
 
 <div class="main_section">
 <div class="ui container">
+  <div class="ui grid photoatdm">
+    <div class="four wide column ">
     <div class="market">
       <h3>Fabricants / prix</h3>
         <div class="img">
         </div>
-        <div>
+      </div>
+    </div>
+    <div class="twelve wide column"  >
             <div>
                 <label>Prix moyen</label>
                 <p>{ dm.price }</p>

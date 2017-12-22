@@ -149,13 +149,17 @@ div#popin.visible
 .picture img {
 	width: 100%;
 }
-app-dm
-{
-	font-family: "helvetica";
-}
+
+
+
 app-dm .img
 {
 	background-color: #6CC2CF;
+	height: 50px;
+	width: 50px;
+	-webkit-border-radius:50px;
+	-moz-border-radius:50px;
+	border-radius:50px;
 }
 
 
@@ -168,6 +172,30 @@ app-dm .description .autonomy .guide .invasive .avantages .maket
 	box-shadow: 4px 7px 16px -3px rgba(0,0,0,0.44);
 	background-color: #ffffff;
 
+}
+
+.photoatdmhead {
+	background-color: #6CC2CF;
+	color: #ffffff;
+	padding: 0 !important:
+}
+
+.photoatdmhead img {
+height: 300px;
+width: -moz-available;
+padding: 0 !important;
+}
+
+.photoatdm {
+	height: 300px;
+}
+#no_padding {
+	padding: 0px !important;
+}
+
+app-dm .photoatdm .four.wide.column {
+	border-right: 4px solid black;
+border-spacing: 15px;
 }
 
 /*		AT 	*/
