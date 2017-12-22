@@ -49,6 +49,11 @@ table {
 	font-family: "helvetica";
 }
 
+@font-face {
+	font-family: "Maxwell";
+	src: url('../font/Maxwell.otf');
+}
+
 /*		HEADER: 	*/
 app-header {
 	background-color: #484c4F;
@@ -181,6 +186,11 @@ app-dm .img
 	padding: 0 !important:
 }
 
+.photoatdmhead .four.wide.column {
+	display: grid;
+
+}
+
 .photoatdmhead img {
 height: 300px;
 width: -moz-available;
@@ -219,7 +229,15 @@ transform: translateY(-50%);
 	padding: 0 !important;
 	float: right;
 }
-
+#nomdmat {
+	font-family: 'Maxwell' !important;
+	font-size: 60px;
+	text-align: center;
+	  text-transform: uppercase;
+		position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
 
 
 /*		AT 	*/
