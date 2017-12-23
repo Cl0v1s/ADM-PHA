@@ -298,3 +298,12 @@ position: fixed;
 margin-top: 55px;
 margin-left: 50px;
 }
+
+#residentswidgets {
+	background-color: white;
+height: 78vh;
+position: fixed;
+margin-top: 69px;
+margin-left: 500px;
+
+}
