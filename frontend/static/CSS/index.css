@@ -166,7 +166,7 @@ app-dm .img
 	-moz-border-radius:50px;
 	border-radius:100px;
 	box-shadow: 4px 7px 16px -3px rgba(0,0,0,0.44);
-	margin: 0 auto;
+margin: 20%;
 	float: left;
 }
 
