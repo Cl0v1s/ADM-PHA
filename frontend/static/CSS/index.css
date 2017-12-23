@@ -289,21 +289,32 @@ transform: translateY(-50%);
 	-moz-box-shadow: 4px 7px 16px -3px rgba(0,0,0,0.44);
 	box-shadow: 4px 7px 16px -3px rgba(0,0,0,0.44);
 	background-color: #ffffff;
+	text-align: center;
 }
 
 #inforesidents {
-	background-color: blue;
+	background-color: #EEEFF0;
 height: 78vh;
 position: fixed;
 margin-top: 55px;
 margin-left: 50px;
+box-shadow: 4px 7px 16px -3px rgba(0,0,0,0.44);
+border : 1px solid black;
+text-align: center;
 }
 
 #residentswidgets {
 	background-color: white;
-height: 78vh;
-position: fixed;
+height: 100%;
 margin-top: 69px;
 margin-left: 500px;
+box-shadow: 4px 7px 16px -3px rgba(0,0,0,0.44);
+border : 1px solid black;
+text-align: center;
 
+}
+
+#inforesidents img {
+
+	border-radius:300px;
 }
