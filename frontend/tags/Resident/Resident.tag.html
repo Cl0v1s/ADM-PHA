@@ -1,13 +1,14 @@
 <app-resident>
     <app-header></app-header>
-    <app-residentinfo resident="{ resident }"></app-residentinfo>
-    <app-usecaseselector resident="{ resident }" usecases="{ usecases }"></app-usecaseselector>
-    
 
+      <div class="ui grid">
+        <div class="eight wide column" >
+     <app-residentinfo resident="{ resident }"></app-residentinfo>
+    <app-usecaseselector resident="{ resident }" usecases="{ usecases }"></app-usecaseselector>
     <div class="widgets">
         <div>
-            Professionnels 
-            <app-userwidget users="{ resident.pro }"></app-userwidget>                
+            Professionnels
+            <app-userwidget users="{ resident.pro }"></app-userwidget>
         </div>
         <div>
             Personnel médical
@@ -38,4 +39,8 @@
                 throw new Error("Usecases cant be null.");
         });
     </script>
+  </div>
+</div>
+</div>
+</div>
 </app-resident>

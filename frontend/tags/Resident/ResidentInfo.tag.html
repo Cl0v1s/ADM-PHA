@@ -1,4 +1,8 @@
 <app-residentinfo>
+
+
+  <div class="ui grid">
+    <div class="four wide column" id="inforesidents">
     <div class="img">
         <img if="{ resident.picture != null }" src="{ resident.picture }">
     </div>
@@ -24,8 +28,8 @@
     </div>
 
     <script>
-        var tag = this;  
-        
+        var tag = this;
+
         tag.resident = null;
 
         tag.on("before-mount", function(){
@@ -34,4 +38,6 @@
                 throw new Error("Resident cant be null.");
         });
     </script>
+</div>
+
 </app-residentinfo>
