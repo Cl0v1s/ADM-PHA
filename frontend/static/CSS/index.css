@@ -246,6 +246,13 @@ transform: translateY(-50%);
 	transform: translateY(-50%);
 }
 
+.dmpicture {
+	height: 300px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
 
 /*		AT 	*/
 #imagelistat
