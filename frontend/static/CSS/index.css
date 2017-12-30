@@ -212,14 +212,17 @@ float: left;
 
 .photoatdm p {
 	text-align: center;
-	color: #D9D9D9;
+	color: #000000;
 	position: relative;
 top: 50%;
 transform: translateY(-50%);
+font-size: 15px;
 }
 
 .photoatdm h3 {
 	text-align: center;
+font-family: 'Maxwell';
+font-size: 25px;
 }
 
 #no_padding {
@@ -230,8 +233,8 @@ transform: translateY(-50%);
 	display: inline-block;
   width: 1px;
   height: 15em;
-  border-left: 1px solid #484C4F;
-  border-right: 1px solid #484C4F;
+	border-left: 1px solid #6CC2CF;
+	border-right: 1px solid #6CC2CF;
 	box-shadow: 4px 7px 16px 0px rgba(0,0,0,0.44);
 	padding: 0 !important;
 	float: right;
