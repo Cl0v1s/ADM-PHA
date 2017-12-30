@@ -1,0 +1,12 @@
+app-dmlist
+{
+    display: block;
+    padding: 20px;
+    text-align: center;
+}
+
+app-dmlist app-dmitem 
+{
+    display: inline-block;
+    text-align: initial;
+}

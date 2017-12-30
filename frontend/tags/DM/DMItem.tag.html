@@ -15,11 +15,19 @@
        </div>
     </a>
     <div class="content">
-      <a class="header">
-        <div class="name">
-              { dm.name }
-          </div>
-      </a>
+      
+        <a class="header" if="{ dm.type == 0 || dm.type == '0' }"  href="#dm/{dm.id}">
+            <div class="name">
+                { dm.name }
+            </div>
+        </a>
+        <a class="header" if="{ dm.type == 1 || dm.type == '1' }"  href="#at/{dm.id}">
+            <div class="name">
+                { dm.name }
+            </div>
+        </a>
+      
+      
       <div class="description">
         <div class="description">
             { dm.description }

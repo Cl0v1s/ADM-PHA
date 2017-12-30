@@ -1,4 +1,7 @@
-	/*		RESET CSS 		*/
+@import 'dms.css';
+@import 'dm.css';
+
+/*		RESET CSS 		*/
 
 
 html, body, div, span, applet, object, iframe,
