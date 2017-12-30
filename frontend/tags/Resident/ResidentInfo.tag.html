@@ -1,29 +1,33 @@
 <app-residentinfo>
-
-
-    <div id="inforesidents">
-    <div class="img">
-        <img if="{ resident.picture != null }" src="{ resident.picture }">
-    </div>
-    <div class="identity">
-        <div class="firstname">
-            { resident.firstname }
+    <div>
+        <div class="img">
+            <img if="{ resident.picture != null }" src="{ resident.picture }">
         </div>
-        <div class="lastname">
-            { resident.lastname }
+        <div class="identity">
+            <div class="firstname">
+                { resident.firstname }
+            </div>
+            <div class="lastname">
+                { resident.lastname }
+            </div>
+            <div class="age">
+                { resident.age } ans
+            </div>
         </div>
-        <div class="age">
-            { resident.age } ans
+        <div class="complements">
+            <div class="pathologies">
+                <label>Pathologies</label>
+                { resident.pathologies }
+            </div>
+            <div class="autonomy">
+                <label>Précisions sur l'autonomie</label>
+                { resident.autonomy }
+            </div>
+            <div class="healplan" if="{ resident.healplan != null }">
+                <label>Plan de soin</label>
+                { resident.healplan }
+            </div>
         </div>
-    </div>
-    <div class="pathologies">
-        { resident.pathologies }
-    </div>
-    <div class="autonomy">
-        { resident.autonomy }
-    </div>
-    <div class="healplan" if="{ resident.healplan != null }">
-        { resident.healplan }
     </div>
 
     <script>

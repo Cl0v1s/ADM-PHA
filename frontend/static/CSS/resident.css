@@ -8,11 +8,72 @@ div[data-is=app-resident] #status
 {
     display: inline-block;
     width: 49.5%;
+    max-width: 500px;
     margin: 0;
     box-sizing: border-box;
     padding: 20px;
     vertical-align: top;
 }  
+
+div[data-is=app-resident] app-residentinfo
+{
+    display: block;
+    width: 100%;
+    min-height: 100%;
+    background-color: rgb(238,239,240);
+    border: 1px solid rgb(149,152, 154);
+    box-shadow: 0 1px 3px 0 #d4d4d5,0 0 0 1px #d4d4d5;
+}
+
+div[data-is=app-resident] app-residentinfo>div
+{
+    display: block;
+    width: 300px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+div[data-is=app-resident] app-residentinfo>div .identity
+{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgb(149,152, 154);
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+div[data-is=app-resident] app-residentinfo>div .identity .lastname
+{
+    text-transform: uppercase;
+}
+
+div[data-is=app-resident] app-residentinfo>div label
+{
+    font-weight: bold;
+    display: block;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+div[data-is=app-resident] app-residentinfo>div .complements div
+{
+    margin-bottom: 20px;
+}
+
+
+
+
+div[data-is=app-resident] app-residentinfo img
+{
+    border-radius: 100%;
+    border: 1px solid rgb(149,152, 154);
+    width: 100%;
+    height: 300px;
+    box-shadow: 0 1px 3px 0 #d4d4d5,0 0 0 1px #d4d4d5;
+} 
+
+
+
 
 div[data-is=app-resident] #informations
 {

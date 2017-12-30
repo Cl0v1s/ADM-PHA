@@ -1,0 +1,21 @@
+@media screen and (max-width: 930px)
+{
+    div[data-is=app-resident] #status
+    {
+        display: block;
+        width: 100%;
+        max-width: initial;
+    }
+
+    div[data-is=app-resident] app-residentinfo
+    {
+        display: block;
+        width: 100%;
+    }
+
+    div[data-is=app-resident] app-residentinfo>div
+    {
+        display: block;
+        width: 100%;
+    }
+}
