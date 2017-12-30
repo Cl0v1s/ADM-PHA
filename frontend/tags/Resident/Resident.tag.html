@@ -1,30 +1,31 @@
 <app-resident>
     <app-header></app-header>
 
-      <div class="ui grid">
-        <app-residentinfo resident="{ resident }" class="ui four wide column"></app-residentinfo>
-
-        <div class="ui ten wide column" id="residentswidgets">
-    <app-usecaseselector resident="{ resident }" usecases="{ usecases }"></app-usecaseselector>
-    <div class="widgets">
-        <div>
-            Professionnels
-            <app-userwidget users="{ resident.pro }"></app-userwidget>
+    <div>
+        <div id="status">
+            <app-residentinfo resident="{ resident }"></app-residentinfo>
         </div>
-        <div>
-            Personnel médical
-            <app-userwidget users="{ resident.perso }"></app-userwidget>
-        </div>
-        <div>
-            Dispositifs médicaux
-            <app-dmwidget dms="{ resident.dms }" resident="{ resident }"></app-dmwidget>
-        </div>
-        <div>
-            Aides techniques
-            <app-dmwidget dms="{ resident.ats }" resident="{ resident }"></app-dmwidget>
+        <div id="informations">
+        <app-usecaseselector resident="{ resident }" usecases="{ usecases }"></app-usecaseselector>
+        <div class="widgets">
+            <div>
+                Professionnels
+                <app-userwidget users="{ resident.pro }"></app-userwidget>
+            </div>
+            <div>
+                Personnel médical
+                <app-userwidget users="{ resident.perso }"></app-userwidget>
+            </div>
+            <div>
+                Dispositifs médicaux
+                <app-dmwidget dms="{ resident.dms }" resident="{ resident }"></app-dmwidget>
+            </div>
+            <div>
+                Aides techniques
+                <app-dmwidget dms="{ resident.ats }" resident="{ resident }"></app-dmwidget>
+            </div>
         </div>
     </div>
-  </div>
 
     <script>
         var tag = this;

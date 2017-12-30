@@ -1,0 +1,12 @@
+app-residentlist
+{
+    display: block;
+    padding: 20px;
+    text-align: center;
+}
+
+app-residentlist app-residentitem
+{
+    display: inline-block;
+    text-align: initial;
+}
