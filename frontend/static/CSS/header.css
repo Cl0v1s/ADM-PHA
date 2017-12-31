@@ -1,0 +1,43 @@
+app-header {
+	background-color: #484c4F;
+	width: 100%;
+	display: inline-block;
+	color: #ffffff;
+	z-index: 10000;
+	position: fixed;
+top: 0;
+}
+
+
+app-header a {
+	color : #ffffff;
+    margin-right: 20px;
+}
+app-header a.selected {
+	text-decoration : underline;
+}
+
+app-header a:hover {
+	text-decoration : underline;
+	color : #ffffff;
+}
+
+app-header img {
+	width: 40px;
+margin-top: 12px;
+margin-bottom: 12px !important;
+vertical-align: middle;
+}
+
+app-header nav {
+	vertical-align: middle;
+display: inline-block;
+position: absolute;
+transform: translateY(-50%);
+right: 5px;
+top: 50%;
+}
+
+app-header .center-element {
+	position: relative !important;
+}
