@@ -63,13 +63,15 @@ div[data-is=app-resident] app-residentinfo>div .complements div
 
 
 
-div[data-is=app-resident] app-residentinfo img
+div[data-is=app-resident] app-residentinfo div.img
 {
     border-radius: 100%;
     border: 1px solid rgb(149,152, 154);
     width: 100%;
     height: 300px;
     box-shadow: 0 1px 3px 0 #d4d4d5,0 0 0 1px #d4d4d5;
+    background-size: cover; 
+    background-position: center;
 } 
 
 

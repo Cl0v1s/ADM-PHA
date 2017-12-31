@@ -17,5 +17,61 @@
     {
         display: block;
         width: 100%;
+        margin: 0;
+        margin-top: 20px;
+        padding: 0;
     }
+
+    div[data-is=app-resident] app-residentinfo>div>div
+    {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+    }
+
+    div[data-is=app-resident] app-residentinfo div.img
+    {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+    }
+
+    div[data-is=app-resident] app-residentinfo div.identity
+    {
+        display: block;
+        width: auto;
+        text-align: center;
+        border-bottom: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    div[data-is=app-resident] app-residentinfo div.complements
+    {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    div[data-is=app-resident] app-residentinfo div.complements>div 
+    {
+        display: inline-block;
+        width: auto;
+        text-align: left;
+        width: 25%;
+        vertical-align: top;
+    }
+    
+    
+}
+
+@media screen and (max-width: 520px)
+{
+    div[data-is=app-resident] app-residentinfo div.complements>div 
+    {
+        display: block;
+        width: auto;
+        padding: 20px;
+    }
+
 }

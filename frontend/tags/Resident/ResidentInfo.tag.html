@@ -1,7 +1,6 @@
 <app-residentinfo>
     <div>
-        <div class="img">
-            <img if="{ resident.picture != null }" src="{ resident.picture }">
+        <div class="img" if="{ resident.picture != null }" style="background-image: url('{ resident.picture }')">
         </div>
         <div class="identity">
             <div class="firstname">
