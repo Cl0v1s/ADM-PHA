@@ -1,14 +1,112 @@
+div[data-is=app-dmdetails] app-dm>div 
+{
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
 app-dm
 {
     font-family: 'Maxwell';
     display: block;
     width: 100%;
     text-align: left;
-    margin-top: 20px;
     font-size: 20px;
-    margin-left: 20px;
 }
 
+app-dm div 
+{
+    box-sizing: border-box;
+}
+
+app-dm .header 
+{
+    margin-top: 100px;
+    display: block;
+    height: 350px;
+    background-color: #6CC2CF;
+    padding-top: 0;
+}
+
+app-dm .header>div
+{
+    width: 30%;
+    height: 100%;
+    display: inline-block;
+} 
+
+app-dm .header .picture 
+{
+    display: block;
+    float: right;
+    width: 70%;
+    height: 100%;
+    background-size: cover; 
+    background-position: center;
+}
+
+app-dm>div
+{
+    margin-top: 100px;
+    display: block;
+    height: 350px; 
+    background-color: white;
+}
+
+app-dm>div h3
+{
+    font-size: 25px;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+}
+
+app-dm>div div.img 
+{
+    width: 30%;
+    height: 100%;
+    float: none;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+}
+
+app-dm>div div.img img 
+{
+    display: inline-block;
+    border-radius: 100%;
+    background-color: #6CC2CF;
+    padding: 20px;
+    width: auto;
+    max-height: 70%;
+    max-width: 100%;
+    vertical-align: top;
+    line-height: 350px;
+}
+
+
+
+
+app-dm>div span.divider 
+{
+    display: inline-block;
+    width: 1px;
+    height: 240px;
+	border-left: 1px solid #6CC2CF;
+	border-right: 1px solid #6CC2CF;
+	box-shadow: 4px 7px 16px 0px rgba(0,0,0,0.44);
+    padding: 0 !important;
+    margin: 0;
+    vertical-align: top;
+    
+}
+
+app-dm>div>div
+{
+    display: inline-block;
+    height: 100%;
+    vertical-align: top;
+    padding: 20px;
+} 
 
 
 
@@ -101,12 +199,7 @@ float: left;
 }
 
 .photoatdm p {
-	text-align: center;
-	color: #000000;
-	position: relative;
-top: 50%;
-transform: translateY(-50%);
-font-size: 15px;
+
 }
 
 .photoatdm h3 {
@@ -120,13 +213,7 @@ font-size: 25px;
 }
 
 .divider {
-	display: inline-block;
-  width: 1px;
-  height: 15em;
-	border-left: 1px solid #6CC2CF;
-	border-right: 1px solid #6CC2CF;
-	box-shadow: 4px 7px 16px 0px rgba(0,0,0,0.44);
-	padding: 0 !important;
+
 }
 #nomdmat {
 	font-family: 'Maxwell' !important;

@@ -1,13 +1,13 @@
 <app-dm>
-  <div>
-    <div class="header">
+  <div class="header">
+    <div>
       <p>
       { dm.name }
       </p>
       <p if="{ dm.type == 0 || dm.type == '0' }"  href="#dm/{dm.id}" class="button add">Dispositif médical</p>
       <p if="{ dm.type == 1 || dm.type == '1' }"  href="#at/{dm.id}" class="button add">Aide technique</p>
     </div>
-    <div style="background-image: url('{dm.picture}')"></div>
+    <div class="picture" style="background-image: url('{dm.picture}')"></div>
   </div>
 
     <div class="description">
