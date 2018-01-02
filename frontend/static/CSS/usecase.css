@@ -1,0 +1,22 @@
+div[data-is=app-usecase]
+{
+
+}
+
+div[data-is=app-usecase] app-dm
+{
+    display: block;
+    margin: 0;
+}
+
+div[data-is=app-usecase] app-dm #mainsectionphoto
+{
+    display: none;
+}
+
+div[data-is=app-usecase] app-dm .main_section
+{
+    width: 50%;
+    min-width: 520px;
+
+}

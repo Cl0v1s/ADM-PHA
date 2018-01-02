@@ -5,6 +5,7 @@ app-header {
 	color: #ffffff;
 	z-index: 10000;
 	position: fixed;
+	height: 110px;
 top: 0;
 }
 

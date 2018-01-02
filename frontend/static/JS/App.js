@@ -117,28 +117,24 @@ let App =
             App.PopIn = null;
             
         }
+        document.getElementById("app").classList.add("blur");
         var e = document.createElement("div");
         e.id = "popin";
-        e.class = "visible";
         document.body.appendChild(e);
-
-
-        
-
-
         App.PopIn = riot.mount("div#popin", tag, data);
+        e.classList.add("visible");
         var close = document.createElement("input");
         close.type = "button";
         close.value = "X";
         close.onclick = function(){
             App.hidePopIn();
         };
-
         e.appendChild(close);
     },
 
     hidePopIn : function()
     {
+        document.getElementById("app").classList.remove("blur");
         var e = document.getElementById("popin");
         if(e != null)
             e.remove();

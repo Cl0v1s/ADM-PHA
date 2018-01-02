@@ -24,8 +24,8 @@
             if(id == null || tag.usecases[id] == null)
                 return;
             let allowedTools = [];    
-            let requestAllowedTools = App.request(App.Address + "/tool_resident?$filter=Resident_id eq "+tag.resident.id);
-            let requestUseCase = App.request(App.Address + "/tool_usecase?$filter=Usecase_id eq "+tag.usecases[id].id);
+            let requestAllowedTools = App.request(App.Address + "/tool_resident?$filter=Resident_id eq "+tag.resident.id, null, "GET");
+            let requestUseCase = App.request(App.Address + "/tool_usecase?$filter=Usecase_id eq "+tag.usecases[id].id, null, "GET");
             let request = Promise.all([requestAllowedTools, requestUseCase]);
             request.then(function(response){ 
                 response[1].value.forEach(tool_usecase => {
