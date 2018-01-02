@@ -1,159 +1,86 @@
 <app-dm>
-  <div class="main_section" id="mainsectionphoto">
-    <div class="ui container">
-      <div class="ui grid photoatdmhead">
-        <div class="four wide column">
-          <div class="namedmat">
-              <p id="nomdmat">
-              { dm.name }
-              </p>
-              <p if="{ dm.type == 0 || dm.type == '0' }"  href="#dm/{dm.id}" class="button add">Dispositif médical</p>
-              <p if="{ dm.type == 1 || dm.type == '1' }"  href="#at/{dm.id}" class="button add">Aide technique</p>
-        </div>
-      </div>
-      <div class="twelve wide column dmpicture" id="no_padding" style="background-image: url('{dm.picture}')">
-      </div>
-      </div>
+  <div>
+    <div class="header">
+      <p>
+      { dm.name }
+      </p>
+      <p if="{ dm.type == 0 || dm.type == '0' }"  href="#dm/{dm.id}" class="button add">Dispositif médical</p>
+      <p if="{ dm.type == 1 || dm.type == '1' }"  href="#at/{dm.id}" class="button add">Aide technique</p>
     </div>
+    <div style="background-image: url('{dm.picture}')"></div>
   </div>
 
-<div class="main_section">
-<div class="ui container dmat">
-  <div class="ui grid photoatdm">
-    <div class="four wide column">
     <div class="description">
         <h3>Description</h3>
         <div class="img">
           <img alt="" src="../../static/IMG/desc.png"/>
         </div>
         <span class="divider"></span>
-      </div>
-    </div>
-      <div class="twelve wide column">
-            <p>
-                { dm.description }
-            </p>
+        <div>
+          {dm.description}
         </div>
     </div>
-  </div>
-</div>
-</div>
 
-<div class="main_section">
-<div class="ui container dmat">
-  <div class="ui grid photoatdm">
-    <div class="four wide column">
     <div class="autonomy">
       <h3>Degré d'autonomie</h3>
-        <div class="img">
-          <img alt="" src="../../static/IMG/autonomy.png"/>
-        </div>
+      <div class="img">
+        <img alt="" src="../../static/IMG/autonomy.png"/>
       </div>
       <span class="divider"></span>
-
+      <div>
+        {dm.autonomy}
+      </div>
     </div>
 
-    <div class="twelve wide column">
-            <p>
-                { dm.autonomy }
-            </p>
-        </div>
-    </div>
-  </div>
-</div>
-
-<div class="main_section">
-<div class="ui container dmat">
-  <div class="ui grid photoatdm">
-    <div class="four wide column">
     <div class="guide">
       <h3>Guide d'utilisation</h3>
-        <div class="img">
-          <img alt="" src="../../static/IMG/conseils.png"/>
-        </div>
+      <div class="img">
+        <img alt="" src="../../static/IMG/conseils.png"/>
       </div>
       <span class="divider"></span>
-
-    </div>
-
-    <div class="twelve wide column">
-            <p>
-                { dm.guide }
-            </p>
-        </div>
+      <div>
+        {dm.guide}
       </div>
     </div>
-  </div>
 
-<div class="main_section">
-<div class="ui container dmat">
-  <div class="ui grid photoatdm">
-    <div class="four wide column">
     <div class="invasive">
-      <h3>Caractère invasif</h3>
+        <h3>Caractère invasif</h3>
         <div class="img">
           <img alt="" src="../../static/IMG/invasif.png"/>
         </div>
-      </div>
-      <span class="divider"></span>
-
-    </div>
-
-        <div class="twelve wide column">
-            <p>
-                { dm.invasive }
-            </p>
+        <span class="divider"></span>
+        <div>
+          {dm.invasive}
         </div>
-    </div>
-  </div>
-</div>
+      </div>
 
-<div class="main_section">
-<div class="ui container dmat">
-  <div class="ui grid photoatdm">
-    <div class="four wide column">
-    <div class="advantages">
+      <div class="advantages">
       <h3>Avantages et inconvénients</h3>
-        <div class="img">
-          <img alt="" src="../../static/IMG/inconv.png"/>
+          <div class="img">
+            <img alt="" src="../../static/IMG/inconv.png"/>
+          </div>
+          <span class="divider"></span>
+          <div>
+            {dm.advantages}
+          </div>
         </div>
-      </div>
-      <span class="divider"></span>
 
-    </div>
-
-    <div class="twelve wide column">
-            <p>
-                { dm.advantages }
-            </p>
-        </div>
-    </div>
-  </div>
-</div>
-
-<div class="main_section">
-<div class="ui container dmat">
-  <div class="ui grid photoatdm">
-    <div class="four wide column ">
-    <div class="market">
+        <div class="price">
       <h3>Fabricants / prix</h3>
-        <div class="img">
-          <img alt="" src="../../static/IMG/price.png"/>
-        </div>
-      </div>
-      <span class="divider"></span>
+          
+                <div class="img">
+                  <img alt="" src="../../static/IMG/price.png"/>
+                </div>
+                <span class="divider"></span>
+                <div>
+                    <label>Prix moyen: { dm.price }€</label><br><br>
+                    <label>Fabricants</label>
+                    <p>
+                        <!--TODO: ajouter les informations sur les fabricants -->
+                    </p>
+                </div>
+              </div>
 
-    </div>
-    <div class="twelve wide column"  >
-                <label>Prix moyen: { dm.price }€</label><br><br>
-                <label>Fabricants</label>
-                <p>
-                    <!--TODO: ajouter les informations sur les fabricants -->
-                </p>
-        </div>
-    </div>
-  </div>
-</div>
 
     <div if="{ dm.comments != null }" class="comments">
         <h2>Commentaires</h2>

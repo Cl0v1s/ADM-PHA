@@ -10,3 +10,11 @@ app-residentlist app-residentitem
     display: inline-block;
     text-align: initial;
 }
+
+app-residentitem .picture 
+{
+    height: 260px;
+    width: 100%;
+    background-size: cover; 
+    background-position: center;
+}
