@@ -1,11 +1,16 @@
 <app-usecase>
-    <div>
+    <div class="header">
         <div>
-            { usecase.name }
+            <p>
+                { usecase.name }
+            </p>
+            <p>
+                Situation d'utilisation 
+            </p>
         </div>
-
+        <div class="picture {usecase.name}"></div>
     </div>
-    <div>
+    <div class="tools">
         <div each='{ tool in tools }' data-id='{ tool.id }' onclick='{ choose }'>{ tool.name }</div>
     </div>
     <app-dm if='{ tools.length > 0 }' dm='{ tools[0] }' ref="tool"></app-dm>
@@ -31,7 +36,7 @@
             let id = event.target.getAttribute("data-id");
             if(id == null)
                 return;
-            let request = App.request(App.Address+"/tool/"+id, null);
+            let request = App.request(App.Address+"/tool/"+id, null, "GET");
             request.then(function(response){
                 tag.refs.tool.dm = response.value;
                 tag.refs.tool.update();
