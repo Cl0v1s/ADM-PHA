@@ -126,6 +126,7 @@ let App =
         var close = document.createElement("input");
         close.type = "button";
         close.value = "X";
+        close.id = "close";
         close.onclick = function(){
             App.hidePopIn();
         };

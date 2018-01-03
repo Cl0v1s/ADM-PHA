@@ -52,10 +52,9 @@ app-dm>div
     text-align: left;
     background-color: white;
     border: 1px solid rgb(149,152, 154);
-    box-shadow: 0 1px 3px 0 #d4d4d5,0 5px 3px 1px #d4d4d5;
+    box-shadow: 0 5px 3px 1px #d4d4d5;
     
 }
-
 
 app-dm>div div.img 
 {
@@ -109,6 +108,44 @@ app-dm>div>div
     padding: 20px;
 } 
 
+app-dm .comments 
+{
+    display: block;
+    border: none;
+    box-shadow: none;
+    height: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 20px !important;
+}
+
+app-dm .comments app-commenteditform
+{
+    display: inline-block;
+    width: 49%;
+    height: 445px;
+}
+
+
+app-dm .comments app-comments
+{
+    display: inline-block;
+    width: 49%;
+    height: 445px;
+    
+}
+app-dm .comments>h2
+{
+    display: inline-block;
+    background-color: #6CC2CF;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px; 
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 1px 3px 0 #d4d4d5,0 5px 3px 1px #d4d4d5;
+}
 
 
 

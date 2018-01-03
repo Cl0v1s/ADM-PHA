@@ -98,8 +98,8 @@
 
 
     <div if="{ dm.comments != null }" class="comments">
-        <h2>Commentaires</h2>
-        <app-commentEditForm if="{ resident != null}" resident="{ resident }" dm="{ dm }" callback="{ afterComment }" ></app-commentEditForm>
+        <h2>Commentaires</h2><br>
+        <app-commentEditForm resident="{ resident }" dm="{ dm }" callback="{ afterComment }" ></app-commentEditForm>
         <app-comments comments="{ dm.comments }"></app-comments>
     </div>
 

@@ -1,0 +1,30 @@
+app-comments 
+{
+    display: block; 
+    width: 100%;
+    border: 1px solid rgb(149,152, 154);
+    box-shadow: 0 5px 3px 1px #d4d4d5;
+    overflow-y: scroll;
+}
+
+app-comments app-commentitem 
+{
+    display: block;
+    width: 80%;
+    border-bottom: 1px solid rgb(149,152, 154);
+    margin: auto;
+    box-sizing: content-box;
+    font-size: 15px;
+    margin-bottom: 10px;
+
+}
+
+app-comments app-commentitem>div
+{
+    margin-bottom: 10px;
+}
+
+app-comments app-commentitem>div:first-of-type
+{
+    font-weight: bold;
+}

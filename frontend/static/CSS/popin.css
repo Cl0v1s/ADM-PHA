@@ -19,6 +19,22 @@ div#popin.visible
     display: block;
 }
 
+div#popin #close 
+{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px;
+    width: auto;
+    height: auto;
+    font-size: 50px;
+    color: white;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding-right: 15px;
+}
+
 div#app.blur 
 {
     filter: blur(5px);
