@@ -40,6 +40,8 @@ $app->any('/v1.0/{collection}', function (Request $request, Response $response, 
     $collection = ucfirst($args["collection"]);
     $operation = ucfirst($request->getMethod());
     $params = null;
+    if($request->isOptions())
+        return $response;
     if($request->isGet())
     {
         $operation = "GetAll";
@@ -55,6 +57,8 @@ $app->any('/v1.0/{collection}/{id}', function(Request $request, Response $respon
     $collection = ucfirst($args["collection"]);
     $operation = ucfirst($request->getMethod());
     $params = null;
+    if($request->isOptions())
+        return $response;
     if($request->isGet())
     {
         $params = $request->getQueryParams();
