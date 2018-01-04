@@ -21,7 +21,6 @@ class Controller
      */
     public static function routeHandler(Request $request, Response $response, $next)
     {
-        $response = $response->withHeader("Content-Type", "application/json");
         $response = $response->withHeader("Access-Control-Allow-Origin", "*");
         $response = $response->withHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, PATCH, OPTIONS");
         $response = $response->withHeader("Access-Control-Allow-Headers", "*");
@@ -31,8 +30,13 @@ class Controller
         $response = $response->withHeader("Date", $date->format(DATE_RFC822));
         $route = $request->getAttribute("route");
 
+        if($request->isOptions() == false)
+            $response = $response->withHeader("Content-Type", "application/json");
+        
+
         if($request->isOptions())
             return $response;
+        
 
         try {
             if (empty($route)) {
