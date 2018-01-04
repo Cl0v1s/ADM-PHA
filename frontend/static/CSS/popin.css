@@ -33,6 +33,7 @@ div#popin #close
     background: none;
     cursor: pointer;
     padding-right: 15px;
+    box-shadow: none;
 }
 
 div#app.blur 

@@ -1,8 +1,10 @@
 <app-commenteditform>
     <form name="edit-comment">
-        <textarea name="content" ref="content">
-        </textarea>
-        <input type="button" value="Envoyer" onclick="{ validate }">
+        <textarea name="content" ref="content" placeholder="Commentaire..."></textarea>
+        <button class="ui button" onclick="{ validate }" style="display: block;
+        width: 106px;
+        margin: auto;
+        margin-top: 20px;">Envoyer</button>
     </form>
 
     <script>
@@ -25,8 +27,9 @@
                 tag.refs.content.value = tag.comment.content;
         });
 
-        tag.validate = function()
+        tag.validate = function(ev)
         {
+            ev.preventDefault();
             if(tag.refs.content.value.trim() == "")
             {
                 ErrorHandler.diagnosticForm(null);

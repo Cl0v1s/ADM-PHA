@@ -28,3 +28,11 @@ app-comments app-commentitem>div:first-of-type
 {
     font-weight: bold;
 }
+
+app-commenteditform button
+{
+    display: block;
+    width: 106px;
+    margin: auto;
+    margin-top: 20px;
+}

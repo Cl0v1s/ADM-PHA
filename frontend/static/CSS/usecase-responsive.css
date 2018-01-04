@@ -1,0 +1,11 @@
+@media screen and (max-width: 886px)
+{
+    div[data-is=app-usecase] app-dm>div 
+    {
+        display: block;
+        width: 90%;
+        margin: auto;
+        margin-bottom: 20px;
+        min-width: 0;
+    }
+}

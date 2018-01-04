@@ -13,13 +13,14 @@
     <div class="tools">
         <div each='{ tool in tools }' data-id='{ tool.id }' onclick='{ choose }'>{ tool.name }</div>
     </div>
-    <app-dm if='{ tools.length > 0 }' dm='{ tools[0] }' ref="tool"></app-dm>
+    <app-dm if='{ tools.length > 0 }' dm='{ tools[0] }' ref="tool" resident="{ resident }"></app-dm>
 
     <script>
         var tag = this;
         
         tag.usecase = null;
         tag.tools = null;
+        tag.resident = null;
 
         tag.on("before-mount", function(){
             tag.usecase = tag.opts.usecase;
@@ -28,6 +29,9 @@
             tag.tools = tag.opts.tools;
             if(tag.tools == null)
                 throw new Error("Tools cant be null.");
+            tag.resident = tag.opts.resident;
+            if(tag.resident == null)
+                throw new Error("Resident cant be null.");
         });
 
 

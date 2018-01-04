@@ -99,7 +99,7 @@
 
     <div if="{ dm.comments != null }" class="comments">
         <h2>Commentaires</h2><br>
-        <app-commentEditForm resident="{ resident }" dm="{ dm }" callback="{ afterComment }" ></app-commentEditForm>
+        <app-commenteditform resident="{ resident }" dm="{ dm }" callback="{ afterComment }" ></app-commenteditform>
         <app-comments comments="{ dm.comments }"></app-comments>
     </div>
 
@@ -114,14 +114,16 @@
             tag.dm = tag.opts.dm;
             if(tag.dm == null)
                 throw new Error("DM cant be null.");
+            if(tag.dm.comments != null)
+              tag.dm.comments.reverse();
             tag.resident = tag.opts.resident;
         });
 
         tag.afterComment = function(comment)
         {
-            if(dm.comments == null)
+            if(tag.dm.comments == null)
                 return;
-            dm.comments.push(comment);
+            tag.dm.comments.splice(0,0,comment);
             tag.update();
         }
 

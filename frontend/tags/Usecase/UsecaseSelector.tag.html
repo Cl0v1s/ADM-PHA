@@ -38,7 +38,8 @@
                 });
                 App.showPopIn("app-usecase", { 
                     "usecase" : tag.usecases[id],
-                    "tools" : allowedTools
+                    "tools" : allowedTools,
+                    "resident" : tag.resident
                 });
             });
             request.catch(function(error){

@@ -7,6 +7,7 @@
 @import 'header-responsive.css';
 @import 'popin.css';
 @import 'usecase.css';
+@import 'usecase-responsive.css';
 @import 'comments.css';
 
 /*		RESET CSS 		*/
@@ -93,6 +94,29 @@ div#app
 .awesomplete {
     width: 410px;
 }
+
+button, input[type=button]
+{
+	background-color: #6CC2CF;
+	box-shadow: 4px 7px 16px -3px rgba(0,0,0,0.44);
+}
+
+input[type=text], input[type=password], textarea
+{
+	box-shadow: 4px 7px 16px -3px rgba(0,0,0,0.44);
+	border-radius: 25px;
+}
+
+textarea
+{
+	width: 90%;
+    margin: auto;
+    display: block;
+	min-height: 250px;
+	padding: 20px;
+}
+
+
 
 
 /*		AT 	*/

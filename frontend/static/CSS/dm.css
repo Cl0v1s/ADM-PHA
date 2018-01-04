@@ -123,8 +123,10 @@ app-dm .comments
 app-dm .comments app-commenteditform
 {
     display: inline-block;
+    vertical-align: top;
     width: 49%;
     height: 445px;
+    padding-top: 20px;
 }
 
 
@@ -133,6 +135,7 @@ app-dm .comments app-comments
     display: inline-block;
     width: 49%;
     height: 445px;
+    padding-top: 20px;
     
 }
 app-dm .comments>h2

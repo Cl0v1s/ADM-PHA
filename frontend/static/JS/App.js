@@ -29,59 +29,55 @@ let App =
             var href=window.location.href;
             if(data == null)
                 data = {};
-            
-            var oReq = new XMLHttpRequest();
-            oReq.open(method, address, true);
-            //TODO: ajouter les headers
-            if(data != null && method != "GET")
-                oReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            
-            //oReq.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-            oReq.send(App.jsonToQuery(data));
 
-            oReq.onreadystatechange = function () 
-            {
-                var DONE = 4; // readyState 4 means the request is done.
-                var OK = 200; // status 200 is a successful return.
-                if (oReq.readyState === DONE) {
-                  if (oReq.status === OK) 
-                  {
-                      var response = JSON.parse(oReq.responseText);
-                        if(address.indexOf(App.Address) == -1)
-                        {
-                            resolve(response);
-                            return;
-                        }
-                        try
-                        {
-                            ErrorHandler.handle(response);
-                            resolve(response);
-                        }
-                        catch(error)
-                        {
-                            if(error.name == ErrorHandler.State.FATAL)
-                            {
-                                if(redirect)
-                                {
-                                    var message = encodeURI(error.message);
-                                    reject(ErrorHandler.State.FATAL);
-                                    route("/error/"+message);
-                                }
-                                else 
-                                {
-                                    ErrorHandler.alertIfError(error);
-                                }
-                            }
-                            else 
-                                reject(error);
-                    }
-                  } else {
-                    var message = encodeURI("Une erreur réseau a eu lieu. Vérifiez votre connexion et réessayez.");
-                    reject(ErrorHandler.State.FATAL);
-                    route("/error/"+message);
-                  }
-                }
+            options = {
+                method: method,
+                mode: 'cors',
             };
+
+            if(method != "GET" && method != "HEAD")
+            {
+                options.headers =  { 'Content-Type': 'application/json' };
+                options.body = JSON.stringify(data);
+            }
+
+            var request = fetch(address, options);
+            request.then(function(response){
+                response = response.json();
+                if(address.indexOf(App.Address) == -1)
+                {
+                    resolve(response);
+                    return;
+                }
+                try
+                {
+                    ErrorHandler.handle(response);
+                    resolve(response);
+                }
+                catch(error)
+                {
+                    if(error.name == ErrorHandler.State.FATAL)
+                    {
+                        if(redirect)
+                        {
+                            var message = encodeURI(error.message);
+                            reject(ErrorHandler.State.FATAL);
+                            route("/error/"+message);
+                        }
+                        else 
+                        {
+                            ErrorHandler.alertIfError(error);
+                        }
+                    }
+                    else 
+                        reject(error);
+                }
+            });
+            request.catch(function(error){
+                var message = encodeURI("Une erreur réseau a eu lieu. Vérifiez votre connexion et réessayez.");
+                reject(ErrorHandler.State.FATAL);
+                route("/error/"+message);
+            });
         });
     },
 
