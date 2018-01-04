@@ -1,0 +1,33 @@
+@media screen and (max-width: 1140px)
+{
+    div[data-is=app-dmdetails] app-dm>div 
+    {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    app-dm>div div.img img,
+    div[data-is=app-dm]>div div.img img 
+    {
+        transform: translate(-50%, -35%);
+    }    
+}
+
+@media screen and (max-width: 886px)
+{
+    div[data-is=app-dm]>div 
+    {
+        display: block;
+        width: 90%;
+        margin: auto;
+        margin-bottom: 20px;
+        min-width: 0;
+    }
+
+    div[data-is=app-dm] .header
+    {
+        width: 100%;
+        margin-bottom: 20px !important;
+    } 
+    
+}

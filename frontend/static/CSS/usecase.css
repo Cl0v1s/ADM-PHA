@@ -86,3 +86,11 @@ div[data-is=app-usecase] app-dm>div
     margin-bottom: 20px;
     margin-left: 30px;
 }
+
+div[data-is=app-usecase] app-dm>div div.img img 
+{
+    width: 70px;
+    height: 70px;
+    transform: translate(-50%, -35%);
+}
+

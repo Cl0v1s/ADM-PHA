@@ -1,5 +1,6 @@
 @import 'dms.css';
 @import 'dm.css';
+@import 'dm-responsive.css';
 @import 'residents.css';
 @import 'resident.css';
 @import 'resident-responsive.css';
@@ -92,7 +93,8 @@ div#app
 }
 
 .awesomplete {
-    width: 410px;
+	width: 90%;
+    max-width: 410px;
 }
 
 button, input[type=button]

@@ -8,10 +8,7 @@ app-header {
 top: 0;
 }
 
-app-header>div:hover 
-{
-	height: 110px;
-}
+
 
 
 app-header a {
