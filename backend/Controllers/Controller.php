@@ -23,7 +23,7 @@ class Controller
     {
         $response = $response->withHeader("Access-Control-Allow-Origin", "*");
         $response = $response->withHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, PATCH, OPTIONS");
-        $response = $response->withHeader("Access-Control-Allow-Headers", "*");
+        $response = $response->withHeader("Access-Control-Allow-Headers", "CONTENT-TYPE");
         //$response = $response->withHeader("Content-Encoding", "deflate");
         $date = new DateTime();
         $date->setTimezone(new DateTimeZone(DateTimeZone::listIdentifiers(DateTimeZone::UTC)[0]));
