@@ -70,7 +70,7 @@ let Router =
             let opts = {
                 results : data[0].value,
                 ats : data[1].value
-            }
+            };
             App.changePage("app-ats", opts);
         });
 
