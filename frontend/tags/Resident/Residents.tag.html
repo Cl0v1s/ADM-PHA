@@ -8,35 +8,55 @@
     <div class="ui container">
       <div class="ui category search">
         <div class="ui icon input">
-              <input list="residents" class="awesomplete" type="text" placeholder="Rechercher un dispositif médical..." ref="search"/>
+              <input list="residents" class="awesomplete" type="text" placeholder="Rechercher un résident..." ref="search"/>
+              <datalist id="residents">
+                <option each="{ resident in residents }">{ resident.firstname } { resident.lastname }</option>
+            </datalist>
           <i class="search icon" ></i>
         </div>
       </div>
 
-    <app-residentlist residents="{ residents }"></app-residentlist>
+    <app-residentlist residents="{ results }"></app-residentlist>
     <script>
         var tag = this;
 
+        tag.timer = null;
+
         tag.residents = null;
+        tag.results = null;
 
         tag.on("before-mount", function(){
+            tag.results = tag.opts.results;
+            if(tag.results == null)
+                throw new Error("Results cant be null.");
             tag.residents = tag.opts.residents;
             if(tag.residents == null)
                 throw new Error("Residents cant be null.");
         });
 
+        tag.on("mount", function(){
+            tag.refs.search.addEventListener("awesomplete-selectcomplete", tag.search);
+            tag.refs.search.addEventListener("keyup", tag.search);
+        });
+
+
         tag.search = function()
         {
-            var names = tag.refs.search.value.split(" ");
-            var filters = "";
-            for(var i = 0; i < names.length; i++)
+            if(tag.timer != null)
             {
-                filters += "firstname eq '*"+names[i]+"*' or lastname eq '*"+names[i]+"*' or "
+                clearTimeout(tag.timer);
             }
-            filters = filters.slice(0, -3);
-            Router.redirect("residents/"+filters);
+            tag.timer = setTimeout(() => {
+                var names = tag.refs.search.value.split(" ");
+                var filters = "";
+                for(var i = 0; i < names.length; i++)
+                {
+                    filters += "firstname eq '*"+names[i]+"*' or lastname eq '*"+names[i]+"*' or "
+                }
+                filters = filters.slice(0, -3);
+                Router.redirect("residents/"+filters);
+            }, 1000);
         };
-
     </script>
   </div>
 </div>

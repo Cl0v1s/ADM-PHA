@@ -83,10 +83,15 @@ let Router =
     {
         if(filters != "")
             filters = "?$filter="+filters;
-        let request = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/resident"+filters, null, "GET");
+        let requestResidents = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/resident", null, "GET");
+        let requestResults = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/resident"+filters, null, "GET");
+        let request = Promise.all([requestResidents, requestResults]);
         request.then(function(data)
         {
-            let opts = { residents : data.value};        
+            let opts = { 
+                residents : data[0].value,
+                results : data[1].value,
+            };        
             App.changePage("app-residents", opts);
             
         }); 
