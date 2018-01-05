@@ -20,6 +20,12 @@
 
 @media screen and (max-width: 950px)
 {
+
+    app-header:hover 
+    {
+        height: auto;
+    }
+
     app-header>div 
     {
         text-align: center;
@@ -33,6 +39,11 @@
         max-height: 365px;
         height: 100%;
     } 
+
+    app-header .ui.container.center-element
+    {
+        height: auto !important;
+    }    
     
 
     app-header img 
