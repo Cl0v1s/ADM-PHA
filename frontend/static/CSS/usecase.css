@@ -1,3 +1,58 @@
+app-usecaseselector .usecase 
+{
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px;
+}
+
+app-usecaseselector .usecase .name 
+{
+    text-align: center;
+}
+
+
+app-usecaseselector .usecase .picture
+{
+    display: block;
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    margin-top: 10px;
+    /* border: 1px solid; */
+    border: 1px solid rgb(149,152, 154);
+    background-size: 70% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+app-usecaseselector .usecase.chambre .picture
+{
+    background-image: url("./../IMG/bed.png");
+}
+
+app-usecaseselector .usecase.hygiène .picture
+{
+    background-image: url("./../IMG/shower.png");
+}
+
+app-usecaseselector .usecase.alimentation .picture
+{
+    background-image: url("./../IMG/cutlery.png");
+}
+
+app-usecaseselector .usecase.activités .picture
+{
+    background-image: url("./../IMG/two-men-meeting.png");
+}
+
+app-usecaseselector .usecase.extérieur .picture
+{
+    background-image: url("./../IMG/footprint.png");
+}
+
+
+
 div[data-is=app-usecase]
 {
 
