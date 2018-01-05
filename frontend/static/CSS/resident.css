@@ -92,6 +92,70 @@ div[data-is=app-resident] #informations
     margin-top: 20px;
 }  
 
+div.widgets>div
+{
+    margin-top: 20px;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    min-width: 240px;
+    /* width: 9%; */
+    margin-left: 10px;
+    padding: 20px;
+    vertical-align: top;
+    height: 200px;
+    box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+}
+
+div.widgets>div>div.name 
+{
+    color: white; 
+    font-size: 20px;
+    text-align: center;
+    text-decoration: underline;
+    font-family: "Helvetica";
+    z-index: 2;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+div.widgets>div app-userwidget, div.widgets>div app-dmwidget
+{
+    z-index: 2;
+    position: relative;
+}
+
+div.widgets>div::before
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image: url("./../IMG/widget.jpg");
+    opacity: 0.3;
+    z-index: 1;
+}
+
+
+div.widgets>div::after
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #6CC2CF;
+    z-index: 0;
+}
+
+
+
+
 /*
 /*		RESIDENTS 	
 

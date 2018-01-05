@@ -9,19 +9,19 @@
         <app-usecaseselector resident="{ resident }" usecases="{ usecases }"></app-usecaseselector>
         <div class="widgets">
             <div>
-                Professionnels
+                <div class="name">Professionnels</div>
                 <app-userwidget users="{ resident.pro }"></app-userwidget>
             </div>
             <div>
-                Personnel médical
+                <div class="name">Personnel médical</div>
                 <app-userwidget users="{ resident.perso }"></app-userwidget>
             </div>
             <div>
-                Dispositifs médicaux
+                <div class="name">Dispositifs médicaux</div>
                 <app-dmwidget dms="{ resident.dms }" resident="{ resident }"></app-dmwidget>
             </div>
             <div>
-                Aides techniques
+                <div class="name">Aides techniques</div>
                 <app-dmwidget dms="{ resident.ats }" resident="{ resident }"></app-dmwidget>
             </div>
         </div>

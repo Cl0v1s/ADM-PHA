@@ -1,0 +1,19 @@
+app-userwidget, app-dmwidget
+{
+    display: block;
+    overflow-y : scroll;
+    height: 80%;
+    padding: 10px;
+}
+
+app-userwidget .item, app-dmwidget .item
+{
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    font-family: "Helvetica";
+    border-radius: 25px;
+    color: #909090;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
