@@ -136,6 +136,14 @@ class APIController extends Controller
         $manager::Delete($id);
     }
 
+    /**
+     * Supprime l'item dont on a sélectionné l'id
+     * @param string $class
+     * @param string $operation : Suppression
+     * @param array $params : Manager, id
+     * @param Response $response
+     * @return Response
+     */
     private static function Put($manager, $data)
     {
         $c = new ReflectionClass($manager);
@@ -148,7 +156,14 @@ class APIController extends Controller
         }
         return $manager::Put(...$params);
     }
-
+    /**
+     * Supprime l'item dont on a sélectionné l'id
+     * @param string $class
+     * @param string $operation : Suppression
+     * @param array $params : Manager, id
+     * @param Response $response
+     * @return Response
+     */
     private static function Patch($manager, $id, $data)
     {
         $c = new ReflectionClass($manager);
