@@ -36,7 +36,11 @@ class Tool_UsecaseManager implements IModelManager
     {
         return ModelManager::Get("Tool_Usecase", $id);
     }
-
+    /**
+     * Supprime l'item dont on a saisi l'id en parametre
+     * @param $int id //identifiant de l'item
+     * @return Response $response // reponse de la requete
+     */
     public static function Delete($id)
     {
         ModelManager::Delete("Tool_Usecase", $id);

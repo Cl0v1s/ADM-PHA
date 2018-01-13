@@ -113,7 +113,12 @@ class ModelManager
         $storage->persist($item, StorageState::ToUpdate);
         $storage->flush();
     }
-
+    /**
+     * Supprime l'item dont on a saisi l'id en parametre
+     * @param $int id //identifiant de l'item
+     * @param $class //classe de l'item
+     * @return Response $response // reponse de la requete
+     */
     public static function Delete($class, $id)
     {
         $storage = Engine::Instance()->getPersistence("DatabaseStorage");

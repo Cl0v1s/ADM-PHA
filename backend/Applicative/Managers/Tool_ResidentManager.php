@@ -47,7 +47,11 @@ class Tool_ResidentManager implements IModelManager
     {
         return ModelManager::Get("Tool_Resident", $id);
     }
-
+    /**
+     * Supprime l'item dont on a saisi l'id en parametre
+     * @param $int id //identifiant de l'item
+     * @return Response $response // reponse de la requete
+     */
     public static function Delete($id)
     {
         return ModelManager::Delete("Tool_Resident", $id);
@@ -69,7 +73,13 @@ class Tool_ResidentManager implements IModelManager
         $item->setAnxiety($anxiety);
         return ModelManager::Put($item);
     }
-
+    /**
+     * Edite un item
+     * @param int $Tool_id //identifiant du tool
+     * @param string progress
+     * @param string anxiety
+     * @return Response $response // reponse de la requete
+     */
     public static function Patch($id, $progress = null, $anxiety = null)
     {
         $item = Tool_ResidentManager::Get($id);

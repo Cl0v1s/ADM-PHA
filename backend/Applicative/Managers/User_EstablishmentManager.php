@@ -26,7 +26,11 @@ class User_EstablishmentManager implements IModelManager
     {
         return ModelManager::Get("User_Establishment" , $id);
     }
-
+    /**
+     * Supprime l'item dont on a saisi l'id en parametre
+     * @param $int id //identifiant de l'item
+     * @return Response $response // reponse de la requete
+     */
     public static function Delete($id)
     {
         ModelManager::Delete("User_Establishment", $id);
