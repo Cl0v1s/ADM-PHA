@@ -66,12 +66,15 @@ class ResidentManager implements IModelManager
         return $resident;
     }
     /**
-     * Ajoute un item dont on a saisi le nom en parametre
-     * @param string $name //nom de l'item
-     * @param string lastname
-     * @param string firstname
-     * @param string lastname
-     * @param string lastname
+     * Ajoute un item dont on a saisi tous les parametres
+     * @param string $lastname //nom
+     * @param string $firstname //prenom
+     * @param int $age //age
+     * @param string $pathologies //pathologies
+     * @param string $autonomy //autonomie
+     * @param int $Establishment_id // identifiant de son etablissement
+     * @param healpan
+     * @param picture
      * @return Response $response // reponse de la requete
      */
 
@@ -88,7 +91,18 @@ class ResidentManager implements IModelManager
         $item->setPicture($picture);
         return ModelManager::Put($item);
     }
-
+    /**
+     * Edite un item dont on a saisi tous les parametres
+     * @param string $lastname //nom
+     * @param string $firstname //prenom
+     * @param int $age //age
+     * @param string $pathologies //pathologies
+     * @param string $autonomy //autonomie
+     * @param int $Establishment_id // identifiant de son etablissement
+     * @param healpan
+     * @param picture
+     * @return Response $response // reponse de la requete
+     */
     public static function Patch($id, $lastname, $firstname, $age, $pathologies, $autonomy, $Establishment_id, $healplan = null, $picture = null)
     {
         $item = ResidentManager::Get($id);

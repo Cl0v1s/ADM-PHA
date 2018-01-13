@@ -87,7 +87,7 @@ class ModelManager
     }
     /**
      * Ajoute un item dont on a saisi le nom en parametre
-     * @param string $item //nom de l'item
+     * @param string StorageItem $item //espace de stockage de l'item
      * @return Response $response // reponse de la requete
      */
 
@@ -99,7 +99,12 @@ class ModelManager
         $storage->flush();
         return $item->Id();
     }
-
+    /**
+     * Edite un item dont on a saisi le nom en parametre
+     * @param int $id //identifiant de l'item
+     * @param string StorageItem $item //espace de stockage de l'item
+     * @return Response $response // reponse de la requete
+     */
     public static function Patch($id, StorageItem $item)
     {
         $storage = Engine::Instance()->getPersistence("DatabaseStorage");

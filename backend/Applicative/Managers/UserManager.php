@@ -26,6 +26,16 @@ class UserManager implements IModelManager
     {
         return ModelManager::Get("User", $id);
     }
+    /**
+     * Ajoute un item
+     * @param string $lastname //nom
+     * @param string $firstname //prenom
+     * @param string $mail
+     * @param int $phone // numero de telephone
+     * @param string $group
+     * @param string $job
+     * @return Response $response // reponse de la requete
+     */
 
     public static function Put($lastname, $firstname, $mail, $phone, $group, $job)
     {

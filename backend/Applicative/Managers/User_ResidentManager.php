@@ -31,7 +31,12 @@ class User_ResidentManager implements IModelManager
     {
         ModelManager::Delete("User_Resident", $id);
     }
-
+    /**
+     * Ajoute un item
+     * @param int $User_id //identifiant de l'user
+     * @param int $Resident_id //identifiant du resident
+     * @return Response $response // reponse de la requete
+     */
     public static function Put($User_id, $Resident_id)
     {
         $item = new User_Resident(null);

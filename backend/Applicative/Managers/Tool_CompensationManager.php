@@ -29,7 +29,7 @@ class Tool_CompensationManager implements IModelManager
     }
     /**
      * Supprime l'item dont on a entré l'id en paramètre
-     * @param int $id
+     * @param int $id // identifiant de l'item
      * @return Response
      */
     public static function Delete($id)
@@ -38,8 +38,8 @@ class Tool_CompensationManager implements IModelManager
     }
     /**
      * Ajoute un item dont on a entré l'id en paramètre
-     * @param int $Tool_id
-     * @param int $Compensation_id
+     * @param int $Tool_id //identifiant du tool
+     * @param int $Compensation_id //identifiant de compensation
      * @return Response
      */
     public static function Put($Tool_id, $Compensation_id)

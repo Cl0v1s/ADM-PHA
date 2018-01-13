@@ -37,7 +37,12 @@ class CompensationManager implements IModelManager
         $item->setName($name);
         return ModelManager::Put($item);
     }
-
+    /**
+     * Edite un item dont on a saisi le nom en parametre
+     * @param int $id //identifiant de l'item
+     * @param string $name //nom de l'item
+     * @return Response $response // reponse de la requete
+     */
     public static function Patch($id, $name)
     {
         $item = CompensationManager::Get($id);

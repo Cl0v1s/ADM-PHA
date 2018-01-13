@@ -31,7 +31,12 @@ class User_EstablishmentManager implements IModelManager
     {
         ModelManager::Delete("User_Establishment", $id);
     }
-
+    /**
+     * Ajoute un item
+     * @param int $User_id //identifiant de l'user
+     * @param int $Establishment_id //identifiant de l'etablissement
+     * @return Response $response // reponse de la requete
+     */
     public static function Put($User_id, $Establishment_id)
     {
         $item = new User_Establishment(null);

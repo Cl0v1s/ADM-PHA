@@ -52,7 +52,14 @@ class Tool_ResidentManager implements IModelManager
     {
         return ModelManager::Delete("Tool_Resident", $id);
     }
-
+    /**
+     * Ajoute un item
+     * @param int $Tool_id //identifiant du tool
+     * @param int $Resident_id // identifiant du resident
+     * @param string progress
+     * @param string anxiety
+     * @return Response $response // reponse de la requete
+     */
     public static function Put($Tool_id, $Resident_id, $progress = null, $anxiety = null)
     {
         $item = new Tool_Resident(null);

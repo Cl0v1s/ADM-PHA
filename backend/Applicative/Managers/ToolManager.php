@@ -26,7 +26,22 @@ class ToolManager implements IModelManager
     {
         return ModelManager::Get("Tool", $id);
     }
-
+    /**
+     * Ajoute un item
+     * @param string name //nom de l'item
+     * @param string description
+     * @param string type
+     * @param picture
+     * @param string autonomy
+     * @param string guide
+     * @param string invasive
+     * @param string constructor
+     * @param string advantages
+     * @param int price
+     * @param string refund
+     * @param string humans
+     * @return Response $response // reponse de la requete
+     */
     public static function Put($name, $description, $type, $picture = null, $autonomy = null, $guide = null, $invasive = null, $constructor = null, $advantages = null, $price = null, $refund = null, $humans = null)
     {
         $item = new Tool(null);
@@ -44,7 +59,22 @@ class ToolManager implements IModelManager
         $item->setType($type);
         return ModelManager::Put($item);
     }
-
+    /**
+     * Edite un item
+     * @param string name //nom de l'item
+     * @param string description
+     * @param string type
+     * @param picture
+     * @param string autonomy
+     * @param string guide
+     * @param string invasive
+     * @param string constructor
+     * @param string advantages
+     * @param int price
+     * @param string refund
+     * @param string humans
+     * @return Response $response // reponse de la requete
+     */
     public static function Patch($id, $name, $description, $type, $picture, $autonomy = null, $guide = null, $invasive = null, $constructor = null, $advantages = null, $price = null, $refund = null, $humans = null)
     {
         $item = ToolManager::Get($id);

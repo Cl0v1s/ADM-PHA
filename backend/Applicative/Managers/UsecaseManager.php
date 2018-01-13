@@ -26,7 +26,11 @@ class UsecaseManager implements IModelManager
     {
         return ModelManager::Get("Usecase", $id);
     }
-
+    /**
+     * Ajoute un item dont on a saisi le nom en parametre
+     * @param string $name //nom de l'item
+     * @return Response $response // reponse de la requete
+     */
     public static function Put($name)
     {
         $item = new Usecase(null);

@@ -41,7 +41,12 @@ class Tool_UsecaseManager implements IModelManager
     {
         ModelManager::Delete("Tool_Usecase", $id);
     }
-
+    /**
+     * Ajoute un item
+     * @param int $Tool_id //identifiant du tool
+     * @param int $Usecase_id // identifiant du usecase
+     * @return Response $response // reponse de la requete
+     */
     public static function Put($Tool_id, $Usecase_id)
     {
         $item = new Tool_Usecase(null);

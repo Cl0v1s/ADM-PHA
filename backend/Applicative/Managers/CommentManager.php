@@ -44,7 +44,15 @@ class CommentManager implements IModelManager
         $item->setResidentId($Resident_id);
         return ModelManager::Put($item);
     }
-
+    /**
+     * Edite un item dont on a saisi l'id en parametre
+     * @param string $content
+     * @param int $User_id
+     * @param int $Resident_id
+     * @param int $Tool_id
+     * @param int $id //identifiant de l'item que l'on veut ajouter
+     * @return Response $response // reponse de la requete
+     */
     public static function Patch($id, $content, $User_id, $Resident_id, $Tool_id)
     {
         $item = CommentManager::Get($id);
