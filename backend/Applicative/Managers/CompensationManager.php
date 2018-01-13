@@ -49,7 +49,11 @@ class CompensationManager implements IModelManager
         $item->setName($name);
         ModelManager::Patch($id, $item);
     }
-
+    /**
+     * Supprime l'item dont on a saisi l'id en parametre
+     * @param $int id //identifiant de l'item
+     * @return Response $response // reponse de la requete
+     */
     public static function Delete( $id)
     {
         ModelManager::Delete("Compensation", $id);

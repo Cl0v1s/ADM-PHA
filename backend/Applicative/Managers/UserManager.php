@@ -48,7 +48,17 @@ class UserManager implements IModelManager
         $item->setJob($job);
         return ModelManager::Put($item);
     }
-
+    /**
+     * Edite un item
+     * @param int $id //identifiant de l'item
+     * @param string $lastname //nom
+     * @param string $firstname //prenom
+     * @param string $mail
+     * @param int $phone // numero de telephone
+     * @param string $group
+     * @param string $job
+     * @return Response $response // reponse de la requete
+     */
     public static function Patch($id, $lastname, $firstname, $mail, $phone, $group, $job)
     {
         $item = UserManager::Get($id);
@@ -60,7 +70,11 @@ class UserManager implements IModelManager
         $item->setJob($job);
         ModelManager::Patch($id, $item);
     }
-
+    /**
+     * Supprime l'item dont on a saisi l'id en parametre
+     * @param $int id //identifiant de l'item
+     * @return Response $response // reponse de la requete
+     */
     public static function Delete($id)
     {
         ModelManager::Delete("User", $id);

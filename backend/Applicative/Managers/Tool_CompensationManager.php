@@ -30,7 +30,7 @@ class Tool_CompensationManager implements IModelManager
     /**
      * Supprime l'item dont on a entré l'id en paramètre
      * @param int $id // identifiant de l'item
-     * @return Response
+     * @return Response //reponse de la requete
      */
     public static function Delete($id)
     {
