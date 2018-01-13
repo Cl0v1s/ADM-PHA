@@ -26,9 +26,9 @@ require_once 'Controllers/Controller.php';
 class APIController extends Controller
 {
     /**
-     * Kesskafé
+     * Exécute la fonction appelée dans operation (getall, put, patch, get, delete)
      * @param string $class 
-     * @param string $operation 
+     * @param string $operation //nature de l'action
      * @param array $params 
      * @param Response $response 
      * @return Response
@@ -109,12 +109,10 @@ class APIController extends Controller
     }
         
     /**
-     * Kesskafé
-     * @param string $class 
-     * @param string $operation 
-     * @param array $params 
-     * @param Response $response 
-     * @return Response
+     * Selectionne l'item dont on a saisi l'id en parametre
+     * @param string $manager // on saisit le manager qui nous interesse
+     * @param int $id //identifiant de l'item que l'on veut selectionner
+     * @return Response $response // reponse de la requete
      */
 
     private static function Get($manager, $id)
@@ -123,12 +121,10 @@ class APIController extends Controller
     }
 
     /**
-     * Supprime l'item dont on a sélectionné l'id
-     * @param string $class 
-     * @param string $operation : Suppression
-     * @param array $params : Manager, id
-     * @param Response $response 
-     * @return Response
+     * Supprime l'item dont on a saisi l'id en parametre dans le manager saisi en parametre
+     * @param string $manager // on saisit le manager qui nous interesse
+     * @param int $id //identifiant de l'item que l'on veut supprimer
+     * @return Response $response // reponse de la requete
      */
 
     private static function Delete($manager, $id)
@@ -137,12 +133,10 @@ class APIController extends Controller
     }
 
     /**
-     * Supprime l'item dont on a sélectionné l'id
-     * @param string $class
-     * @param string $operation : Suppression
-     * @param array $params : Manager, id
-     * @param Response $response
-     * @return Response
+     * Ajouter un item dont on a saisi l'id en parametre dans le manager que l'on a saisi en parametre
+     * @param string $manager // on saisit le manager qui nous interesse
+     * @param int $id //identifiant de l'item que l'on veut ajouter
+     * @return Response $response // reponse de la requete
      */
     private static function Put($manager, $data)
     {
@@ -157,12 +151,10 @@ class APIController extends Controller
         return $manager::Put(...$params);
     }
     /**
-     * Supprime l'item dont on a sélectionné l'id
-     * @param string $class
-     * @param string $operation : Suppression
-     * @param array $params : Manager, id
-     * @param Response $response
-     * @return Response
+     * Editer un item dont on a saisi l'id en parametre dans le manager que l'on a saisi en parametre
+     * @param string $manager // on saisit le manager qui nous interesse
+     * @param int $id //identifiant de l'item que l'on veut éditer
+     * @return Response $response // reponse de la requete
      */
     private static function Patch($manager, $id, $data)
     {

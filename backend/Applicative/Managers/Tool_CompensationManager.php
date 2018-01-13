@@ -10,18 +10,18 @@ class Tool_CompensationManager implements IModelManager
 {
 
     /**
-     * Selectionne tous les items de ce manager
-     * @param string $filters
-     * @return Response
+     * Selectionne tous les items avec une restriction
+     * @param string $filters //restriction exigée par l'utilisateur
+     * @return Response $response // reponse de la requete
      */
     public static function GetAll($filters)
     {
         return ModelManager::GetAll("Tool_Compensation");
     }
     /**
-     * Sélectionne l'item dont on a entré l'id en paramètre
-     * @param int $id
-     * @return Response
+     * Selectionne l'item dont on a saisi l'id en parametre
+     * @param int $id //identifiant de l'item que l'on veut selectionner
+     * @return Response $response // reponse de la requete
      */
     public static function Get($id)
     {

@@ -8,11 +8,20 @@
 
 class ResidentManager implements IModelManager
 {
+    /**
+     * Selectionne tous les items avec une restriction
+     * @param string $filters //restriction exigée par l'utilisateur
+     * @return Response $response // reponse de la requete
+     */
     public static function GetAll($filters)
     {
         return ModelManager::GetAll("Resident", $filters);
     }
-
+    /**
+     * Selectionne l'item dont on a saisi l'id en parametre
+     * @param int $id //identifiant de l'item que l'on veut selectionner
+     * @return Response $response // reponse de la requete
+     */
     public static function Get($id)
     {
         $resident =  ModelManager::Get("Resident", $id);
@@ -56,6 +65,15 @@ class ResidentManager implements IModelManager
 
         return $resident;
     }
+    /**
+     * Ajoute un item dont on a saisi le nom en parametre
+     * @param string $name //nom de l'item
+     * @param string lastname
+     * @param string firstname
+     * @param string lastname
+     * @param string lastname
+     * @return Response $response // reponse de la requete
+     */
 
     public static function Put($lastname, $firstname, $age, $pathologies, $autonomy, $Establishment_id, $healplan = null, $picture = null)
     {

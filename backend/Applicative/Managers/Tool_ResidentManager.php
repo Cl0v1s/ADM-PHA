@@ -8,7 +8,11 @@
 
 class Tool_ResidentManager implements IModelManager
 {
-
+    /**
+     * Selectionne tous les items avec une restriction
+     * @param string $filters //restriction exigée par l'utilisateur
+     * @return Response $response // reponse de la requete
+     */
     public static function GetAll($filters)
     {
         $links = ModelManager::GetAll("Tool_Resident", $filters);
@@ -34,7 +38,11 @@ class Tool_ResidentManager implements IModelManager
 
         return $results;
     }
-
+    /**
+     * Selectionne l'item dont on a saisi l'id en parametre
+     * @param int $id //identifiant de l'item que l'on veut selectionner
+     * @return Response $response // reponse de la requete
+     */
     public static function Get($id)
     {
         return ModelManager::Get("Tool_Resident", $id);
