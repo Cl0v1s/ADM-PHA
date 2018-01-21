@@ -1,11 +1,11 @@
-app-usecaseselector .usecase 
+app-usecaseselector .usecase
 {
     cursor: pointer;
     display: inline-block;
     margin: 10px;
 }
 
-app-usecaseselector .usecase .name 
+app-usecaseselector .usecase .name
 {
     text-align: center;
 }
@@ -58,10 +58,10 @@ div[data-is=app-usecase]
 
 }
 
-div[data-is=app-usecase] .header 
+div[data-is=app-usecase] .header
 {
     display: block;
-    height: 350px;
+    height: 220px;
     background-color: #6CC2CF;
     padding-top: 0;
 }
@@ -71,26 +71,48 @@ div[data-is=app-usecase] .header>div
     width: 30%;
     height: 100%;
     display: inline-block;
-} 
+}
 
-div[data-is=app-usecase] .header .picture 
+div[data-is=app-usecase] .header>div>p
+{
+    text-align: center;
+    color: #ffffff;
+}
+
+div[data-is=app-usecase] .header>div> p:first-of-type
+{
+    font-size: 55px;
+    font-family: 'Maxwell' !important;
+    margin-top: 60px;
+}
+
+div[data-is=app-usecase] .header>div> p
+{
+    font-size: 15px;
+    font-family: 'Helvetica';
+}
+
+
+
+
+div[data-is=app-usecase] .header .picture
 {
     display: block;
     float: right;
     width: 70%;
     height: 100%;
-    background-size: cover; 
+    background-size: cover;
     background-position: center;
 }
 
 /* TODO: définir ici les images des différents usecases */
-div[data-is=app-usecase] .header .picture.Chambre 
+div[data-is=app-usecase] .header .picture.Chambre
 {
     background-image: url("./../IMG/img_lists.jpg");
 }
 
 
-div[data-is=app-usecase] .tools 
+div[data-is=app-usecase] .tools
 {
     display: block;
     width: 100%;
@@ -98,16 +120,17 @@ div[data-is=app-usecase] .tools
     padding: 20px;
 }
 
-div[data-is=app-usecase] .tools>div 
+div[data-is=app-usecase] .tools>div
 {
     display: inline-block;
     background-color: #6CC2CF;
     padding: 5px;
     padding-left: 10px;
-    padding-right: 10px; 
+    padding-right: 10px;
     color: white;
     cursor: pointer;
     box-shadow: 0 1px 3px 0 #d4d4d5,0 5px 3px 1px #d4d4d5;
+    margin-right: 50px;
 }
 
 
@@ -142,10 +165,9 @@ div[data-is=app-usecase] app-dm>div
     margin-left: 30px;
 }
 
-div[data-is=app-usecase] app-dm>div div.img img 
+div[data-is=app-usecase] app-dm>div div.img img
 {
     width: 70px;
     height: 70px;
     transform: translate(-50%, -35%);
 }
-

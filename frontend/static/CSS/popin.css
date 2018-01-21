@@ -13,13 +13,13 @@ div#popin
     box-shadow: 0 1px 3px 0 #d4d4d5,0 0 0 1px #d4d4d5;
     display: none;
 }
- 
+
 div#popin.visible
 {
     display: block;
 }
 
-div#popin #close 
+div#popin #close
 {
     position: absolute;
     right: 0;
@@ -36,7 +36,7 @@ div#popin #close
     box-shadow: none;
 }
 
-div#app.blur 
+div#app.blur
 {
     filter: blur(5px);
 }
