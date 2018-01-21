@@ -17,10 +17,10 @@ div[data-is=app-dmdetails]>div>div>#price
 app-dm,
 div[data-is=app-dm]
 {
-    font-family: 'Maxwell';
+    font-family: 'Helvetica';
     display: block;
     width: 100%;
-    text-align: left;
+    text-align: center;
     font-size: 20px;
 }
 
@@ -39,8 +39,15 @@ div[data-is=app-dm] .header
     background-color: #6CC2CF;
     padding-top: 0;
     color: #ffffff;
-    text-align: center;
+    text-align: right;
 }
+
+div[data-is="app-dm"] .header > div > div p {
+  font-family: 'Maxwell';
+}
+
+
+
 
 div[data-is=app-dm] .header
 {
@@ -111,6 +118,7 @@ div[data-is=app-dm]>div div.img img
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 0 2px 1px 1px #d4d4d5;
 }
 
 
@@ -124,7 +132,7 @@ div[data-is=app-dm]>div span.divider
     height: 70%;
 	border-left: 1px solid #6CC2CF;
 	border-right: 1px solid #6CC2CF;
-	box-shadow: 4px 7px 16px 0px rgba(0,0,0,0.44);
+	box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.44);
     padding: 0 !important;
     margin: 0;
     vertical-align: middle;
