@@ -8,16 +8,40 @@
 
 class ToolManager implements IModelManager
 {
+    /**
+     * Selectionne tous les items avec une restriction
+     * @param string $filters //restriction exigée par l'utilisateur
+     * @return Response $response // reponse de la requete
+     */
     public static function GetAll($filters)
     {
         return ModelManager::GetAll("Tool", $filters);
     }
-
+    /**
+     * Selectionne l'item dont on a saisi l'id en parametre
+     * @param int $id //identifiant de l'item que l'on veut selectionner
+     * @return Response $response // reponse de la requete
+     */
     public static function Get($id)
     {
         return ModelManager::Get("Tool", $id);
     }
-
+    /**
+     * Ajoute un item
+     * @param string name //nom de l'item
+     * @param string description
+     * @param string type
+     * @param picture
+     * @param string autonomy
+     * @param string guide
+     * @param string invasive
+     * @param string constructor
+     * @param string advantages
+     * @param int price
+     * @param string refund
+     * @param string humans
+     * @return Response $response // reponse de la requete
+     */
     public static function Put($name, $description, $type, $picture = null, $autonomy = null, $guide = null, $invasive = null, $constructor = null, $advantages = null, $price = null, $refund = null, $humans = null)
     {
         $item = new Tool(null);
@@ -35,7 +59,22 @@ class ToolManager implements IModelManager
         $item->setType($type);
         return ModelManager::Put($item);
     }
-
+    /**
+     * Edite un item
+     * @param string name //nom de l'item
+     * @param string description
+     * @param string type
+     * @param picture
+     * @param string autonomy
+     * @param string guide
+     * @param string invasive
+     * @param string constructor
+     * @param string advantages
+     * @param int price
+     * @param string refund
+     * @param string humans
+     * @return Response $response // reponse de la requete
+     */
     public static function Patch($id, $name, $description, $type, $picture, $autonomy = null, $guide = null, $invasive = null, $constructor = null, $advantages = null, $price = null, $refund = null, $humans = null)
     {
         $item = ToolManager::Get($id);
@@ -53,7 +92,11 @@ class ToolManager implements IModelManager
         $item->setPicture($picture);
         ModelManager::Patch($id, $item);
     }
-
+    /**
+     * Supprime l'item dont on a saisi l'id en parametre
+     * @param $int id //identifiant de l'item
+     * @return Response $response // reponse de la requete
+     */
     public static function Delete($id)
     {
         ModelManager::Delete("Tool", $id);

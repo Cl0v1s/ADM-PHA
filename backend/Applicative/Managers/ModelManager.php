@@ -60,6 +60,11 @@ class ModelManager
     }
 
 
+    /**
+     * Selectionne tous les items avec une restriction
+     * @param string $filters //restriction exigée par l'utilisateur
+     * @return Response $response // reponse de la requete
+     */
     public static function GetAll($class, $filters)
     {
         $storage = Engine::Instance()->getPersistence("DatabaseStorage");
@@ -68,7 +73,11 @@ class ModelManager
         $storage->findAll($class, $items, $filters);
         return $items;
     }
-
+    /**
+     * Selectionne l'item dont on a saisi l'id en parametre
+     * @param int $id //identifiant de l'item que l'on veut selectionner
+     * @return Response $response // reponse de la requete
+     */
     public static function Get($class, $id)
     {
         $storage = Engine::Instance()->getPersistence("DatabaseStorage");
@@ -76,6 +85,11 @@ class ModelManager
         $item = $storage->find($item);
         return $item;
     }
+    /**
+     * Ajoute un item dont on a saisi le nom en parametre
+     * @param string StorageItem $item //espace de stockage de l'item
+     * @return Response $response // reponse de la requete
+     */
 
     public static function Put(StorageItem $item)
     {
@@ -85,7 +99,12 @@ class ModelManager
         $storage->flush();
         return $item->Id();
     }
-
+    /**
+     * Edite un item dont on a saisi le nom en parametre
+     * @param int $id //identifiant de l'item
+     * @param string StorageItem $item //espace de stockage de l'item
+     * @return Response $response // reponse de la requete
+     */
     public static function Patch($id, StorageItem $item)
     {
         $storage = Engine::Instance()->getPersistence("DatabaseStorage");
@@ -94,7 +113,12 @@ class ModelManager
         $storage->persist($item, StorageState::ToUpdate);
         $storage->flush();
     }
-
+    /**
+     * Supprime l'item dont on a saisi l'id en parametre
+     * @param $int id //identifiant de l'item
+     * @param $class //classe de l'item
+     * @return Response $response // reponse de la requete
+     */
     public static function Delete($class, $id)
     {
         $storage = Engine::Instance()->getPersistence("DatabaseStorage");

@@ -8,22 +8,39 @@
 
 class User_EstablishmentManager implements IModelManager
 {
-
+    /**
+     * Selectionne tous les items avec une restriction
+     * @param string $filters //restriction exigée par l'utilisateur
+     * @return Response $response // reponse de la requete
+     */
     public static function GetAll($filters)
     {
         return ModelManager::GetAll("User_Establishment", $filters);
     }
-
+    /**
+     * Selectionne l'item dont on a saisi l'id en parametre
+     * @param int $id //identifiant de l'item que l'on veut selectionner
+     * @return Response $response // reponse de la requete
+     */
     public static function Get($id)
     {
         return ModelManager::Get("User_Establishment" , $id);
     }
-
+    /**
+     * Supprime l'item dont on a saisi l'id en parametre
+     * @param $int id //identifiant de l'item
+     * @return Response $response // reponse de la requete
+     */
     public static function Delete($id)
     {
         ModelManager::Delete("User_Establishment", $id);
     }
-
+    /**
+     * Ajoute un item
+     * @param int $User_id //identifiant de l'user
+     * @param int $Establishment_id //identifiant de l'etablissement
+     * @return Response $response // reponse de la requete
+     */
     public static function Put($User_id, $Establishment_id)
     {
         $item = new User_Establishment(null);

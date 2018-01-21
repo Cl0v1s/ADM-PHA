@@ -19,11 +19,13 @@ let Router =
     // Définition des fonctions de route
     routeIndex : function()
     {
+        App.hidePopIn();
         App.changePage("app-index", null);
     },
 
     routeDMs : function(filters = "")
     {
+        App.hidePopIn();
         if(filters != "")
             filters = " and "+filters;
         let requestResults = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool?$filter=type eq 0"+filters, null, "GET");
@@ -45,6 +47,7 @@ let Router =
 
     routeDM : function(id)
     {
+        App.hidePopIn();
         let request = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool/"+id, null, "GET");
         request.then(function(data){
             let opts = {
@@ -60,6 +63,7 @@ let Router =
    
     routeATs : function(filters = "")
     {
+        App.hidePopIn();
         if(filters != "")
             filters = " and "+filters;
         let requestResults = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool?$filter=type eq 1"+filters, null, "GET");
@@ -81,6 +85,7 @@ let Router =
 
     routeResidents : function(filters = "")
     {
+        App.hidePopIn();
         if(filters != "")
             filters = "?$filter="+filters;
         let requestResidents = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/resident", null, "GET");
@@ -103,6 +108,7 @@ let Router =
 
     routeResident : function(id)
     {
+        App.hidePopIn();
         let requestUsecase = App.request(App.Address + "/usecase", null, "GET");
         let requestResident = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/resident/"+id, null, "GET");
         let request = Promise.all([requestResident, requestUsecase]);
