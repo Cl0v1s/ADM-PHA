@@ -13,7 +13,7 @@ div[data-is=app-resident] #status
     box-sizing: border-box;
     padding: 20px;
     vertical-align: top;
-}  
+}
 
 div[data-is=app-resident] app-residentinfo
 {
@@ -70,9 +70,9 @@ div[data-is=app-resident] app-residentinfo div.img
     width: 100%;
     height: 300px;
     box-shadow: 0 1px 3px 0 #d4d4d5,0 0 0 1px #d4d4d5;
-    background-size: cover; 
+    background-size: cover;
     background-position: center;
-} 
+}
 
 
 
@@ -90,7 +90,8 @@ div[data-is=app-resident] #informations
     box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
     vertical-align: top;
     margin-top: 20px;
-}  
+    margin-bottom: 20px;
+}
 
 div.widgets>div
 {
@@ -107,9 +108,9 @@ div.widgets>div
     box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
 }
 
-div.widgets>div>div.name 
+div.widgets>div>div.name
 {
-    color: white; 
+    color: white;
     font-size: 20px;
     text-align: center;
     text-decoration: underline;
@@ -157,7 +158,7 @@ div.widgets>div::after
 
 
 /*
-/*		RESIDENTS 	
+/*		RESIDENTS
 
 #imagelistresidents{
 	background-image: url("../IMG/img_lists.jpg");
