@@ -61,6 +61,7 @@ class Resident extends StorageItem
      */
     public $picture;
 
+
     /**
      * @return mixed
      */
