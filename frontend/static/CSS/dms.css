@@ -21,16 +21,17 @@ app-dmlist
 }
 
 
-app-dmlist app-dmitem 
+app-dmlist app-dmitem
 {
     display: inline-block;
     text-align: initial;
+		margin-right: 20px;
 }
 
-app-dmitem .picture 
+app-dmitem .picture
 {
     height: 260px;
     width: 100%;
-    background-size: cover; 
+    background-size: cover;
     background-position: center;
 }
