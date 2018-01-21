@@ -38,6 +38,8 @@ div[data-is=app-dm] .header
     height: 350px;
     background-color: #6CC2CF;
     padding-top: 0;
+    color: #ffffff;
+    text-align: center;
 }
 
 div[data-is=app-dm] .header
@@ -144,12 +146,6 @@ div[data-is=app-dm]>div>div p
     font-size: 15px;
 }
 
-app-dm>div>div>p label,
-div[data-is=app-dm]>div>div>p label
-{
-    font-family: 'Maxwell';
-    font-size: 20px;
-}
 
 
 app-dm .comments,

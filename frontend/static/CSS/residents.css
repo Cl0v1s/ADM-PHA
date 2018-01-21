@@ -19,3 +19,14 @@ app-residentitem .picture
     background-size: cover;
     background-position: center;
 }
+
+.ui.card  {
+  text-align: center !important;
+  background-color: #F2F2F2;
+  border-radius: 0 !important;
+}
+
+.ui.card > .content > .description {
+  font-size: 20px;
+  font-family: 'Maxwell';
+}
