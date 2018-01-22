@@ -143,7 +143,9 @@
                     {
                         let tool_resident = response[0].value[i];
                         if(tool_resident.tool.id == tool_usecase.tool.id)
+                        {
                             allowedTools.push(tool_resident.tool);
+                        }
                     }
                 });
                 App.showPopIn("app-usecase", { 

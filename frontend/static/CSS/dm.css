@@ -83,7 +83,7 @@ div[data-is=app-dm] .header .picture
     float: right;
     width: 70%;
     height: 100%;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
 }
 
@@ -159,6 +159,7 @@ div[data-is=app-dm]>div>div
     display: inline-block;
     vertical-align: middle;
     padding: 20px;
+    width: 60%;
 }
 
 app-dm>div>div p,

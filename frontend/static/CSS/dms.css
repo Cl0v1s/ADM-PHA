@@ -26,6 +26,7 @@ app-dmlist app-dmitem
     display: inline-block;
     text-align: initial;
 		margin-right: 20px;
+		margin-bottom: 20px;
 }
 
 app-dmitem .picture

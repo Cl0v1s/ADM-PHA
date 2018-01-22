@@ -26,6 +26,7 @@ let App =
     {
         return new Promise(function(resolve, reject)
         {
+            App.showLoading();
             var href=window.location.href;
             if(data == null)
                 data = {};
@@ -43,6 +44,7 @@ let App =
 
             var request = fetch(address, options);
             request.then(function(response){
+                App.hideLoading();
                 response = response.json();
                 if(address.indexOf(App.Address) == -1)
                 {
@@ -74,6 +76,7 @@ let App =
                 }
             });
             request.catch(function(error){
+                App.hideLoading();
                 var message = encodeURI("Une erreur réseau a eu lieu. Vérifiez votre connexion et réessayez.");
                 reject(ErrorHandler.State.FATAL);
                 route("/error/"+message);
@@ -135,6 +138,30 @@ let App =
         var e = document.getElementById("popin");
         if(e != null)
             e.remove();
+    },
+
+    LoadingCounter : 0,
+
+    showLoading : function()
+    {
+        App.LoadingCounter++;
+        if(document.getElementById("loading") != null)
+            return;
+        var e = document.createElement("div");
+        e.id = "loading";
+        document.body.appendChild(e);
+    },
+
+    hideLoading()
+    {
+        App.LoadingCounter--;
+        if(App.LoadingCounter > 0)
+            return;
+        var e = document.getElementById("loading");
+        if(e == null)
+            return;
+        e.remove();
+        App.LoadingCounter = 0;
     },
 
     showNotification : function(message)

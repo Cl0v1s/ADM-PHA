@@ -10,6 +10,7 @@ app-residentlist app-residentitem
     display: inline-block;
     text-align: initial;
     margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 app-residentitem .picture

@@ -124,21 +124,23 @@ div[data-is=app-usecase] .tools
 div[data-is=app-usecase] .tools>div
 {
     display: inline-block;
-    background-color: #6CC2CF;
+      background-color: #E7E7E8;
+  color: #515558;
+    
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    color: white;
     cursor: pointer;
     box-shadow: 0 1px 3px 0 #d4d4d5,0 5px 3px 1px #d4d4d5;
-    margin-right: 50px;
+    margin-right: 25px;
 }
 
 
 /* Pour une case séléctionnée dans la popin */
-div[data-is="app-usecase"] .tools > div > #selected {
-  background-color: #E7E7E8;
-  color: #515558;
+
+div[data-is="app-usecase"] .tools > div.selected {
+    background-color: #6CC2CF;
+    color: white;
 }
 
 div[data-is=app-usecase] app-dm

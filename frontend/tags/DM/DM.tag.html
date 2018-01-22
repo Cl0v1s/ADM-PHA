@@ -45,7 +45,7 @@
       <span class="divider"></span>
       <div>
         <p>
-        {dm.guide}
+          <a href="{dm.guide}" target="_blank">Lien vers la notice d'utilisation</a>
         </p>
       </div>
     </div>
@@ -88,13 +88,15 @@
                 <div>
                   <p>
                     <label>Prix moyen: { dm.price }€</label><br><br>
-                    <label>Fabricants</label>
+                    <label>Fabricants</label><br>
                     <p>
-                        <!--TODO: ajouter les informations sur les fabricants -->
+                        {dm.constructor}
                     </p>
                     </p>
                 </div>
-              </div>
+        </div>
+
+        
 
 
     <div if="{ dm.comments != null }" class="comments">
