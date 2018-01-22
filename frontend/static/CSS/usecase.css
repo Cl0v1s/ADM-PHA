@@ -106,11 +106,57 @@ div[data-is=app-usecase] .header .picture
     background-position: center;
 }
 
-/* TODO: définir ici les images des différents usecases */
 div[data-is=app-usecase] .header .picture.Chambre
 {
-    background-image: url("./../IMG/img_lists.jpg");
+    background-image: url("./../IMG/chambre.jpg");
 }
+
+div[data-is=app-usecase] .header .picture.Hygiène
+{
+    background-image: url("./../IMG/hygiene.jpg");
+}
+
+div[data-is=app-usecase] .header .picture.Alimentation
+{
+    background-image: url("./../IMG/food.jpg");
+}
+div[data-is=app-usecase] .header .picture.Activités
+{
+    background-image: url("./../IMG/activities.jpg");
+}
+div[data-is=app-usecase] .header .picture.Extérieur
+{
+    background-image: url("./../IMG/outside.jpg");
+}
+div[data-is=app-usecase] .header .picture.Tête
+{
+    background-image: url("./../IMG/head.jpg");
+}
+div[data-is=app-usecase] .header .picture.Torse
+{
+    background-image: url("./../IMG/chest.jpg");
+}
+div[data-is=app-usecase] .header .picture.Bras
+{
+    background-image: url("./../IMG/arms.jpg");
+}
+div[data-is=app-usecase] .header .picture.Mains
+{
+    background-image: url("./../IMG/hand.jpg");
+}
+div[data-is=app-usecase] .header .picture.Jambes
+{
+    background-image: url("./../IMG/legs.jpg");
+}
+div[data-is=app-usecase] .header .picture.Pieds
+{
+    background-image: url("./../IMG/foot.jpg");
+}
+
+
+
+
+
 
 
 div[data-is=app-usecase] .tools
