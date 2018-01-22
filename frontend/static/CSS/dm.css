@@ -47,6 +47,7 @@ div[data-is=app-dm] .header > div >p
     color: #ffffff;
 }
 
+app-dm .header>div> p:first-of-type,
 div[data-is=app-dm] .header>div> p:first-of-type
 {
     font-size: 55px;
@@ -54,6 +55,7 @@ div[data-is=app-dm] .header>div> p:first-of-type
     margin-top: 60px;
 }
 
+app-dm .header>div> p,
 div[data-is=app-dm] .header>div> p
 {
     font-size: 15px;
@@ -160,6 +162,9 @@ div[data-is=app-dm]>div>div
     vertical-align: middle;
     padding: 20px;
     width: 60%;
+    overflow-y: auto;
+    max-height: 110px;
+
 }
 
 app-dm>div>div p,
