@@ -53,6 +53,7 @@ app-usecaseselector .usecase.extérieur .picture
 
 
 
+
 div[data-is=app-usecase]
 {
 
@@ -134,7 +135,11 @@ div[data-is=app-usecase] .tools>div
 }
 
 
-
+/* Pour une case séléctionnée dans la popin */
+div[data-is="app-usecase"] .tools > div > #selected {
+  background-color: #E7E7E8;
+  color: #515558;
+}
 
 div[data-is=app-usecase] app-dm
 {
