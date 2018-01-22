@@ -162,8 +162,7 @@ div[data-is=app-dm]>div>div
     vertical-align: middle;
     padding: 20px;
     width: 60%;
-    overflow-y: auto;
-    max-height: 110px;
+
 
 }
 
@@ -172,6 +171,8 @@ div[data-is=app-dm]>div>div p
 {
     font-family: "helvetica";
     font-size: 15px;
+    overflow-y: auto;
+    max-height: 110px;
 }
 
 
