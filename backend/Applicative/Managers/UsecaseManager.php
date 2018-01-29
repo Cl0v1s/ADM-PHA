@@ -41,7 +41,6 @@ class UsecaseManager implements IModelManager
      * Edite un item dont on a saisi le nom et l'id en parametre
      * @param string $name //nom de l'item
      * @param $id // identifiant de l'item
-     * @return Response $response // reponse de la requete
      */
     public static function Patch($id, $name)
     {
@@ -52,7 +51,6 @@ class UsecaseManager implements IModelManager
     /**
      * Supprime l'item dont on a saisi l'id en parametre
      * @param $int id //identifiant de l'item
-     * @return Response $response // reponse de la requete
      */
     public static function Delete($id)
     {

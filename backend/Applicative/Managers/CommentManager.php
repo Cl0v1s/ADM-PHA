@@ -27,11 +27,11 @@ class CommentManager implements IModelManager
         return ModelManager::Get("Comment", $id);
     }
     /**
-     * Ajoute un item dont on a saisi l'id en parametre
-     * @param string $content
-     * @param int $User_id
-     * @param int $Resident_id
-     * @param int $Tool_id
+     * Ajoute un item
+     * @param string $content Contenu du commentaire 
+     * @param int $User_id Id de l'user qui poste
+     * @param int $Resident_id Id du resident concerné 
+     * @param int $Tool_id Id de l'outil concerné 
      * @param int $id //identifiant de l'item que l'on veut ajouter
      * @return Response $response // reponse de la requete
      */
@@ -46,12 +46,11 @@ class CommentManager implements IModelManager
     }
     /**
      * Edite un item dont on a saisi l'id en parametre
-     * @param string $content
-     * @param int $User_id
-     * @param int $Resident_id
-     * @param int $Tool_id
+     * @param string $content Contenu du commentaire 
+     * @param int $User_id Id de l'user qui poste
+     * @param int $Resident_id Id du resident concerné 
+     * @param int $Tool_id Id de l'outil concerné 
      * @param int $id //identifiant de l'item que l'on veut ajouter
-     * @return Response $response // reponse de la requete
      */
     public static function Patch($id, $content, $User_id, $Resident_id, $Tool_id)
     {
@@ -65,7 +64,6 @@ class CommentManager implements IModelManager
     /**
      * Supprime l'item dont on a saisi l'id en parametre
      * @param $int id //identifiant de l'item
-     * @return Response $response // reponse de la requete
      */
     public static function Delete( $id)
     {

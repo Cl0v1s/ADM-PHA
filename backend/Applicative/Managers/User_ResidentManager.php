@@ -29,7 +29,6 @@ class User_ResidentManager implements IModelManager
     /**
      * Supprime l'item dont on a saisi l'id en parametre
      * @param $int id //identifiant de l'item
-     * @return Response $response // reponse de la requete
      */
     public static function Delete($id)
     {

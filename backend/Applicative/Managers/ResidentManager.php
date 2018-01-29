@@ -73,8 +73,8 @@ class ResidentManager implements IModelManager
      * @param string $pathologies //pathologies
      * @param string $autonomy //autonomie
      * @param int $Establishment_id // identifiant de son etablissement
-     * @param healpan
-     * @param picture
+     * @param healpan Plan de soin 
+     * @param picture Photo de profil
      * @return Response $response // reponse de la requete
      */
 
@@ -101,7 +101,6 @@ class ResidentManager implements IModelManager
      * @param int $Establishment_id // identifiant de son etablissement
      * @param healpan
      * @param picture
-     * @return Response $response // reponse de la requete
      */
     public static function Patch($id, $lastname, $firstname, $age, $pathologies, $autonomy, $Establishment_id, $healplan = null, $picture = null)
     {
@@ -119,7 +118,6 @@ class ResidentManager implements IModelManager
     /**
      * Supprime l'item dont on a saisi l'id en parametre
      * @param $int id //identifiant de l'item
-     * @return Response $response // reponse de la requete
      */
     public static function Delete($id)
     {

@@ -9,6 +9,11 @@
 class ModelManager
 {
 
+    /**
+     * Construit une clause where SQL à partir d'un filtre microsoft API
+     * @param string $filters //restriction exigée par l'utilisateur
+     * @return Response $response // clause sql compatible
+     */
     private static function buildSQLWhere($filters)
     {
         $filters = str_replace("*", "%", $filters);
@@ -87,7 +92,7 @@ class ModelManager
     }
     /**
      * Ajoute un item dont on a saisi le nom en parametre
-     * @param string StorageItem $item //espace de stockage de l'item
+     * @param string StorageItem $item //Item à stocker
      * @return Response $response // reponse de la requete
      */
 
@@ -102,8 +107,7 @@ class ModelManager
     /**
      * Edite un item dont on a saisi le nom en parametre
      * @param int $id //identifiant de l'item
-     * @param string StorageItem $item //espace de stockage de l'item
-     * @return Response $response // reponse de la requete
+     * @param string StorageItem $item //item à stocker
      */
     public static function Patch($id, StorageItem $item)
     {

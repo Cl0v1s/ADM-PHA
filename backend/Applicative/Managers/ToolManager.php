@@ -29,17 +29,17 @@ class ToolManager implements IModelManager
     /**
      * Ajoute un item
      * @param string name //nom de l'item
-     * @param string description
-     * @param string type
-     * @param picture
-     * @param string autonomy
-     * @param string guide
-     * @param string invasive
-     * @param string constructor
-     * @param string advantages
-     * @param int price
-     * @param string refund
-     * @param string humans
+     * @param string description description de l'outil
+     * @param string type   type (DM = 0, AT = 1)
+     * @param picture Photo de l'outil
+     * @param string autonomy Degré d'autonomie
+     * @param string guide lien vers le guide d'usage
+     * @param string invasive Caractères invasif 
+     * @param string constructor Nom du contructoeur
+     * @param string advantages Avantages et inconvénients
+     * @param int price prix 
+     * @param string refund Pourcentage remboursé
+     * @param string humans Nombre de personnes nécessaires à la manipulation de l'outil
      * @return Response $response // reponse de la requete
      */
     public static function Put($name, $description, $type, $picture = null, $autonomy = null, $guide = null, $invasive = null, $constructor = null, $advantages = null, $price = null, $refund = null, $humans = null)
@@ -61,19 +61,18 @@ class ToolManager implements IModelManager
     }
     /**
      * Edite un item
-     * @param string name //nom de l'item
-     * @param string description
-     * @param string type
-     * @param picture
-     * @param string autonomy
-     * @param string guide
-     * @param string invasive
-     * @param string constructor
-     * @param string advantages
-     * @param int price
-     * @param string refund
-     * @param string humans
-     * @return Response $response // reponse de la requete
+* @param string name //nom de l'item
+     * @param string description description de l'outil
+     * @param string type   type (DM = 0, AT = 1)
+     * @param picture Photo de l'outil
+     * @param string autonomy Degré d'autonomie
+     * @param string guide lien vers le guide d'usage
+     * @param string invasive Caractères invasif 
+     * @param string constructor Nom du contructoeur
+     * @param string advantages Avantages et inconvénients
+     * @param int price prix 
+     * @param string refund Pourcentage remboursé
+     * @param string humans Nombre de personnes nécessaires à la manipulation de l'outil
      */
     public static function Patch($id, $name, $description, $type, $picture, $autonomy = null, $guide = null, $invasive = null, $constructor = null, $advantages = null, $price = null, $refund = null, $humans = null)
     {
@@ -95,7 +94,6 @@ class ToolManager implements IModelManager
     /**
      * Supprime l'item dont on a saisi l'id en parametre
      * @param $int id //identifiant de l'item
-     * @return Response $response // reponse de la requete
      */
     public static function Delete($id)
     {

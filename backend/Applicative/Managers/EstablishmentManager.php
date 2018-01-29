@@ -42,7 +42,6 @@ class EstablishmentManager implements IModelManager
      * Edite un item dont on a saisi le nom en parametre
      * @param int $id //identifiant de l'item
      * @param string $name //nom de l'item
-     * @return Response $response // reponse de la requete
      */
     public static function Patch($id, $name)
     {
@@ -53,7 +52,6 @@ class EstablishmentManager implements IModelManager
     /**
      * Supprime l'item dont on a saisi l'id en parametre
      * @param $int id //identifiant de l'item
-     * @return Response $response // reponse de la requete
      */
     public static function Delete( $id)
     {

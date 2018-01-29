@@ -78,7 +78,6 @@ class Tool_ResidentManager implements IModelManager
      * @param int $Tool_id //identifiant du tool
      * @param string progress
      * @param string anxiety
-     * @return Response $response // reponse de la requete
      */
     public static function Patch($id, $progress = null, $anxiety = null)
     {

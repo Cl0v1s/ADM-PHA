@@ -30,10 +30,10 @@ class UserManager implements IModelManager
      * Ajoute un item
      * @param string $lastname //nom
      * @param string $firstname //prenom
-     * @param string $mail
+     * @param string $mail adresse email
      * @param int $phone // numero de telephone
-     * @param string $group
-     * @param string $job
+     * @param string $group groupe privilèges 0: personnel médical 1: professionnel 2: admin
+     * @param string $job Métier de l'utilisateur 
      * @return Response $response // reponse de la requete
      */
 
@@ -50,14 +50,12 @@ class UserManager implements IModelManager
     }
     /**
      * Edite un item
-     * @param int $id //identifiant de l'item
      * @param string $lastname //nom
      * @param string $firstname //prenom
-     * @param string $mail
+     * @param string $mail adresse email
      * @param int $phone // numero de telephone
-     * @param string $group
-     * @param string $job
-     * @return Response $response // reponse de la requete
+     * @param string $group groupe privilèges 0: personnel médical 1: professionnel 2: admin
+     * @param string $job Métier de l'utilisateur 
      */
     public static function Patch($id, $lastname, $firstname, $mail, $phone, $group, $job)
     {
@@ -73,7 +71,6 @@ class UserManager implements IModelManager
     /**
      * Supprime l'item dont on a saisi l'id en parametre
      * @param $int id //identifiant de l'item
-     * @return Response $response // reponse de la requete
      */
     public static function Delete($id)
     {
