@@ -6,6 +6,9 @@
  * Time: 19:53
  */
 
+  /**
+  * Classe du modèle correspondant aux compensations
+  **/
 class Compensation extends StorageItem
 {
     /**

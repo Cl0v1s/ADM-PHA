@@ -27,9 +27,9 @@ class APIController extends Controller
 {
     /**
      * Exécute la fonction appelée dans operation (getall, put, patch, get, delete)
-     * @param string $class 
+     * @param string $class Classe du modèle à manipuler
      * @param string $operation //nature de l'action
-     * @param array $params 
+     * @param array $params paramètres associés à la requète
      * @param Response $response 
      * @return Response
      */
@@ -124,7 +124,6 @@ class APIController extends Controller
      * Supprime l'item dont on a saisi l'id en parametre dans le manager saisi en parametre
      * @param string $manager // on saisit le manager qui nous interesse
      * @param int $id //identifiant de l'item que l'on veut supprimer
-     * @return Response $response // reponse de la requete
      */
 
     private static function Delete($manager, $id)
@@ -154,7 +153,6 @@ class APIController extends Controller
      * Editer un item dont on a saisi l'id en parametre dans le manager que l'on a saisi en parametre
      * @param string $manager // on saisit le manager qui nous interesse
      * @param int $id //identifiant de l'item que l'on veut éditer
-     * @return Response $response // reponse de la requete
      */
     private static function Patch($manager, $id, $data)
     {

@@ -6,6 +6,9 @@
  * Time: 19:49
  */
 
+  /**
+  * Classe du modèle correspondant aux résidents
+  **/
 class Resident extends StorageItem
 {
 

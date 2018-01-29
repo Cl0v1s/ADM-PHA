@@ -9,6 +9,10 @@ include_once 'Core/StorageItem.php';
  * Date: 21/03/17
  * Time: 19:48
  */
+
+  /**
+  * Classe du modèle correspondant aux utilisateurs
+  **/
 class User extends StorageItem
 {
 

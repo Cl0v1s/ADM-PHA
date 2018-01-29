@@ -6,6 +6,9 @@
  * Time: 12:25
  */
 
+  /**
+  * Classe du modèle correspondant aux liens entre dispositifs et cas d'utilisation
+  **/
 class Tool_Usecase extends StorageItem
 {
     /**

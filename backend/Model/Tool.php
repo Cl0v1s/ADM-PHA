@@ -6,6 +6,9 @@
  * Time: 19:56
  */
 
+  /**
+  * Classe du modèle correspondant aux DM et AT 
+  **/
 class Tool extends StorageItem
 {
     /**

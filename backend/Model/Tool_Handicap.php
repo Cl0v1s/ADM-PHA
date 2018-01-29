@@ -6,6 +6,9 @@
  * Time: 12:25
  */
 
+  /**
+  * Classe du modèle correspondant aux liens entre dispositifs et handicaps
+  **/
 class Tool_Handicap extends StorageItem
 {
     /**

@@ -6,6 +6,9 @@
  * Time: 12:25
  */
 
+  /**
+  * Classe du modèle correspondant aux liens entre dispositifs et compensations
+  **/
 class Tool_Compensation extends StorageItem
 {
     /**

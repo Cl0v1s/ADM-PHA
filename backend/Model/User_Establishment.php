@@ -6,6 +6,9 @@
  * Time: 12:25
  */
 
+  /**
+  * Classe du modèle correspondant aux liens entre utilisateur et établissement
+  **/
 class User_Establishment extends StorageItem
 {
     /**

@@ -6,6 +6,9 @@
  * Time: 19:53
  */
 
+ /**
+  * Classe du modèle correspondant aux commentaires 
+  **/
 class Comment extends StorageItem
 {
     /**
