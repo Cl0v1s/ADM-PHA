@@ -8,7 +8,7 @@ div[data-is=app-dm]>div
     height: 200px;
 }
 
-div[data-is=app-dm] .title
+div[data-is=app-dm] .title, div[data-is=app-dmdetails] app-dm .title
 {
     display: none;
 
@@ -56,11 +56,13 @@ div[data-is=app-dm] .header > div >p
 app-dm .header>div> p:first-of-type,
 div[data-is=app-dm] .header>div> p:first-of-type
 {
-    font-size: 55px;
+    font-size: 45px;
+    line-height: 45px;
     font-family: 'Maxwell' !important;
     margin-top: 60px;
     overflow: initial !important;
     max-height: 100% !important;
+    margin-bottom: 5px;
 }
 
 app-dm .header>div> p,
