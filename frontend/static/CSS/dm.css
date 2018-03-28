@@ -180,9 +180,10 @@ app-dm>div>div p,
 div[data-is=app-dm]>div>div p
 {
     font-family: "helvetica";
-    font-size: 15px;
+    font-size: 18px;
     overflow-y: auto;
     max-height: 110px;
+    line-height: 23px;
 }
 
 

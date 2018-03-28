@@ -18,10 +18,15 @@ app-header .ui.container.center-element
 
 
 
-app-header a {
+app-header a, app-header span {
 	color : #ffffff;
     margin-right: 20px;
 }
+
+app-header span {
+	color: rgba(255,255,255,0.3);
+}
+
 app-header a.selected {
 	text-decoration : underline;
 }
