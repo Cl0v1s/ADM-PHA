@@ -28,8 +28,8 @@ let Router =
         App.hidePopIn();
         if(filters != "")
             filters = " and "+filters;
-        let requestResults = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool?$filter=type eq 0"+filters, null, "GET");
-        let requestDms = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool?$filter=type eq 0", null, "GET");
+        let requestResults = App.request(App.Address + "/tool?$filter=type eq 0"+filters, null, "GET");
+        let requestDms = App.request(App.Address + "/tool?$filter=type eq 0", null, "GET");
         let request = Promise.all([requestResults, requestDms]);
 
         request.then(function(data){
@@ -48,7 +48,7 @@ let Router =
     routeDM : function(id)
     {
         App.hidePopIn();
-        let request = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool/"+id, null, "GET");
+        let request = App.request(App.Address + "/tool/"+id, null, "GET");
         request.then(function(data){
             let opts = {
                 dm : data.value,
@@ -66,8 +66,8 @@ let Router =
         App.hidePopIn();
         if(filters != "")
             filters = " and "+filters;
-        let requestResults = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool?$filter=type eq 1"+filters, null, "GET");
-        let requestAts = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/tool?$filter=type eq 1", null, "GET");
+        let requestResults = App.request(App.Address + "/tool?$filter=type eq 1"+filters, null, "GET");
+        let requestAts = App.request(App.Address + "/tool?$filter=type eq 1", null, "GET");
         let request = Promise.all([requestResults, requestAts]);
 
         request.then(function(data){
@@ -88,8 +88,8 @@ let Router =
         App.hidePopIn();
         if(filters != "")
             filters = "?$filter="+filters;
-        let requestResidents = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/resident", null, "GET");
-        let requestResults = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/resident"+filters, null, "GET");
+        let requestResidents = App.request(App.Address + "/resident", null, "GET");
+        let requestResults = App.request(App.Address + "/resident"+filters, null, "GET");
         let request = Promise.all([requestResidents, requestResults]);
         request.then(function(data)
         {
@@ -110,7 +110,7 @@ let Router =
     {
         App.hidePopIn();
         let requestUsecase = App.request(App.Address + "/usecase", null, "GET");
-        let requestResident = App.request("http://www.clovis-portron.cf/ADMPHA/backend/v1.0/resident/"+id, null, "GET");
+        let requestResident = App.request(App.Address + "/resident/"+id, null, "GET");
         let request = Promise.all([requestResident, requestUsecase]);
         request.then(function(data)
         {

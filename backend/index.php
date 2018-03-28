@@ -36,7 +36,7 @@ $app->add(function(Request $request, Response $response, $next){
 
 // Définition des routes
 
-$app->any('/v1.0/{collection}', function (Request $request, Response $response, $args) {
+$app->any('/v1-0/{collection}', function (Request $request, Response $response, $args) {
     $collection = ucfirst($args["collection"]);
     $operation = ucfirst($request->getMethod());
     $params = null;
@@ -52,7 +52,7 @@ $app->any('/v1.0/{collection}', function (Request $request, Response $response, 
     return APIController::Execute($collection, $operation, $params, $response);
 });
 
-$app->any('/v1.0/{collection}/{id}', function(Request $request, Response $response, $args)
+$app->any('/v1-0/{collection}/{id}', function(Request $request, Response $response, $args)
 {
     $collection = ucfirst($args["collection"]);
     $operation = ucfirst($request->getMethod());

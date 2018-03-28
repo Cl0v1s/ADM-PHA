@@ -1,7 +1,8 @@
 let App =
 {
     // L'adresse de base dans laquelle on a besoin de taper éventuellement
-    Address : "http://www.clovis-portron.cf/ADMPHA/backend/v1.0",
+    //Address : "http://www.clovis-portron.cf/ADMPHA/backend/v1.0",
+    Address : "http://localhost:8080/v1-0",
 
     // Le composant actuellement monté en tant que page 
     Page : null,
