@@ -163,22 +163,21 @@ div[data-is=app-usecase] .tools
 {
     display: block;
     width: 100%;
-    margin-top: 20px;
+    margin: 20px;
     padding: 20px;
+    text-align: center;
 }
 
 div[data-is=app-usecase] .tools>div
 {
     display: inline-block;
-      background-color: #E7E7E8;
-  color: #515558;
-    
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+    background-color: #E7E7E8;
+    color: #515558;
+    padding: 15px;
+    font-family: 'Helvetica';
     cursor: pointer;
-    box-shadow: 0 1px 3px 0 #d4d4d5,0 5px 3px 1px #d4d4d5;
-    margin-right: 25px;
+    /*box-shadow: 0 1px 3px 0 #d4d4d5,0 5px 3px 1px #d4d4d5;
+    margin-right: 25px;*/
 }
 
 
@@ -187,6 +186,7 @@ div[data-is=app-usecase] .tools>div
 div[data-is="app-usecase"] .tools > div.selected {
     background-color: #6CC2CF;
     color: white;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3) inset;
 }
 
 div[data-is=app-usecase] app-dm
@@ -204,6 +204,18 @@ div[data-is=app-usecase] app-dm h3
 div[data-is=app-usecase] app-dm .header
 {
     display: none;
+}
+
+div[data-is=app-usecase] app-dm .title
+{
+    display: block;
+    background-color: #6CC2CF;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    margin-bottom: 30px;
+    padding: 10px;
 }
 
 div[data-is=app-usecase] app-dm>div

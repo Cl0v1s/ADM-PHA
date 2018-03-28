@@ -8,6 +8,12 @@ div[data-is=app-dm]>div
     height: 200px;
 }
 
+div[data-is=app-dm] .title
+{
+    display: none;
+
+}
+
 app-dm>div>div,
 div[data-is=app-dmdetails]>div>div>#price
 {
@@ -223,7 +229,6 @@ div[data-is=app-dm] .comments>h2
     padding-left: 10px;
     padding-right: 10px;
     color: white;
-    cursor: pointer;
     box-shadow: 0 1px 3px 0 #d4d4d5,0 5px 3px 1px #d4d4d5;
 }
 
