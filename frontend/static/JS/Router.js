@@ -4,11 +4,18 @@
 
 let Router = 
 {
+
+    /**
+     * Change l'url actuel
+     */
     redirect : function (rt)
     {
         route(rt);
     },
 
+    /**
+     * Démarre le routeur 
+     */
     start : function()
     {
         Router.setRoutes();
@@ -17,6 +24,8 @@ let Router =
 
     /////////////////////////////////////////////////////////////////
     // Définition des fonctions de route
+
+
     routeIndex : function()
     {
         App.hidePopIn();
@@ -125,6 +134,9 @@ let Router =
 
      ///////////////////////////////////////////////////////////////
 
+     /**
+      * Définition des routes, associant une url locale à une fonction de route décrite ci-dessus
+      */
     setRoutes : function()
     {
         route("dms", Router.routeDMs);

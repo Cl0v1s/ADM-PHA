@@ -10,6 +10,11 @@ let App =
     // Le composant actuellement monté en tant que PopIn
     PopIn: null,
 
+
+    /**
+     * Convertit un objet JSON en donnée de formulaire compatible url-from-encoded
+     * json: objet json à convertir 
+     */
     jsonToQuery : function(json) {
         return  Object.keys(json).map(function(key) {
                 if(json[key] != null)
@@ -106,6 +111,11 @@ let App =
         window.scroll(0,0);
     },
 
+    /**
+     * Affiche une popin contenant un tag donné
+     * tag: Tag à afficher au sein de la popin
+     * data: objet à transmettre en opts au tag à afficher 
+     */
     showPopIn : function(tag, data)
     {
         if(App.PopIn != null)
@@ -133,6 +143,9 @@ let App =
         e.appendChild(close);
     },
 
+    /**
+     * Cache la popin
+     */
     hidePopIn : function()
     {
         document.getElementById("app").classList.remove("blur");
@@ -143,6 +156,9 @@ let App =
 
     LoadingCounter : 0,
 
+    /**
+     * Affiche l'animation de chargement 
+     */
     showLoading : function()
     {
         App.LoadingCounter++;
@@ -153,6 +169,9 @@ let App =
         document.body.appendChild(e);
     },
 
+    /**
+     * Masque l'animation de chargement
+     */
     hideLoading()
     {
         App.LoadingCounter--;
@@ -165,6 +184,9 @@ let App =
         App.LoadingCounter = 0;
     },
 
+    /**
+     * Affiche une notification à l'utilisateur
+     */
     showNotification : function(message)
     {
         //TODO: revoir ca pour le présenter d'une meilleure manière

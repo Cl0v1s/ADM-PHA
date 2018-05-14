@@ -27,6 +27,10 @@ let ErrorHandler =
             window.alert(error.message);
     },
 
+    /**
+     * Analyse un formulaire et présente les erreurs commises à l'utilisateur 
+     * errors: liste d'erreur de saisie au sein du formulaire 
+     */
     diagnosticForm : function(errors)
     {
         throw new Error("Not implemented.");
